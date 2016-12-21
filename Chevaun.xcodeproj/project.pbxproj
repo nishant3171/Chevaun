@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		733D875DDBD3B8A9187F4F7C /* Pods_Chevaun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF71FC4B38F5F883CC9A920 /* Pods_Chevaun.framework */; };
+		F440AD581E0AF18A0016D771 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440AD571E0AF18A0016D771 /* ProfileViewController.swift */; };
 		F470308B1E0AD1270050257A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470308A1E0AD1270050257A /* AppDelegate.swift */; };
-		F470308D1E0AD1270050257A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470308C1E0AD1270050257A /* ViewController.swift */; };
+		F470308D1E0AD1270050257A /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470308C1E0AD1270050257A /* ActivityViewController.swift */; };
 		F47030901E0AD1270050257A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F470308E1E0AD1270050257A /* Main.storyboard */; };
 		F47030921E0AD1270050257A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47030911E0AD1270050257A /* Assets.xcassets */; };
 		F47030951E0AD1270050257A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47030931E0AD1270050257A /* LaunchScreen.storyboard */; };
+		F470309D1E0AD1B40050257A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F470309C1E0AD1B40050257A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E28BC6578C91435A489BB91 /* Pods-Chevaun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chevaun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chevaun/Pods-Chevaun.debug.xcconfig"; sourceTree = "<group>"; };
+		8CF71FC4B38F5F883CC9A920 /* Pods_Chevaun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chevaun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBA1CA9E7EEE8613145FF8C5 /* Pods-Chevaun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chevaun.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chevaun/Pods-Chevaun.release.xcconfig"; sourceTree = "<group>"; };
+		F440AD571E0AF18A0016D771 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F47030871E0AD1270050257A /* Chevaun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chevaun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F470308A1E0AD1270050257A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F470308C1E0AD1270050257A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F470308C1E0AD1270050257A /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		F470308F1E0AD1270050257A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F47030911E0AD1270050257A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F47030941E0AD1270050257A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F47030961E0AD1270050257A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F470309C1E0AD1B40050257A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,69 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				733D875DDBD3B8A9187F4F7C /* Pods_Chevaun.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8735022CC46D2DB1E31AF9F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E28BC6578C91435A489BB91 /* Pods-Chevaun.debug.xcconfig */,
+				BBA1CA9E7EEE8613145FF8C5 /* Pods-Chevaun.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A20B5B5960F0F4EC39FC2AC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CF71FC4B38F5F883CC9A920 /* Pods_Chevaun.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F440AD531E0AE88E0016D771 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F440AD541E0AE8940016D771 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F440AD551E0AE89A0016D771 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F470308C1E0AD1270050257A /* ActivityViewController.swift */,
+				F440AD571E0AF18A0016D771 /* ProfileViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F440AD561E0AE8AF0016D771 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F470308E1E0AD1270050257A /* Main.storyboard */,
+				F47030931E0AD1270050257A /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		F470307E1E0AD1270050257A = {
 			isa = PBXGroup;
 			children = (
 				F47030891E0AD1270050257A /* Chevaun */,
 				F47030881E0AD1270050257A /* Products */,
+				8735022CC46D2DB1E31AF9F0 /* Pods */,
+				A20B5B5960F0F4EC39FC2AC0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,11 +114,13 @@
 		F47030891E0AD1270050257A /* Chevaun */ = {
 			isa = PBXGroup;
 			children = (
+				F440AD561E0AE8AF0016D771 /* Storyboards */,
+				F440AD551E0AE89A0016D771 /* Controller */,
+				F440AD541E0AE8940016D771 /* View */,
+				F440AD531E0AE88E0016D771 /* Model */,
 				F470308A1E0AD1270050257A /* AppDelegate.swift */,
-				F470308C1E0AD1270050257A /* ViewController.swift */,
-				F470308E1E0AD1270050257A /* Main.storyboard */,
+				F470309C1E0AD1B40050257A /* GoogleService-Info.plist */,
 				F47030911E0AD1270050257A /* Assets.xcassets */,
-				F47030931E0AD1270050257A /* LaunchScreen.storyboard */,
 				F47030961E0AD1270050257A /* Info.plist */,
 			);
 			path = Chevaun;
@@ -71,9 +133,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F47030991E0AD1270050257A /* Build configuration list for PBXNativeTarget "Chevaun" */;
 			buildPhases = (
+				CC94A93C0768C03D25727E76 /* [CP] Check Pods Manifest.lock */,
 				F47030831E0AD1270050257A /* Sources */,
 				F47030841E0AD1270050257A /* Frameworks */,
 				F47030851E0AD1270050257A /* Resources */,
+				4E196262BDD63DCCA291FF84 /* [CP] Embed Pods Frameworks */,
+				F0E404A6A9377EAD9B0C39ED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,18 +191,68 @@
 			files = (
 				F47030951E0AD1270050257A /* LaunchScreen.storyboard in Resources */,
 				F47030921E0AD1270050257A /* Assets.xcassets in Resources */,
+				F470309D1E0AD1B40050257A /* GoogleService-Info.plist in Resources */,
 				F47030901E0AD1270050257A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4E196262BDD63DCCA291FF84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chevaun/Pods-Chevaun-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC94A93C0768C03D25727E76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F0E404A6A9377EAD9B0C39ED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chevaun/Pods-Chevaun-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F47030831E0AD1270050257A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F470308D1E0AD1270050257A /* ViewController.swift in Sources */,
+				F440AD581E0AF18A0016D771 /* ProfileViewController.swift in Sources */,
+				F470308D1E0AD1270050257A /* ActivityViewController.swift in Sources */,
 				F470308B1E0AD1270050257A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +372,7 @@
 		};
 		F470309A1E0AD1270050257A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E28BC6578C91435A489BB91 /* Pods-Chevaun.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G7TV7283LG;
@@ -270,6 +386,7 @@
 		};
 		F470309B1E0AD1270050257A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBA1CA9E7EEE8613145FF8C5 /* Pods-Chevaun.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G7TV7283LG;
@@ -300,6 +417,7 @@
 				F470309B1E0AD1270050257A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
