@@ -18,9 +18,21 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        guard FIRAuth.auth()?.currentUser != nil else {
+            infoLabel.text = "Please sign in."
+            return
+        }
+        
+        infoLabel.text = "Already logged in."
+        
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -47,9 +59,13 @@ class ProfileViewController: UIViewController {
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
             if error != nil {
                 print("Unable to authenticate with Firebase.\(error)")
-            } else {
+            } else if user?.uid != nil {
+                DataService.instance.saveUser(uid: user!.uid)
                 print("Authenticated with Firebase.")
-                self.infoLabel.text = "Signed In"
+                self.infoLabel.text = "Thanks for signing in."
+            }
+            else {
+                print("Couldn't get the user id.")
             }
         })
     }
