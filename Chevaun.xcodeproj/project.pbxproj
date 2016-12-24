@@ -17,6 +17,7 @@
 		F47030921E0AD1270050257A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47030911E0AD1270050257A /* Assets.xcassets */; };
 		F47030951E0AD1270050257A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47030931E0AD1270050257A /* LaunchScreen.storyboard */; };
 		F470309D1E0AD1B40050257A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F470309C1E0AD1B40050257A /* GoogleService-Info.plist */; };
+		F49A38D31E0DDBD1004BCBC8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49A38D21E0DDBD1004BCBC8 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		F47030941E0AD1270050257A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F47030961E0AD1270050257A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F470309C1E0AD1B40050257A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F49A38D21E0DDBD1004BCBC8 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				F470309C1E0AD1B40050257A /* GoogleService-Info.plist */,
 				F47030911E0AD1270050257A /* Assets.xcassets */,
 				F47030961E0AD1270050257A /* Info.plist */,
+				F49A38D21E0DDBD1004BCBC8 /* DataService.swift */,
 			);
 			path = Chevaun;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				F43130F21E0EAB9500824B86 /* ActivityCell.swift in Sources */,
 				F470308D1E0AD1270050257A /* ActivityViewController.swift in Sources */,
 				F470308B1E0AD1270050257A /* AppDelegate.swift in Sources */,
+				F49A38D31E0DDBD1004BCBC8 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
