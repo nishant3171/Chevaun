@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		733D875DDBD3B8A9187F4F7C /* Pods_Chevaun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF71FC4B38F5F883CC9A920 /* Pods_Chevaun.framework */; };
+		F43130F01E0E9A1000824B86 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43130EF1E0E9A1000824B86 /* ActivityModel.swift */; };
 		F440AD581E0AF18A0016D771 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440AD571E0AF18A0016D771 /* ProfileViewController.swift */; };
 		F470308B1E0AD1270050257A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470308A1E0AD1270050257A /* AppDelegate.swift */; };
 		F470308D1E0AD1270050257A /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470308C1E0AD1270050257A /* ActivityViewController.swift */; };
@@ -21,6 +22,7 @@
 		7E28BC6578C91435A489BB91 /* Pods-Chevaun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chevaun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chevaun/Pods-Chevaun.debug.xcconfig"; sourceTree = "<group>"; };
 		8CF71FC4B38F5F883CC9A920 /* Pods_Chevaun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chevaun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA1CA9E7EEE8613145FF8C5 /* Pods-Chevaun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chevaun.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chevaun/Pods-Chevaun.release.xcconfig"; sourceTree = "<group>"; };
+		F43130EF1E0E9A1000824B86 /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		F440AD571E0AF18A0016D771 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F47030871E0AD1270050257A /* Chevaun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chevaun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F470308A1E0AD1270050257A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				F470309C1E0AD1B40050257A /* GoogleService-Info.plist */,
 				F47030911E0AD1270050257A /* Assets.xcassets */,
 				F47030961E0AD1270050257A /* Info.plist */,
+				F43130EF1E0E9A1000824B86 /* ActivityModel.swift */,
 			);
 			path = Chevaun;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43130F01E0E9A1000824B86 /* ActivityModel.swift in Sources */,
 				F440AD581E0AF18A0016D771 /* ProfileViewController.swift in Sources */,
 				F470308D1E0AD1270050257A /* ActivityViewController.swift in Sources */,
 				F470308B1E0AD1270050257A /* AppDelegate.swift in Sources */,
