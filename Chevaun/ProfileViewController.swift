@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class ProfileViewController: UIViewController {
     
@@ -25,6 +28,29 @@ class ProfileViewController: UIViewController {
     
     @IBAction func facebookLogin(sender: UIButton) {
         
+        let facebookLogin = FBSDKLoginManager()
+        
+        facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            if error != nil {
+                print("Unable to authenticate with Facebook.")
+            } else if result?.isCancelled == true {
+                print("You are not giving the permissions.")
+            } else {
+                print("Successfully authenticated")
+                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                self.firebaseAuthentication(credential)
+            }
+        }
     }
 
+    func firebaseAuthentication(_ credential: FIRAuthCredential) {
+        FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+            if error != nil {
+                print("Unable to authenticate with Firebase.\(error)")
+            } else {
+                print("Authenticated with Firebase.")
+                self.infoLabel.text = "Signed In"
+            }
+        })
+    }
 }
