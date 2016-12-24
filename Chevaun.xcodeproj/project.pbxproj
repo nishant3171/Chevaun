@@ -66,6 +66,7 @@
 		F440AD531E0AE88E0016D771 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F43130EF1E0E9A1000824B86 /* ActivityModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -124,7 +125,6 @@
 				F470309C1E0AD1B40050257A /* GoogleService-Info.plist */,
 				F47030911E0AD1270050257A /* Assets.xcassets */,
 				F47030961E0AD1270050257A /* Info.plist */,
-				F43130EF1E0E9A1000824B86 /* ActivityModel.swift */,
 			);
 			path = Chevaun;
 			sourceTree = "<group>";
