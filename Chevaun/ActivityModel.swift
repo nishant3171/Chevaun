@@ -16,11 +16,11 @@ class ActivityModel {
     var image: UIImage?
     var review: String
     
-    init(name: String,description: String?, image: UIImage?, rating: String) {
+    init(name: String,description: String?, image: UIImage?, review: String) {
         self.name = name
         self.description = description
         self.image = image
-        self.rating = rating
+        self.review = review
     }
     
 }
