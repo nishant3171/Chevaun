@@ -16,17 +16,20 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
     @IBOutlet weak var reviewButton: UIButton!
     @IBOutlet weak var activityNameTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var galleryButton: UIButton!
+    @IBOutlet weak var mainActivityImage: UIImageView!
 
     
     //MARK: Variables
-//    var imagePicker: UIImagePickerController!
+    var imagePicker: UIImagePickerController!
+//    var galleryImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        imagePicker = UIImagePickerController()
+        imagePicker = UIImagePickerController()
         
-//        imagePicker.delegate = self
+        imagePicker.delegate = self
         activityNameTextField.delegate = self
         descriptionTextView.delegate = self
         
@@ -39,6 +42,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         super.viewWillAppear(animated)
         
 //        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
+        mainActivityImage.clipsToBounds = true
         subscribeToNotifications()
     }
     
@@ -48,6 +52,22 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         super.viewWillDisappear(animated)
         
         unsubscribeFromNotification()
+    }
+    
+    @IBAction func pickingGalleryImage(_ sender: UIButton) {
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let galleryImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            print(galleryImage)
+            self.mainActivityImage.image = galleryImage
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+        
+        self.galleryButton.isHidden = true
     }
     
     //MARK: Keyboard Notifications

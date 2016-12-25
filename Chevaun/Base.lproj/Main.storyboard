@@ -98,7 +98,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R3T-fz-18d" id="n2X-TW-T7t">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lzs-qs-f30">
@@ -206,7 +206,7 @@
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                             </textView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sto-nE-1Ha">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sto-nE-1Ha">
                                                 <rect key="frame" x="8" y="8" width="359" height="250"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="sto-nE-1Ha" secondAttribute="height" multiplier="359:250" id="cnJ-sn-ol0"/>
@@ -253,6 +253,13 @@
                                                     <constraint firstItem="zsf-x0-zPh" firstAttribute="leading" secondItem="Afh-ff-UcE" secondAttribute="leading" constant="4" id="yq3-QH-OHz"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sca-uu-fS2">
+                                                <rect key="frame" x="101" y="211" width="173" height="30"/>
+                                                <state key="normal" title="+ Add image from gallery"/>
+                                                <connections>
+                                                    <action selector="pickingGalleryImage:" destination="Pky-aT-02h" eventType="touchUpInside" id="Tcd-bh-isW"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.95294117647058818" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -262,11 +269,13 @@
                                             <constraint firstAttribute="bottom" secondItem="yNk-bF-3Un" secondAttribute="bottom" constant="8" id="8HZ-QX-iMP"/>
                                             <constraint firstItem="sto-nE-1Ha" firstAttribute="top" secondItem="0Ff-Pb-fyI" secondAttribute="top" constant="8" id="BV0-56-UfQ"/>
                                             <constraint firstItem="Afh-ff-UcE" firstAttribute="leading" secondItem="0Ff-Pb-fyI" secondAttribute="leading" constant="8" id="I55-vj-vwK"/>
+                                            <constraint firstItem="Afh-ff-UcE" firstAttribute="top" secondItem="Sca-uu-fS2" secondAttribute="bottom" constant="33" id="LZg-ca-LVi"/>
                                             <constraint firstAttribute="trailing" secondItem="Afh-ff-UcE" secondAttribute="trailing" constant="8" id="LwY-ud-edS"/>
                                             <constraint firstAttribute="height" constant="536" id="QZm-za-OJ0"/>
                                             <constraint firstAttribute="height" constant="1200" id="SNu-06-NqA"/>
                                             <constraint firstItem="sto-nE-1Ha" firstAttribute="leading" secondItem="0Ff-Pb-fyI" secondAttribute="leading" constant="8" id="eRN-Bg-imf"/>
                                             <constraint firstAttribute="trailing" secondItem="sto-nE-1Ha" secondAttribute="trailing" constant="8" id="hZa-bQ-Zko"/>
+                                            <constraint firstItem="Sca-uu-fS2" firstAttribute="centerX" secondItem="sto-nE-1Ha" secondAttribute="centerX" id="hzS-ys-8jG"/>
                                             <constraint firstItem="Afh-ff-UcE" firstAttribute="top" secondItem="sto-nE-1Ha" secondAttribute="bottom" constant="16" id="nNR-zm-gbQ"/>
                                             <constraint firstAttribute="trailing" secondItem="yNk-bF-3Un" secondAttribute="trailing" constant="8" id="pzs-g4-dbY"/>
                                             <constraint firstItem="yNk-bF-3Un" firstAttribute="leading" secondItem="0Ff-Pb-fyI" secondAttribute="leading" constant="8" id="uhI-rc-Jfa"/>
@@ -328,12 +337,14 @@
                     <connections>
                         <outlet property="activityNameTextField" destination="zsf-x0-zPh" id="MHA-x6-Dwd"/>
                         <outlet property="descriptionTextView" destination="yNk-bF-3Un" id="wfk-c1-lYa"/>
+                        <outlet property="galleryButton" destination="Sca-uu-fS2" id="QrR-qe-rU8"/>
+                        <outlet property="mainActivityImage" destination="sto-nE-1Ha" id="1p7-XB-juf"/>
                         <outlet property="reviewButton" destination="zvt-LO-xT2" id="eEJ-K8-yfs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecc-5G-rjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1512.8" y="26.53673163418291"/>
+            <point key="canvasLocation" x="1567" y="27"/>
         </scene>
     </scenes>
     <resources>
