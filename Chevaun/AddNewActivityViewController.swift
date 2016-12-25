@@ -18,6 +18,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var galleryButton: UIButton!
     @IBOutlet weak var mainActivityImage: UIImageView!
+    @IBOutlet weak var cameraButton: UIButton!
 
     
     //MARK: Variables
@@ -41,7 +42,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
         mainActivityImage.clipsToBounds = true
         subscribeToNotifications()
     }
@@ -68,7 +69,15 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         self.dismiss(animated: true, completion: nil)
         
         self.galleryButton.isHidden = true
+        self.cameraButton.isHidden = true
     }
+    
+    @IBAction func takingImageFromCamera(_ sender: UIButton) {
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+
     
     //MARK: Keyboard Notifications
     

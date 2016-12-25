@@ -260,6 +260,13 @@
                                                     <action selector="pickingGalleryImage:" destination="Pky-aT-02h" eventType="touchUpInside" id="Tcd-bh-isW"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCM-Ue-DSk">
+                                                <rect key="frame" x="106" y="24" width="163" height="30"/>
+                                                <state key="normal" title="Add image with Camera"/>
+                                                <connections>
+                                                    <action selector="takingImageFromCamera:" destination="Pky-aT-02h" eventType="touchUpInside" id="xG3-u9-PQp"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.95294117647058818" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -271,9 +278,11 @@
                                             <constraint firstItem="Afh-ff-UcE" firstAttribute="leading" secondItem="0Ff-Pb-fyI" secondAttribute="leading" constant="8" id="I55-vj-vwK"/>
                                             <constraint firstItem="Afh-ff-UcE" firstAttribute="top" secondItem="Sca-uu-fS2" secondAttribute="bottom" constant="33" id="LZg-ca-LVi"/>
                                             <constraint firstAttribute="trailing" secondItem="Afh-ff-UcE" secondAttribute="trailing" constant="8" id="LwY-ud-edS"/>
+                                            <constraint firstItem="sto-nE-1Ha" firstAttribute="top" secondItem="rCM-Ue-DSk" secondAttribute="bottom" constant="-46" id="O7F-ZI-3WL"/>
                                             <constraint firstAttribute="height" constant="536" id="QZm-za-OJ0"/>
                                             <constraint firstAttribute="height" constant="1200" id="SNu-06-NqA"/>
                                             <constraint firstItem="sto-nE-1Ha" firstAttribute="leading" secondItem="0Ff-Pb-fyI" secondAttribute="leading" constant="8" id="eRN-Bg-imf"/>
+                                            <constraint firstItem="rCM-Ue-DSk" firstAttribute="centerX" secondItem="sto-nE-1Ha" secondAttribute="centerX" id="gmJ-nn-YrF"/>
                                             <constraint firstAttribute="trailing" secondItem="sto-nE-1Ha" secondAttribute="trailing" constant="8" id="hZa-bQ-Zko"/>
                                             <constraint firstItem="Sca-uu-fS2" firstAttribute="centerX" secondItem="sto-nE-1Ha" secondAttribute="centerX" id="hzS-ys-8jG"/>
                                             <constraint firstItem="Afh-ff-UcE" firstAttribute="top" secondItem="sto-nE-1Ha" secondAttribute="bottom" constant="16" id="nNR-zm-gbQ"/>
@@ -336,6 +345,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityNameTextField" destination="zsf-x0-zPh" id="MHA-x6-Dwd"/>
+                        <outlet property="cameraButton" destination="rCM-Ue-DSk" id="fhN-KC-bfb"/>
                         <outlet property="descriptionTextView" destination="yNk-bF-3Un" id="wfk-c1-lYa"/>
                         <outlet property="galleryButton" destination="Sca-uu-fS2" id="QrR-qe-rU8"/>
                         <outlet property="mainActivityImage" destination="sto-nE-1Ha" id="1p7-XB-juf"/>
