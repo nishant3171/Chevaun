@@ -80,7 +80,7 @@
         <!--Activity-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ActivityViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActivityViewController" id="BYZ-38-t0r" customClass="ActivityViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -93,7 +93,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityCell" rowHeight="83" id="R3T-fz-18d" customClass="ActivityCell" customModule="Chevaun" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ActivityCell" rowHeight="83" id="R3T-fz-18d" customClass="ActivityCell" customModule="Chevaun" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R3T-fz-18d" id="n2X-TW-T7t">
@@ -129,6 +129,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="ffc-uX-ssh"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="SRs-bi-Nnj"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -184,7 +185,7 @@
         <!--Add New Activity View Controller-->
         <scene sceneID="A7F-lB-i24">
             <objects>
-                <viewController id="Pky-aT-02h" customClass="AddNewActivityViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNewActivity" id="Pky-aT-02h" customClass="AddNewActivityViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UBi-SU-L14"/>
                         <viewControllerLayoutGuide type="bottom" id="eUg-mH-OCE"/>

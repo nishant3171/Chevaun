@@ -61,3 +61,16 @@ extension ActivityViewController: UITableViewDataSource {
     
 }
 
+extension ActivityViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let destination = self.storyboard?.instantiateViewController(withIdentifier: "AddNewActivity") as! AddNewActivityViewController
+        destination.newActivity = activities[indexPath.row]
+        print(destination.newActivity!)
+        self.navigationController?.pushViewController(destination, animated: true)
+        
+    }
+    
+}
+

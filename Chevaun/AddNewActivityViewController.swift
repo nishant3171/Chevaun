@@ -23,6 +23,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
     
     //MARK: Variables
     var imagePicker: UIImagePickerController!
+    var newActivity: ActivityModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,11 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         imagePicker.delegate = self
         activityNameTextField.delegate = self
         descriptionTextView.delegate = self
+        
+        if newActivity != nil {
+            settingUpActivityFromTableView()
+        }
+        
         
         self.automaticallyAdjustsScrollViewInsets = false
 
@@ -77,6 +83,8 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
     }
     
     @IBAction func savingActivity(_ sender: UIButton) {
+        
+        if newActivity == nil {
         if let mainImage = mainActivityImage.image, let name = activityNameTextField.text, let description = descriptionTextView.text {
             print(mainImage)
             let activity = ActivityModel(name: name, description: description, image: mainImage, review: "Fun Activity")
@@ -84,11 +92,29 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
             let appDelegate = object as! AppDelegate
             appDelegate.activities.append(activity)
         }
+        } else {
+            newActivity?.image = mainActivityImage.image
+            newActivity?.description = descriptionTextView.text
+            newActivity?.name = activityNameTextField.text!
+        }
 
         self.dismiss(animated: true, completion: nil)
     }
     
 
+    func settingUpActivityFromTableView() {
+        
+        mainActivityImage.image = newActivity?.image
+        descriptionTextView.text = newActivity?.description
+        activityNameTextField.text = newActivity?.name
+        
+        galleryButton.isHidden = true
+        cameraButton.isHidden = true
+        
+//        let button1 = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(getter: UIDynamicBehavior.action))
+//        self.navigationItem.setRightBarButton(button1, animated: true)
+    
+    }
     
     //MARK: Keyboard Notifications
     
