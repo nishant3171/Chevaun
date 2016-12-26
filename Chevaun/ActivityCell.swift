@@ -24,10 +24,14 @@ class ActivityCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func draw(_ rect: CGRect) {
+        activityImage.clipsToBounds = true
+    }
 
-    func configureCell(activity: ActivityModel) {
-        self.activityImage.image = activity.image
-        self.activityDescription.text = activity.description
-        self.activityName.text = activity.name
+    func configureCell(name: String,description: String,image: UIImage) {
+        self.activityImage.image = image
+        self.activityDescription.text = description
+        self.activityName.text = name
     }
 }

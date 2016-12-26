@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddNewActivityViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,UITextViewDelegate{
+class AddNewActivityViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,UITextViewDelegate {
     
     //MARK: IBOutlets
     
@@ -23,7 +23,6 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
     
     //MARK: Variables
     var imagePicker: UIImagePickerController!
-//    var galleryImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +74,18 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
     @IBAction func takingImageFromCamera(_ sender: UIButton) {
         imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func savingActivity(_ sender: UIButton) {
+        if let mainImage = mainActivityImage.image, let name = activityNameTextField.text, let description = descriptionTextView.text {
+            print(mainImage)
+            let activity = ActivityModel(name: name, description: description, image: mainImage, review: "Fun Activity")
+            let object = UIApplication.shared.delegate
+            let appDelegate = object as! AppDelegate
+            appDelegate.activities.append(activity)
+        }
+
+        self.dismiss(animated: true, completion: nil)
     }
     
 
@@ -135,3 +146,4 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
     }
     
 }
+
