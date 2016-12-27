@@ -62,8 +62,8 @@ class ProfileViewController: UIViewController {
                 print("Unable to authenticate with Firebase.\(error)")
             } else if user?.uid != nil {
                 
-                if let newUser = user, let providerId = user?.providerID {
-                let userData = ["provider": providerId]
+                if let newUser = user {
+                let userData = ["provider": credential.provider]
                 DataService.instance.saveUser(uid: newUser.uid, userData: userData)
                 print("Authenticated with Firebase.")
                 self.infoLabel.text = "Thanks for signing in."
