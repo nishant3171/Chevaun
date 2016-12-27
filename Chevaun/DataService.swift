@@ -9,6 +9,8 @@
 import Foundation
 import FirebaseDatabase
 
+let DB_BASE = FIRDatabase.database().reference()
+
 class DataService {
     
     private static let _instance = DataService()
@@ -17,12 +19,20 @@ class DataService {
         return _instance
     }
     
-    var mainRef: FIRDatabaseReference {
-        return FIRDatabase.database().reference()
+    private var _REF_BASE = DB_BASE
+    private var _REF_USERS = DB_BASE.child("users")
+    
+    var REF_BASE: FIRDatabaseReference {
+        return _REF_BASE
     }
     
-    func saveUser(uid: String) {
-        let profile: Dictionary<String, String> = ["firstName": " ","lastName": " "]
-        mainRef.child("users").child(uid).child("profile").setValue(profile)
+    var REF_USERS: FIRDatabaseReference {
+        return _REF_USERS
+    }
+    
+    func saveUser(uid: String, userData: Dictionary<String,String>) {
+        REF_USERS.child(uid).updateChildValues(userData)
     }
 }
+
+//Best Practice - save "users" and other stuff like that as constants.

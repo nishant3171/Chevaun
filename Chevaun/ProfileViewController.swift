@@ -24,12 +24,13 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        guard FIRAuth.auth()?.currentUser != nil else {
-            infoLabel.text = "Please sign in."
-            return
+        if FIRAuth.auth()?.currentUser != nil {
+            infoLabel.text = "Already logged in."
+        } else {
+            infoLabel.text = "Please sign up."
         }
         
-        infoLabel.text = "Already logged in."
+//        infoLabel.text = "Already logged in."
         
         
     }
@@ -60,9 +61,13 @@ class ProfileViewController: UIViewController {
             if error != nil {
                 print("Unable to authenticate with Firebase.\(error)")
             } else if user?.uid != nil {
-                DataService.instance.saveUser(uid: user!.uid)
+                
+                if let newUser = user, let providerId = user?.providerID {
+                let userData = ["provider": providerId]
+                DataService.instance.saveUser(uid: newUser.uid, userData: userData)
                 print("Authenticated with Firebase.")
                 self.infoLabel.text = "Thanks for signing in."
+                }
             }
             else {
                 print("Couldn't get the user id.")
