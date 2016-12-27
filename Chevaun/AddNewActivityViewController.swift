@@ -24,6 +24,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
     //MARK: Variables
     var imagePicker: UIImagePickerController!
     var newActivity: ActivityModel?
+    var timeStamp = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +39,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
             settingUpActivityFromTableView()
         }
         
-        
         self.automaticallyAdjustsScrollViewInsets = false
-
         
     }
     
@@ -84,10 +83,12 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
     
     @IBAction func savingActivity(_ sender: UIButton) {
         
+        convertingDateToString()
+        
         if newActivity == nil {
         if let mainImage = mainActivityImage.image, let name = activityNameTextField.text, let description = descriptionTextView.text {
             print(mainImage)
-            let activity = ActivityModel(name: name, description: description, image: mainImage, review: "Fun Activity")
+            let activity = ActivityModel(name: name, description: description, image: mainImage, review: "Fun Activity",date: timeStamp)
             let object = UIApplication.shared.delegate
             let appDelegate = object as! AppDelegate
             appDelegate.activities.append(activity)
@@ -96,6 +97,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
             newActivity?.image = mainActivityImage.image
             newActivity?.description = descriptionTextView.text
             newActivity?.name = activityNameTextField.text!
+            newActivity?.date = timeStamp
         }
 
         self.dismiss(animated: true, completion: nil)
@@ -114,6 +116,18 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
 //        let button1 = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(getter: UIDynamicBehavior.action))
 //        self.navigationItem.setRightBarButton(button1, animated: true)
     
+    }
+    
+    func convertingDateToString() {
+        
+        let dateOfActivity = Date()
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        print(formatter.timeZone)
+        formatter.dateStyle = .medium
+        timeStamp = formatter.string(from: dateOfActivity)
+        print(timeStamp)
+        
     }
     
     //MARK: Keyboard Notifications

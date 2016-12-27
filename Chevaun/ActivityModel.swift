@@ -15,12 +15,14 @@ class ActivityModel {
     var description: String?
     var image: UIImage?
     var review: String
+    var date: String
     
-    init(name: String,description: String?, image: UIImage?, review: String) {
+    init(name: String,description: String?, image: UIImage?, review: String,date: String) {
         self.name = name
         self.description = description
         self.image = image
         self.review = review
+        self.date = date
     }
     
 }
