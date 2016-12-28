@@ -65,7 +65,12 @@ class ProfileViewController: UIViewController {
                 if let newUser = user {
                 let userData = ["provider": credential.provider]
                 DataService.instance.saveUser(uid: newUser.uid, userData: userData)
+                    print(newUser.uid)
+                    
+                UserDefaults.standard.set(newUser.uid, forKey: "UID")
+                    //Save UID in constants file. See the example from Udacity.
                 print("Authenticated with Firebase.")
+                    
                 self.infoLabel.text = "Thanks for signing in."
                 }
             }

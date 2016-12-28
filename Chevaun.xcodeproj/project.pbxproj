@@ -20,6 +20,7 @@
 		F47030951E0AD1270050257A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47030931E0AD1270050257A /* LaunchScreen.storyboard */; };
 		F470309D1E0AD1B40050257A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F470309C1E0AD1B40050257A /* GoogleService-Info.plist */; };
 		F49A38D31E0DDBD1004BCBC8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49A38D21E0DDBD1004BCBC8 /* DataService.swift */; };
+		F4F255EB1E1406B1002F48B5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F255EA1E1406B1002F48B5 /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		F47030961E0AD1270050257A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F470309C1E0AD1B40050257A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F49A38D21E0DDBD1004BCBC8 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		F4F255EA1E1406B1002F48B5 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				F43130EF1E0E9A1000824B86 /* ActivityModel.swift */,
 				F4107C061E10727200EAFBC4 /* ActivitiesArray.swift */,
+				F4F255EA1E1406B1002F48B5 /* UserProfile.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				F470308D1E0AD1270050257A /* ActivityViewController.swift in Sources */,
 				F470308B1E0AD1270050257A /* AppDelegate.swift in Sources */,
 				F49A38D31E0DDBD1004BCBC8 /* DataService.swift in Sources */,
+				F4F255EB1E1406B1002F48B5 /* UserProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

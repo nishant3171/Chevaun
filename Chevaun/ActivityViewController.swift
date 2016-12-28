@@ -20,6 +20,18 @@ class ActivityViewController: UIViewController {
         super.viewDidLoad()
         
         automaticallyAdjustsScrollViewInsets = false
+        
+        if let newString = UserDefaults.standard.string(forKey: "UID") {
+            DataService.instance.REF_USERS.child(newString).observe(.value, with: { (snapshot) in
+                print(DataService.instance.REF_USERS.child(newString))
+                if let snapshotValue = snapshot.value {
+                    print(snapshotValue)
+                }
+            })
+        }
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

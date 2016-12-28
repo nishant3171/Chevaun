@@ -21,7 +21,8 @@ class DataService {
     
     private var _REF_BASE = DB_BASE
     private var _REF_USERS = DB_BASE.child("users")
-    
+    private var _REF_ACTIVITIES = DB_BASE.child("activities")
+
     
     var REF_BASE: FIRDatabaseReference {
         return _REF_BASE
@@ -31,9 +32,17 @@ class DataService {
         return _REF_USERS
     }
     
+    var REF_ACTIVITIES: FIRDatabaseReference {
+        return _REF_ACTIVITIES
+    }
+    
+    
     func saveUser(uid: String, userData: Dictionary<String,String>) {
         REF_USERS.child(uid).updateChildValues(userData)
+        
     }
+    
+    
 }
 
 //Best Practice - save "users" and other stuff like that as constants.
