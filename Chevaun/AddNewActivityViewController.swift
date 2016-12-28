@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AddNewActivityViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,UITextViewDelegate {
     
@@ -20,6 +21,9 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
     @IBOutlet weak var mainActivityImage: UIImageView!
     @IBOutlet weak var cameraButton: UIButton!
 
+    
+    //MARK: Constants
+    let defaults = UserDefaults.standard
     
     //MARK: Variables
     var imagePicker: UIImagePickerController!
@@ -92,7 +96,25 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
             let object = UIApplication.shared.delegate
             let appDelegate = object as! AppDelegate
             appDelegate.activities.append(activity)
-        }
+            
+            if let imageData = UIImageJPEGRepresentation(mainImage, 0.5),let newString = defaults.string(forKey: "UID")  {
+                
+                let imageUID = NSUUID().uuidString
+                let metadata = FIRStorageMetadata()
+                metadata.contentType = "jpeg"
+                
+                DataService.instance.REF_ACTIVITYIMAGES.child(newString).child(imageUID).put(imageData, metadata: metadata) { (metadata, error) in
+                    if error != nil {
+                        print("Unable to upload images.")
+                    } else {
+                        print("Successfully uploaded image to Firebase.")
+                    if let downloadURL = metadata?.downloadURL()?.absoluteString {
+                    self.uploadingActivitiesToFirebase(imageURL: downloadURL)
+                    }
+                    }
+                }
+            }
+            }
         } else {
             newActivity?.image = mainActivityImage.image
             newActivity?.description = descriptionTextView.text
@@ -101,6 +123,19 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         }
 
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func uploadingActivitiesToFirebase(imageURL: String) {
+        if let name = activityNameTextField.text, let description = descriptionTextView.text, let newString = defaults.string(forKey: "UID") {
+            //Check Dictionary is <String, String>
+        let post: Dictionary<String, String> = [
+            "nameofActivity": name,
+            "description": description,
+            "imageURL": imageURL
+        ]
+        let firebasePost = DataService.instance.REF_ACTIVITIES.child(newString).childByAutoId()
+            firebasePost.setValue(post)
+        }
     }
     
 
