@@ -14,9 +14,11 @@ class ActivityViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    var activities: [ActivityModel] {
-        return (UIApplication.shared.delegate as! AppDelegate).activities
-    }
+//    var activities: [ActivityModel] {
+//        return (UIApplication.shared.delegate as! AppDelegate).activities
+//    }
+    
+    var activities = [ActivityModel]()
     
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
 
@@ -29,24 +31,22 @@ class ActivityViewController: UIViewController {
         if let newString = UserDefaults.standard.string(forKey: "UID") {
             DataService.instance.REF_ACTIVITIES.child(newString).observe(.value, with: { (snapshot) in
                 print(DataService.instance.REF_USERS.child(newString))
+                var activity = [ActivityModel]()
                 if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                     for snap in snapshot {
                         print(snap)
                         if let postDict = snap.value as? Dictionary<String,String> {
                             let key = snap.key
                             let post = ActivityModel(postKey: key, postData: postDict)
-                            let object = UIApplication.shared.delegate
-                            let appDelegate = object as! AppDelegate
-                            appDelegate.activities.append(post)
+                            activity.append(post)
                         }
                     }
                 }
+                self.activities = activity
+//                self.activities.sort{($0.date > $1.date)}
                 self.tableView.reloadData()
             })
         }
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,6 +75,7 @@ extension ActivityViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath) as! ActivityCell
+//        activities.sort{($0.date > $1.date)}
         let activity = activities[indexPath.row]
         print(activity)
         print(activities[indexPath.row])
@@ -84,16 +85,9 @@ extension ActivityViewController: UITableViewDataSource {
         }
         
         cell.configureCell(activity: activities[indexPath.row])
-        
-        
-        
-        
-//        if let description = activity.description, let image = activity.image {
-//            cell.configureCell(name: activity.name, description: description, image: image)
-//        }
+
         return cell
-        
-//        return UITableViewCell()
+    
     }
     
 }

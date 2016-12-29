@@ -89,13 +89,13 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         
         convertingDateToString()
         
-        if newActivity == nil {
-        if let mainImage = mainActivityImage.image, let name = activityNameTextField.text, let description = descriptionTextView.text {
-            print(mainImage)
-            let activity = ActivityModel(name: name, description: description, image: mainImage,date: timeStamp)
-            let object = UIApplication.shared.delegate
-            let appDelegate = object as! AppDelegate
-            appDelegate.activities.append(activity)
+        if newActivity == nil, let mainImage = mainActivityImage.image {
+//        if let mainImage = mainActivityImage.image, let name = activityNameTextField.text, let description = descriptionTextView.text {
+//            print(mainImage)
+//            let activity = ActivityModel(name: name, description: description, image: mainImage,date: timeStamp)
+//            let object = UIApplication.shared.delegate
+//            let appDelegate = object as! AppDelegate
+//            appDelegate.activities.append(activity)
             
             if let imageData = UIImageJPEGRepresentation(mainImage, 0.5),let newString = defaults.string(forKey: "UID")  {
                 
@@ -114,7 +114,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
                     }
                 }
             }
-            }
+//            }
         } else {
             newActivity?.image = mainActivityImage.image
             newActivity?.description = descriptionTextView.text
