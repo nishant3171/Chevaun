@@ -92,7 +92,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         if newActivity == nil {
         if let mainImage = mainActivityImage.image, let name = activityNameTextField.text, let description = descriptionTextView.text {
             print(mainImage)
-            let activity = ActivityModel(name: name, description: description, image: mainImage, review: "Fun Activity",date: timeStamp)
+            let activity = ActivityModel(name: name, description: description, image: mainImage,date: timeStamp)
             let object = UIApplication.shared.delegate
             let appDelegate = object as! AppDelegate
             appDelegate.activities.append(activity)
@@ -131,7 +131,8 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         let post: Dictionary<String, String> = [
             "nameofActivity": name,
             "description": description,
-            "imageURL": imageURL
+            "imageURL": imageURL,
+            "date": timeStamp
         ]
         let firebasePost = DataService.instance.REF_ACTIVITIES.child(newString).childByAutoId()
             firebasePost.setValue(post)
@@ -141,9 +142,30 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
 
     func settingUpActivityFromTableView() {
         
-        mainActivityImage.image = newActivity?.image
+//        mainActivityImage.image = newActivity?.image
         descriptionTextView.text = newActivity?.description
         activityNameTextField.text = newActivity?.name
+        
+        if newActivity?.image != nil {
+            self.mainActivityImage.image = newActivity?.image
+        } else {
+            if let imageURL = newActivity?.imageURL {
+                let ref = FIRStorage.storage().reference(forURL: imageURL)
+                ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                    if error != nil {
+                        print("Unable to download image from Firebase Storage.")
+                    } else {
+                        print("Image downloaded from Firebase Storage.")
+                        if let imageData = data {
+                            if let image = UIImage(data: imageData) {
+                                self.mainActivityImage.image = image
+                                ActivityViewController.imageCache.setObject(image, forKey: imageURL as NSString)
+                            }
+                        }
+                    }
+                })
+            }
+        }
         
         galleryButton.isHidden = true
         cameraButton.isHidden = true

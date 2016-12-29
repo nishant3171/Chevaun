@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class ActivityViewController: UIViewController {
     
@@ -15,6 +17,9 @@ class ActivityViewController: UIViewController {
     var activities: [ActivityModel] {
         return (UIApplication.shared.delegate as! AppDelegate).activities
     }
+    
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +27,21 @@ class ActivityViewController: UIViewController {
         automaticallyAdjustsScrollViewInsets = false
         
         if let newString = UserDefaults.standard.string(forKey: "UID") {
-            DataService.instance.REF_USERS.child(newString).observe(.value, with: { (snapshot) in
+            DataService.instance.REF_ACTIVITIES.child(newString).observe(.value, with: { (snapshot) in
                 print(DataService.instance.REF_USERS.child(newString))
-                if let snapshotValue = snapshot.value {
-                    print(snapshotValue)
+                if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                    for snap in snapshot {
+                        print(snap)
+                        if let postDict = snap.value as? Dictionary<String,String> {
+                            let key = snap.key
+                            let post = ActivityModel(postKey: key, postData: postDict)
+                            let object = UIApplication.shared.delegate
+                            let appDelegate = object as! AppDelegate
+                            appDelegate.activities.append(post)
+                        }
+                    }
                 }
+                self.tableView.reloadData()
             })
         }
         
@@ -41,7 +56,7 @@ class ActivityViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        tableView.reloadData()
+//        tableView.reloadData()
     }
     
 }
@@ -63,9 +78,19 @@ extension ActivityViewController: UITableViewDataSource {
         let activity = activities[indexPath.row]
         print(activity)
         print(activities[indexPath.row])
-        if let description = activity.description, let image = activity.image {
-         cell.configureCell(name: activity.name, description: description, image: image)
+        
+        if let activityImage = activities[indexPath.row].image {
+            print(activityImage)
         }
+        
+        cell.configureCell(activity: activities[indexPath.row])
+        
+        
+        
+        
+//        if let description = activity.description, let image = activity.image {
+//            cell.configureCell(name: activity.name, description: description, image: image)
+//        }
         return cell
         
 //        return UITableViewCell()
