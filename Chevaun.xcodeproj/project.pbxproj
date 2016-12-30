@@ -21,6 +21,7 @@
 		F470309D1E0AD1B40050257A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F470309C1E0AD1B40050257A /* GoogleService-Info.plist */; };
 		F49A38D31E0DDBD1004BCBC8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49A38D21E0DDBD1004BCBC8 /* DataService.swift */; };
 		F4F255EB1E1406B1002F48B5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F255EA1E1406B1002F48B5 /* UserProfile.swift */; };
+		F4FCBD741E167ACD00F47619 /* ActivityReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCBD731E167ACD00F47619 /* ActivityReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		F470309C1E0AD1B40050257A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F49A38D21E0DDBD1004BCBC8 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		F4F255EA1E1406B1002F48B5 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		F4FCBD731E167ACD00F47619 /* ActivityReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				F46BEC1F1E0F0B68003F68F3 /* AddNewActivityViewController.swift */,
 				F470308C1E0AD1270050257A /* ActivityViewController.swift */,
 				F440AD571E0AF18A0016D771 /* ProfileViewController.swift */,
+				F4FCBD731E167ACD00F47619 /* ActivityReviewViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				F43130F01E0E9A1000824B86 /* ActivityModel.swift in Sources */,
 				F46BEC201E0F0B68003F68F3 /* AddNewActivityViewController.swift in Sources */,
 				F440AD581E0AF18A0016D771 /* ProfileViewController.swift in Sources */,
+				F4FCBD741E167ACD00F47619 /* ActivityReviewViewController.swift in Sources */,
 				F43130F21E0EAB9500824B86 /* ActivityCell.swift in Sources */,
 				F4107C071E10727200EAFBC4 /* ActivitiesArray.swift in Sources */,
 				F470308D1E0AD1270050257A /* ActivityViewController.swift in Sources */,
