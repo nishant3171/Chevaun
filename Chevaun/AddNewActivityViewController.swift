@@ -97,7 +97,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
 //            let appDelegate = object as! AppDelegate
 //            appDelegate.activities.append(activity)
             
-            if let imageData = UIImageJPEGRepresentation(mainImage, 0.5),let newString = defaults.string(forKey: "UID")  {
+            if let imageData = UIImageJPEGRepresentation(mainImage, 0.2),let newString = defaults.string(forKey: "UID")  {
                 
                 let imageUID = NSUUID().uuidString
                 let metadata = FIRStorageMetadata()
