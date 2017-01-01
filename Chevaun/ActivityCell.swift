@@ -46,8 +46,6 @@ class ActivityCell: UITableViewCell {
             
         }
         
-
-        
     }
     
 }

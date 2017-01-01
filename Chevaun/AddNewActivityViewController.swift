@@ -164,8 +164,9 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         let dateOfActivity = Date()
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.current
+        formatter.timeStyle = .medium
         print(formatter.timeZone)
-        formatter.dateStyle = .medium
+        formatter.dateStyle = .full
         timeStamp = formatter.string(from: dateOfActivity)
         print(timeStamp)
         
