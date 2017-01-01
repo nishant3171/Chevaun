@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class ActivityCell: UITableViewCell {
     
@@ -38,10 +39,14 @@ class ActivityCell: UITableViewCell {
         if activity.image != nil {
             self.activityImage.image = activity.image
         } else {
-            activity.downloadingImage(completionClosure: { (image) in
-                self.activityImage.image = image
-            })
+            
+            let imageView: UIImageView = self.activityImage
+            let imageURL = URL(string: activity.imageURL)
+            imageView.sd_setImage(with: imageURL)
+            
         }
+        
+
         
     }
     

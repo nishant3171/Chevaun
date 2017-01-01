@@ -98,7 +98,6 @@ extension ActivityViewController: UITableViewDelegate {
         
         let destination = self.storyboard?.instantiateViewController(withIdentifier: "AddNewActivity") as! AddNewActivityViewController
         destination.newActivity = activities[indexPath.row]
-//        destination.newActivity?.image = activities[indexPath.row].image
         print(destination.newActivity!)
         self.navigationController?.pushViewController(destination, animated: true)
         
