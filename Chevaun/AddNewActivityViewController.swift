@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+//import SDWebImage
 
 class AddNewActivityViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,UITextViewDelegate {
     
@@ -90,12 +91,6 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         convertingDateToString()
         
         if newActivity == nil, let mainImage = mainActivityImage.image {
-//        if let mainImage = mainActivityImage.image, let name = activityNameTextField.text, let description = descriptionTextView.text {
-//            print(mainImage)
-//            let activity = ActivityModel(name: name, description: description, image: mainImage,date: timeStamp)
-//            let object = UIApplication.shared.delegate
-//            let appDelegate = object as! AppDelegate
-//            appDelegate.activities.append(activity)
             
             if let imageData = UIImageJPEGRepresentation(mainImage, 0.2),let newString = defaults.string(forKey: "UID")  {
                 
@@ -114,7 +109,6 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
                     }
                 }
             }
-//            }
         } else {
             newActivity?.image = mainActivityImage.image
             newActivity?.description = descriptionTextView.text
@@ -142,28 +136,18 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
 
     func settingUpActivityFromTableView() {
         
-//        mainActivityImage.image = newActivity?.image
         descriptionTextView.text = newActivity?.description
         activityNameTextField.text = newActivity?.name
         
         if newActivity?.image != nil {
             self.mainActivityImage.image = newActivity?.image
         } else {
+
+            
             if let imageURL = newActivity?.imageURL {
-                let ref = FIRStorage.storage().reference(forURL: imageURL)
-                ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
-                    if error != nil {
-                        print("Unable to download image from Firebase Storage.")
-                    } else {
-                        print("Image downloaded from Firebase Storage.")
-                        if let imageData = data {
-                            if let image = UIImage(data: imageData) {
-                                self.mainActivityImage.image = image
-                                ActivityViewController.imageCache.setObject(image, forKey: imageURL as NSString)
-                            }
-                        }
-                    }
-                })
+                let url = URL(string: imageURL)
+                let imageView: UIImageView = self.mainActivityImage
+                imageView.sd_setImage(with: url)
             }
         }
         

@@ -218,7 +218,6 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sto-nE-1Ha">
                                                 <rect key="frame" x="8" y="8" width="359" height="250"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="359" id="kQL-Ry-76V"/>
                                                     <constraint firstAttribute="height" constant="250" id="xD9-28-baD"/>
                                                 </constraints>
                                             </imageView>
