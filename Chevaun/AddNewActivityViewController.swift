@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 //import SDWebImage
 
-class AddNewActivityViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,UITextViewDelegate {
+class AddNewActivityViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate,UITextViewDelegate,ActivityReviewViewControllerDelegate {
     
     //MARK: IBOutlets
     
@@ -30,6 +30,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
     var imagePicker: UIImagePickerController!
     var newActivity: ActivityModel?
     var timeStamp = String()
+    var review: [Int] = [0,0,0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,8 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         
         self.automaticallyAdjustsScrollViewInsets = false
         
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +57,9 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
         mainActivityImage.clipsToBounds = true
         subscribeToNotifications()
+        
+        print(review[0])
+        print(review[1])
     }
     
 
@@ -62,6 +68,13 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         super.viewWillDisappear(animated)
         
         unsubscribeFromNotification()
+    }
+    
+    @IBAction func reivewButtonTapped(_ sender: UIButton) {
+        
+        let destination = self.storyboard?.instantiateViewController(withIdentifier: "ReviewViewController") as! ActivityReviewViewController
+        destination.reviewDelegate = self
+        self.present(destination, animated: true, completion: nil)
     }
     
     @IBAction func pickingGalleryImage(_ sender: UIButton) {
@@ -117,6 +130,12 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         }
 
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func sendValue(fun: Float, growth: Float, satisfaction: Float) {
+        review[0] = Int(fun)
+        review[1] = Int(growth)
+        review[2] = Int(satisfaction)
     }
     
     func uploadingActivitiesToFirebase(imageURL: String) {

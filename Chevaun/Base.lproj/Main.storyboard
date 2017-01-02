@@ -251,7 +251,7 @@
                                                             <color key="titleColor" red="0.99987119440000005" green="0.99998223779999995" blue="0.99984109399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="Gch-vY-6SC" kind="presentation" id="rRk-ha-hFb"/>
+                                                            <action selector="reivewButtonTapped:" destination="Pky-aT-02h" eventType="touchUpInside" id="HBe-lH-aUJ"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -375,7 +375,7 @@
         <!--Activity Review View Controller-->
         <scene sceneID="HPe-7p-7Vu">
             <objects>
-                <viewController id="Gch-vY-6SC" customClass="ActivityReviewViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewViewController" id="Gch-vY-6SC" customClass="ActivityReviewViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Evf-s5-fT6"/>
                         <viewControllerLayoutGuide type="bottom" id="gmh-gL-zu1"/>
