@@ -452,6 +452,10 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="290" id="NsC-jo-fyQ"/>
                                                                 </constraints>
+                                                                <color key="thumbTintColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <connections>
+                                                                    <action selector="funSliderValueChangedWithSender:" destination="Gch-vY-6SC" eventType="touchUpInside" id="8lU-xy-YXk"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                     </stackView>
@@ -470,6 +474,10 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="290" id="Z4r-DA-Ilh"/>
                                                                 </constraints>
+                                                                <color key="thumbTintColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <connections>
+                                                                    <action selector="growthSliderValueChangedWithSender:" destination="Gch-vY-6SC" eventType="touchUpInside" id="Swg-Jx-gIS"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                     </stackView>
@@ -488,6 +496,10 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="290" id="FX5-Jx-rU7"/>
                                                                 </constraints>
+                                                                <color key="thumbTintColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <connections>
+                                                                    <action selector="satisfactionSliderValueChangedWithSender:" destination="Gch-vY-6SC" eventType="touchUpInside" id="n71-1I-5XC"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                     </stackView>
@@ -533,6 +545,11 @@
                             <constraint firstItem="OTS-5z-NVl" firstAttribute="trailing" secondItem="Gk3-mt-FWW" secondAttribute="trailingMargin" id="oVD-Pu-ipY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="funSlider" destination="zgM-AQ-eZM" id="P53-BH-Pnb"/>
+                        <outlet property="growthSlider" destination="PTs-t4-EP8" id="dR6-ez-U2i"/>
+                        <outlet property="satisfactionSlider" destination="G7h-0t-56J" id="YuD-Hq-rxO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxe-d7-0RQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
