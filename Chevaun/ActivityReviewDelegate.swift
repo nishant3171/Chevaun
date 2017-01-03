@@ -10,6 +10,6 @@ import Foundation
 
 protocol ActivityReviewViewControllerDelegate {
     
-    func sendValue(fun:Float, growth: Float, satisfaction: Float)
+    func sendValue(fun:Float, growth: Float, satisfaction: Float, finalReview: String)
     
 }

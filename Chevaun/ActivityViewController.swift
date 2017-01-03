@@ -35,7 +35,7 @@ class ActivityViewController: UIViewController {
                 if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                     for snap in snapshot {
                         print(snap)
-                        if let postDict = snap.value as? Dictionary<String,String> {
+                        if let postDict = snap.value as? Dictionary<String,AnyObject> {
                             let key = snap.key
                             let post = ActivityModel(postKey: key, postData: postDict)
                             activity.append(post)

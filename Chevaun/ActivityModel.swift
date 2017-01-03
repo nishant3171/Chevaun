@@ -18,7 +18,10 @@ class ActivityModel {
     var description: String?
     var image: UIImage?
     var imageURL: String!
-//    var review: String!
+    var review: String!
+    var funPercentage: Int!
+    var growthPercentage: Int!
+    var satisfactionPercentage: Int!
     var date: String!
     var postKey: String!
     
@@ -30,20 +33,20 @@ class ActivityModel {
         self.date = date
     }
     
-    init(postKey: String,postData: Dictionary<String,String>) {
+    init(postKey: String,postData: Dictionary<String,AnyObject>) {
         self.postKey = postKey
         
         if let name = postData["nameofActivity"] {
-            self.name = name
+            self.name = name as! String
         }
         
         if let description = postData["description"] {
-            self.description = description
+            self.description = description as? String
         }
         
         if let imageURL = postData["imageURL"] {
-            self.imageURL = imageURL
-            if let image = ActivityViewController.imageCache.object(forKey: imageURL as NSString) {
+            self.imageURL = imageURL as! String
+            if let image = ActivityViewController.imageCache.object(forKey: imageURL as! NSString) {
                 self.image = image
             } else {
                 self.image = nil
@@ -51,8 +54,25 @@ class ActivityModel {
         }
         
         if let date = postData["date"] {
-            self.date = date
+            self.date = date as! String
         }
+        
+        if let review = postData["reviewString"] {
+            self.review = review as! String
+        }
+        
+        if let growthPercentage = postData["growthPercentage"] {
+            self.growthPercentage = growthPercentage as! Int
+        }
+        
+        if let funPercentage = postData["funPercentage"] {
+            self.funPercentage = funPercentage as! Int
+        }
+        
+        if let satisfactionPercentage = postData["satisfactionPercentage"] {
+            self.satisfactionPercentage = satisfactionPercentage as! Int
+        }
+        
     }
     
 //    func downloadingImage(completionClosure closure: @escaping (_ image: UIImage) -> Void) {

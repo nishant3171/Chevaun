@@ -46,6 +46,11 @@ class ActivityCell: UITableViewCell {
             
         }
         
+        print(activity.review)
+        print(activity.funPercentage)
+        print(activity.growthPercentage)
+        print(activity.satisfactionPercentage)
+        
     }
     
 }

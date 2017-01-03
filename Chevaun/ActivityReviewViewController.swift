@@ -16,6 +16,8 @@ class ActivityReviewViewController: UIViewController {
     var satisfactionSliderValue: Float = 0
     var activityReview: [Float] = [0,0,0]
     var reviewDelegate: ActivityReviewViewControllerDelegate!
+    var finalReview = String()
+    var newActivity: ActivityModel?
 
     @IBOutlet weak var funSlider: UISlider!
     @IBOutlet weak var growthSlider: UISlider!
@@ -24,10 +26,16 @@ class ActivityReviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if newActivity != nil {
+            settingUpSliders()
+        }
 
         funSlider.value = funSliderValue
         growthSlider.value = growthSliderValue
         satisfactionSlider.value = satisfactionSliderValue
+        
+        
         
     }
 
@@ -38,8 +46,8 @@ class ActivityReviewViewController: UIViewController {
     
     @IBAction func backButton(sender: UIButton) {
         
-
-        reviewDelegate.sendValue(fun: funSliderValue, growth: growthSliderValue, satisfaction: satisfactionSliderValue)
+        reviewLabel()
+        reviewDelegate.sendValue(fun: funSliderValue, growth: growthSliderValue, satisfaction: satisfactionSliderValue, finalReview: finalReview)
         self.dismiss(animated: true, completion: nil)
         
     }
@@ -64,6 +72,54 @@ class ActivityReviewViewController: UIViewController {
         slider.value = roundedValue
         return slider.value
     }
+    
+    func reviewLabel() {
+        
+        let x = max(max(activityReview[0], activityReview[1]),activityReview[2])
+        
+        if x >= 40 {
+            if activityReview[0] == activityReview[1] && activityReview[0] == activityReview[2] {
+                finalReview = "Best work!"
+            }else if activityReview[0] == activityReview[1] && activityReview[0] == x {
+                finalReview = "Fun&Growth"
+            } else if activityReview[0] == activityReview[2] && activityReview[0] == x {
+                finalReview = "Fun & Satisfaction."
+            } else if activityReview[1] == activityReview[2] && activityReview[1] == x {
+                finalReview = "Growth & Satisfaction"
+            } else {
+                for y in activityReview where y == x {
+                    if let index = activityReview.index(of: y) {
+                        switch index {
+                        case 0:
+                            finalReview = "Fun"
+                        case 1:
+                            finalReview = "Growth"
+                        case 2:
+                            finalReview = "Satisfaction"
+                        default:
+                            finalReview = "Generic"
+                        }
+                    }
+                    
+                }
+            
+            }
+        } else {
+            finalReview = "Should not do this work."
+        }
+    }
+    
+    func settingUpSliders() {
+        
+        if let funValue = newActivity?.funPercentage, let growthValue = newActivity?.growthPercentage, let satisfactionValue = newActivity?.satisfactionPercentage, let review = newActivity?.review {
+            funSliderValue = Float(funValue)
+            growthSliderValue = Float(growthValue)
+            satisfactionSliderValue = Float(satisfactionValue)
+            finalReview = review
+        }
+        
+    }
+    
     
 }
 

@@ -31,6 +31,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
     var newActivity: ActivityModel?
     var timeStamp = String()
     var review: [Int] = [0,0,0]
+    var reviewString = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +61,9 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         
         print(review[0])
         print(review[1])
+        print(review[2])
+        print(reviewString)
+        
     }
     
 
@@ -73,6 +77,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
     @IBAction func reivewButtonTapped(_ sender: UIButton) {
         
         let destination = self.storyboard?.instantiateViewController(withIdentifier: "ReviewViewController") as! ActivityReviewViewController
+        destination.newActivity = newActivity
         destination.reviewDelegate = self
         self.present(destination, animated: true, completion: nil)
     }
@@ -127,25 +132,34 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
             newActivity?.description = descriptionTextView.text
             newActivity?.name = activityNameTextField.text!
             newActivity?.date = timeStamp
+            newActivity?.funPercentage = review[0]
+            newActivity?.growthPercentage = review[1]
+            newActivity?.satisfactionPercentage = review[2]
+            newActivity?.review = reviewString
         }
 
         self.dismiss(animated: true, completion: nil)
     }
     
-    func sendValue(fun: Float, growth: Float, satisfaction: Float) {
+    func sendValue(fun: Float, growth: Float, satisfaction: Float, finalReview: String) {
         review[0] = Int(fun)
         review[1] = Int(growth)
         review[2] = Int(satisfaction)
+        reviewString = finalReview
     }
     
     func uploadingActivitiesToFirebase(imageURL: String) {
         if let name = activityNameTextField.text, let description = descriptionTextView.text, let newString = defaults.string(forKey: "UID") {
             //Check Dictionary is <String, String>
-        let post: Dictionary<String, String> = [
-            "nameofActivity": name,
-            "description": description,
-            "imageURL": imageURL,
-            "date": timeStamp
+        let post: Dictionary<String, AnyObject> = [
+            "nameofActivity": name as AnyObject,
+            "description": description as AnyObject,
+            "imageURL": imageURL as AnyObject,
+            "date": timeStamp as AnyObject,
+            "funPercentage": review[0] as AnyObject,
+            "growthPercentage": review[1] as AnyObject,
+            "satisfactionPercentage": review[2] as AnyObject,
+            "reviewString": reviewString as AnyObject
         ]
         let firebasePost = DataService.instance.REF_ACTIVITIES.child(newString).childByAutoId()
             firebasePost.setValue(post)
@@ -157,6 +171,10 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         
         descriptionTextView.text = newActivity?.description
         activityNameTextField.text = newActivity?.name
+        review[0] = (newActivity?.funPercentage)!
+        review[1] = (newActivity?.growthPercentage)!
+        review[2] = (newActivity?.satisfactionPercentage)!
+        reviewString = (newActivity?.review)!
         
         if newActivity?.image != nil {
             self.mainActivityImage.image = newActivity?.image
