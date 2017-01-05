@@ -27,6 +27,8 @@
 		F481A2061E1993EA006733BB /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = F481A2051E1993EA006733BB /* Extras.swift */; };
 		F49A38D31E0DDBD1004BCBC8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49A38D21E0DDBD1004BCBC8 /* DataService.swift */; };
 		F4F255EB1E1406B1002F48B5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F255EA1E1406B1002F48B5 /* UserProfile.swift */; };
+		F4F2710D1E1F01E80061D7F3 /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F2710C1E1F01E80061D7F3 /* Challenge.storyboard */; };
+		F4F2710F1E1F02120061D7F3 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F2710E1E1F02120061D7F3 /* ChallengeViewController.swift */; };
 		F4FCBD741E167ACD00F47619 /* ActivityReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCBD731E167ACD00F47619 /* ActivityReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		F481A2051E1993EA006733BB /* Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
 		F49A38D21E0DDBD1004BCBC8 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		F4F255EA1E1406B1002F48B5 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		F4F2710C1E1F01E80061D7F3 /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
+		F4F2710E1E1F02120061D7F3 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		F4FCBD731E167ACD00F47619 /* ActivityReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +117,7 @@
 				F440AD571E0AF18A0016D771 /* ProfileViewController.swift */,
 				F4FCBD731E167ACD00F47619 /* ActivityReviewViewController.swift */,
 				F418815E1E1ECE3E0089C3FD /* HappeningsViewController.swift */,
+				F4F2710E1E1F02120061D7F3 /* ChallengeViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				F470308E1E0AD1270050257A /* Main.storyboard */,
+				F4F2710C1E1F01E80061D7F3 /* Challenge.storyboard */,
 				F41881631E1ECF6B0089C3FD /* Happenings.storyboard */,
 				F418815C1E1ECB100089C3FD /* Profile.storyboard */,
 				F41881591E1ECAB50089C3FD /* Activity.storyboard */,
@@ -250,6 +256,7 @@
 				F418815B1E1ECAB50089C3FD /* Activity.storyboard in Resources */,
 				F470309D1E0AD1B40050257A /* GoogleService-Info.plist in Resources */,
 				F41881641E1ECF6B0089C3FD /* Happenings.storyboard in Resources */,
+				F4F2710D1E1F01E80061D7F3 /* Challenge.storyboard in Resources */,
 				F47030901E0AD1270050257A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +320,7 @@
 				F46BEC201E0F0B68003F68F3 /* AddNewActivityViewController.swift in Sources */,
 				F440AD581E0AF18A0016D771 /* ProfileViewController.swift in Sources */,
 				F4FCBD741E167ACD00F47619 /* ActivityReviewViewController.swift in Sources */,
+				F4F2710F1E1F02120061D7F3 /* ChallengeViewController.swift in Sources */,
 				F43130F21E0EAB9500824B86 /* ActivityCell.swift in Sources */,
 				F455B12D1E1AF56300C42689 /* ActivityReviewDelegate.swift in Sources */,
 				F481A2061E1993EA006733BB /* Extras.swift in Sources */,

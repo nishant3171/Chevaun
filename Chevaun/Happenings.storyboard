@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Happenings View Controller-->
+        <!--Happenings-->
         <scene sceneID="123-Ot-hrm">
             <objects>
                 <viewController storyboardIdentifier="HappenigsViewController" id="iH5-mi-y5X" customClass="HappeningsViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
@@ -95,7 +95,7 @@
                             <constraint firstAttribute="trailing" secondItem="rgt-NT-DLa" secondAttribute="trailing" id="rfu-9Q-YM3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tyn-9H-LP4"/>
+                    <navigationItem key="navigationItem" title="Happenings" id="tyn-9H-LP4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oor-p3-FFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,9 +109,14 @@
                     <tabBarItem key="tabBarItem" title="Add" image="Combined Shape" id="Uo8-HW-mvo"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vkq-WD-3RG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -242,10 +247,10 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="SeT-hd-871"/>
                                                 <exclude reference="8Jl-5n-6Hy"/>
-                                                <exclude reference="gHF-yf-YUK"/>
+                                                <exclude reference="SeT-hd-871"/>
                                                 <exclude reference="DeP-7e-Dnl"/>
+                                                <exclude reference="gHF-yf-YUK"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -284,9 +289,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="VdU-JU-LwC"/>
                                 <exclude reference="1za-3A-L5h"/>
                                 <exclude reference="BMC-eD-TE3"/>
+                                <exclude reference="VdU-JU-LwC"/>
                                 <exclude reference="lQl-eh-h79"/>
                             </mask>
                         </variation>
@@ -381,7 +386,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="290" height="67"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ke3-fS-r2W">
-                                                                <rect key="frame" x="131" y="0.0" width="29" height="25"/>
+                                                                <rect key="frame" x="130.5" y="0.0" width="29" height="25"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -403,7 +408,7 @@
                                                         <rect key="frame" x="0.0" y="103" width="290" height="67"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal Growth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TF-w5-0Lc">
-                                                                <rect key="frame" x="78" y="0.0" width="135" height="25"/>
+                                                                <rect key="frame" x="77.5" y="0.0" width="135" height="25"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -425,7 +430,7 @@
                                                         <rect key="frame" x="0.0" y="206" width="290" height="67"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Satisfaction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsJ-f2-IU4">
-                                                                <rect key="frame" x="98" y="0.0" width="94" height="25"/>
+                                                                <rect key="frame" x="98.5" y="0.0" width="93.5" height="25"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -462,7 +467,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Your Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Cl-aH-2FT">
-                                <rect key="frame" x="109" y="34" width="157" height="24"/>
+                                <rect key="frame" x="109" y="34.5" width="157" height="23.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
