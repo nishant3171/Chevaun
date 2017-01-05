@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		733D875DDBD3B8A9187F4F7C /* Pods_Chevaun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF71FC4B38F5F883CC9A920 /* Pods_Chevaun.framework */; };
 		F4107C071E10727200EAFBC4 /* ActivitiesArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4107C061E10727200EAFBC4 /* ActivitiesArray.swift */; };
+		F418815B1E1ECAB50089C3FD /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41881591E1ECAB50089C3FD /* Activity.storyboard */; };
+		F418815D1E1ECB100089C3FD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418815C1E1ECB100089C3FD /* Profile.storyboard */; };
 		F43130F01E0E9A1000824B86 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43130EF1E0E9A1000824B86 /* ActivityModel.swift */; };
 		F43130F21E0EAB9500824B86 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43130F11E0EAB9500824B86 /* ActivityCell.swift */; };
 		F440AD581E0AF18A0016D771 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440AD571E0AF18A0016D771 /* ProfileViewController.swift */; };
@@ -31,6 +33,8 @@
 		8CF71FC4B38F5F883CC9A920 /* Pods_Chevaun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chevaun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA1CA9E7EEE8613145FF8C5 /* Pods-Chevaun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chevaun.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chevaun/Pods-Chevaun.release.xcconfig"; sourceTree = "<group>"; };
 		F4107C061E10727200EAFBC4 /* ActivitiesArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesArray.swift; sourceTree = "<group>"; };
+		F418815A1E1ECAB50089C3FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Activity.storyboard; sourceTree = "<group>"; };
+		F418815C1E1ECB100089C3FD /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		F43130EF1E0E9A1000824B86 /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		F43130F11E0EAB9500824B86 /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		F440AD571E0AF18A0016D771 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				F470308E1E0AD1270050257A /* Main.storyboard */,
+				F418815C1E1ECB100089C3FD /* Profile.storyboard */,
+				F41881591E1ECAB50089C3FD /* Activity.storyboard */,
 				F47030931E0AD1270050257A /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
@@ -232,8 +238,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F418815D1E1ECB100089C3FD /* Profile.storyboard in Resources */,
 				F47030951E0AD1270050257A /* LaunchScreen.storyboard in Resources */,
 				F47030921E0AD1270050257A /* Assets.xcassets in Resources */,
+				F418815B1E1ECAB50089C3FD /* Activity.storyboard in Resources */,
 				F470309D1E0AD1B40050257A /* GoogleService-Info.plist in Resources */,
 				F47030901E0AD1270050257A /* Main.storyboard in Resources */,
 			);
@@ -312,6 +320,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		F41881591E1ECAB50089C3FD /* Activity.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F418815A1E1ECAB50089C3FD /* Base */,
+			);
+			name = Activity.storyboard;
+			sourceTree = "<group>";
+		};
 		F470308E1E0AD1270050257A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
