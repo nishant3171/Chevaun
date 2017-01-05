@@ -80,17 +80,7 @@
                             <constraint firstItem="pS2-wm-E9l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qdd-Hf-Erg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Activity" id="zcm-Gl-dbv">
-                        <barButtonItem key="leftBarButtonItem" image="Profile" id="6em-u8-fGd"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pXy-DW-tlc">
-                            <connections>
-                                <segue destination="Pky-aT-02h" kind="show" id="UBN-Z3-V7J"/>
-                            </connections>
-                        </barButtonItem>
-                        <connections>
-                            <outlet property="backBarButtonItem" destination="6em-u8-fGd" id="BzK-RG-bla"/>
-                        </connections>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Activity" id="zcm-Gl-dbv"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="pS2-wm-E9l" id="mkO-RJ-la8"/>
@@ -100,11 +90,11 @@
             </objects>
             <point key="canvasLocation" x="746.39999999999998" y="26.53673163418291"/>
         </scene>
-        <!--Item-->
+        <!--Activities-->
         <scene sceneID="yZ1-tv-K3X">
             <objects>
                 <navigationController storyboardIdentifier="ActivityNavigation" automaticallyAdjustsScrollViewInsets="NO" id="7HY-Od-DOQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="MaK-jn-pbC"/>
+                    <tabBarItem key="tabBarItem" title="Activities" image="Activity" id="MaK-jn-pbC"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="o6I-TM-Kr3">
@@ -308,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecc-5G-rjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1567" y="27"/>
+            <point key="canvasLocation" x="1750" y="27"/>
         </scene>
         <!--Activity Review View Controller-->
         <scene sceneID="HPe-7p-7Vu">
@@ -491,13 +481,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxe-d7-0RQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2301.5999999999999" y="26.53673163418291"/>
+            <point key="canvasLocation" x="2822" y="27"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Activity" width="25" height="25"/>
         <image name="CloseButton" width="44" height="44"/>
         <image name="Left Arrow" width="35" height="11"/>
-        <image name="Profile" width="31" height="30"/>
         <image name="Right Arrow" width="35" height="11"/>
     </resources>
 </document>

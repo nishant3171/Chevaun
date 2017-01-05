@@ -18,52 +18,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.094117647060000004" green="0.46274509800000002" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="5Ti-ix-wgC" kind="relationship" relationship="viewControllers" id="nrk-1D-MD6"/>
-                        <segue destination="YeW-fb-UJ4" kind="relationship" relationship="viewControllers" id="2YE-dO-DMG"/>
                         <segue destination="l1S-Bq-eqq" kind="relationship" relationship="viewControllers" id="VNM-IP-sif"/>
+                        <segue destination="kyf-64-zdO" kind="relationship" relationship="viewControllers" id="UdY-Fy-Tc4"/>
                     </connections>
                 </tabBarController>
             </objects>
             <point key="canvasLocation" x="746" y="-708"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="CcK-Hg-ODg">
+            <objects>
+                <viewController id="kyf-64-zdO" customClass="HappeningsViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8KL-M9-OW1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bay-0S-KOI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xjn-Nn-Ltl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="zO9-qz-3QT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="icO-ym-gI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1602" y="-708"/>
+        </scene>
         <!--ActivityNavigation-->
         <scene sceneID="uo0-JV-0eZ">
             <objects>
                 <viewControllerPlaceholder storyboardName="Activity" referencedIdentifier="ActivityNavigation" id="5Ti-ix-wgC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activities" image="Activity" selectedImage="Activity" id="x1B-C7-LaY"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="x1B-C7-LaY"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsL-aW-7wF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-194.40000000000001" y="26.53673163418291"/>
         </scene>
-        <!--ProfileNavigation-->
+        <!--Profile-->
         <scene sceneID="gYR-0g-jUj">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileNavigation" id="l1S-Bq-eqq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="ProfileHiglighted" id="OpJ-cz-olR"/>
+                <viewControllerPlaceholder storyboardName="Profile" id="l1S-Bq-eqq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="OpJ-cz-olR"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Pu-cc-j1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="502" y="26"/>
-        </scene>
-        <!--HappeningNavigation-->
-        <scene sceneID="Mc7-mc-t6r">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="HappenigsViewController" storyboardName="Happenings" referencedIdentifier="HappeningNavigation" id="YeW-fb-UJ4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add" image="Combined Shape" selectedImage="Combined Shape" id="mEl-Nd-jpd"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gNy-Hf-eyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1004" y="26"/>
+            <point key="canvasLocation" x="271" y="27"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Activity" width="25" height="25"/>
-        <image name="Combined Shape" width="25" height="25"/>
-        <image name="Profile" width="31" height="30"/>
-        <image name="ProfileHiglighted" width="31" height="30"/>
-    </resources>
 </document>

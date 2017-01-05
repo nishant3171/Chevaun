@@ -11,6 +11,8 @@
 		F4107C071E10727200EAFBC4 /* ActivitiesArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4107C061E10727200EAFBC4 /* ActivitiesArray.swift */; };
 		F418815B1E1ECAB50089C3FD /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41881591E1ECAB50089C3FD /* Activity.storyboard */; };
 		F418815D1E1ECB100089C3FD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418815C1E1ECB100089C3FD /* Profile.storyboard */; };
+		F418815F1E1ECE3E0089C3FD /* HappeningsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418815E1E1ECE3E0089C3FD /* HappeningsViewController.swift */; };
+		F41881641E1ECF6B0089C3FD /* Happenings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41881631E1ECF6B0089C3FD /* Happenings.storyboard */; };
 		F43130F01E0E9A1000824B86 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43130EF1E0E9A1000824B86 /* ActivityModel.swift */; };
 		F43130F21E0EAB9500824B86 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43130F11E0EAB9500824B86 /* ActivityCell.swift */; };
 		F440AD581E0AF18A0016D771 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440AD571E0AF18A0016D771 /* ProfileViewController.swift */; };
@@ -35,6 +37,8 @@
 		F4107C061E10727200EAFBC4 /* ActivitiesArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesArray.swift; sourceTree = "<group>"; };
 		F418815A1E1ECAB50089C3FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Activity.storyboard; sourceTree = "<group>"; };
 		F418815C1E1ECB100089C3FD /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		F418815E1E1ECE3E0089C3FD /* HappeningsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HappeningsViewController.swift; sourceTree = "<group>"; };
+		F41881631E1ECF6B0089C3FD /* Happenings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Happenings.storyboard; sourceTree = "<group>"; };
 		F43130EF1E0E9A1000824B86 /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		F43130F11E0EAB9500824B86 /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		F440AD571E0AF18A0016D771 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				F470308C1E0AD1270050257A /* ActivityViewController.swift */,
 				F440AD571E0AF18A0016D771 /* ProfileViewController.swift */,
 				F4FCBD731E167ACD00F47619 /* ActivityReviewViewController.swift */,
+				F418815E1E1ECE3E0089C3FD /* HappeningsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				F470308E1E0AD1270050257A /* Main.storyboard */,
+				F41881631E1ECF6B0089C3FD /* Happenings.storyboard */,
 				F418815C1E1ECB100089C3FD /* Profile.storyboard */,
 				F41881591E1ECAB50089C3FD /* Activity.storyboard */,
 				F47030931E0AD1270050257A /* LaunchScreen.storyboard */,
@@ -243,6 +249,7 @@
 				F47030921E0AD1270050257A /* Assets.xcassets in Resources */,
 				F418815B1E1ECAB50089C3FD /* Activity.storyboard in Resources */,
 				F470309D1E0AD1B40050257A /* GoogleService-Info.plist in Resources */,
+				F41881641E1ECF6B0089C3FD /* Happenings.storyboard in Resources */,
 				F47030901E0AD1270050257A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +318,7 @@
 				F481A2061E1993EA006733BB /* Extras.swift in Sources */,
 				F4107C071E10727200EAFBC4 /* ActivitiesArray.swift in Sources */,
 				F470308D1E0AD1270050257A /* ActivityViewController.swift in Sources */,
+				F418815F1E1ECE3E0089C3FD /* HappeningsViewController.swift in Sources */,
 				F470308B1E0AD1270050257A /* AppDelegate.swift in Sources */,
 				F49A38D31E0DDBD1004BCBC8 /* DataService.swift in Sources */,
 				F4F255EB1E1406B1002F48B5 /* UserProfile.swift in Sources */,

@@ -78,12 +78,13 @@
             </objects>
             <point key="canvasLocation" x="2791.1999999999998" y="-702.09895052473769"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="Utp-Em-AmY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Txj-gq-0dn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="k8u-wg-Dbg"/>
+                <navigationController storyboardIdentifier="ProfileNavigation" automaticallyAdjustsScrollViewInsets="NO" id="Txj-gq-0dn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="LUM-q0-TH7"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bZz-HC-W1P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -98,4 +99,7 @@
             <point key="canvasLocation" x="1852" y="-702.09895052473769"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Profile" width="31" height="30"/>
+    </resources>
 </document>
