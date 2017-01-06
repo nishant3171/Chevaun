@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-
+var activities = [ActivityModel]()
 class ActivityViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
@@ -18,7 +18,7 @@ class ActivityViewController: UIViewController {
 //        return (UIApplication.shared.delegate as! AppDelegate).activities
 //    }
     
-    var activities = [ActivityModel]()
+    
     
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
 
@@ -29,7 +29,7 @@ class ActivityViewController: UIViewController {
         automaticallyAdjustsScrollViewInsets = false
         
         if let newString = UserDefaults.standard.string(forKey: "UID") {
-            DataService.instance.REF_ACTIVITIES.child(newString).queryOrdered(byChild: "date").observe(.value, with: { (snapshot) in
+            DataService.instance.REF_ACTIVITIES.child(newString).observe(.value, with: { (snapshot) in
                 print(DataService.instance.REF_USERS.child(newString))
                 var activity = [ActivityModel]()
                 if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
@@ -43,7 +43,7 @@ class ActivityViewController: UIViewController {
                     }
                 }
                 activity.sort{($0.date > $1.date)}
-                self.activities = activity
+                activities = activity
 //                self.activities.sort{($0.date > $1.date)}
                 self.tableView.reloadData()
             })

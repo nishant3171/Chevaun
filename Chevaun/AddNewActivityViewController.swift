@@ -201,9 +201,10 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         let dateOfActivity = Date()
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.current
-        formatter.timeStyle = .medium
-        print(formatter.timeZone)
-        formatter.dateStyle = .full
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZ"
+        
+        
+        
         timeStamp = formatter.string(from: dateOfActivity)
         print(timeStamp)
         
@@ -262,6 +263,10 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         } else {
             return true
         }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        descriptionTextView.text = ""
     }
     
 }
