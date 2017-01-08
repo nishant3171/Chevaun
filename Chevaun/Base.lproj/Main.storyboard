@@ -27,8 +27,8 @@
                     <connections>
                         <segue destination="5Ti-ix-wgC" kind="relationship" relationship="viewControllers" id="nrk-1D-MD6"/>
                         <segue destination="YeW-fb-UJ4" kind="relationship" relationship="viewControllers" id="2YE-dO-DMG"/>
-                        <segue destination="l1S-Bq-eqq" kind="relationship" relationship="viewControllers" id="VNM-IP-sif"/>
                         <segue destination="hAg-5i-sGN" kind="relationship" relationship="viewControllers" id="X3H-wH-wjk"/>
+                        <segue destination="l1S-Bq-eqq" kind="relationship" relationship="viewControllers" id="VNM-IP-sif"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SmD-6V-u90" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -69,7 +69,7 @@
         <scene sceneID="Bmi-5t-RN3">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="ChallengeViewController" storyboardName="Challenge" referencedIdentifier="ChallengeNavigation" id="hAg-5i-sGN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Ogb-e8-eAR"/>
+                    <tabBarItem key="tabBarItem" title="Challenge" image="ChallengeIcon" id="Ogb-e8-eAR"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJc-Jo-cRw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,6 +78,7 @@
     </scenes>
     <resources>
         <image name="Activity" width="25" height="25"/>
+        <image name="ChallengeIcon" width="31" height="31"/>
         <image name="Combined Shape" width="25" height="25"/>
         <image name="Profile" width="31" height="30"/>
         <image name="ProfileHiglighted" width="31" height="30"/>

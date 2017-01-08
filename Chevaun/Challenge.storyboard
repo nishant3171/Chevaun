@@ -216,7 +216,7 @@
         <scene sceneID="Y0q-T7-ZlQ">
             <objects>
                 <navigationController storyboardIdentifier="ChallengeNavigation" automaticallyAdjustsScrollViewInsets="NO" id="TVc-Nt-2Rp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Challenge" image="ChallengeIcon" selectedImage="ChallengeIconSelected" id="JvO-ji-mtm"/>
+                    <tabBarItem key="tabBarItem" title="Challenge" image="ChallengeIcon" selectedImage="ChallengeIcon" id="JvO-ji-mtm"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -240,6 +240,5 @@
     </scenes>
     <resources>
         <image name="ChallengeIcon" width="31" height="31"/>
-        <image name="ChallengeIconSelected" width="31" height="31"/>
     </resources>
 </document>

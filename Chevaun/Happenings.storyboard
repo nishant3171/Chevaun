@@ -329,7 +329,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EHk-US-3er">
-                                <rect key="frame" x="43" y="132" width="290" height="403"/>
+                                <rect key="frame" x="43" y="178" width="290" height="311"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="220" translatesAutoresizingMaskIntoConstraints="NO" id="9UQ-u1-5E6">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
@@ -376,7 +376,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="meI-wP-tir">
-                                        <rect key="frame" x="0.0" y="38" width="290" height="365"/>
+                                        <rect key="frame" x="0.0" y="38" width="290" height="273"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="pHD-6X-MYq">
                                                 <rect key="frame" x="0.0" y="0.0" width="290" height="273"/>
@@ -452,12 +452,6 @@
                                                     <constraint firstAttribute="width" constant="290" id="RRr-On-q3h"/>
                                                 </constraints>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nice Growth Factor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WT4-DW-acH">
-                                                <rect key="frame" x="0.0" y="321" width="290" height="44"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="32"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -478,12 +472,21 @@
                                     <action selector="backButtonWithSender:" destination="P7T-hL-z3d" eventType="touchUpInside" id="CBm-AW-7it"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nice Growth Factor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="WT4-DW-acH">
+                                <rect key="frame" x="24" y="525" width="327" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="WT4-DW-acH" secondAttribute="trailing" constant="8" id="B4n-Ng-6eS"/>
                             <constraint firstItem="6Cl-aH-2FT" firstAttribute="centerY" secondItem="GCD-c8-IF3" secondAttribute="centerY" id="VEk-Ll-XMj"/>
                             <constraint firstItem="EHk-US-3er" firstAttribute="centerY" secondItem="Xdw-AX-29b" secondAttribute="centerY" id="cig-VA-lfv"/>
+                            <constraint firstItem="WT4-DW-acH" firstAttribute="leading" secondItem="Xdw-AX-29b" secondAttribute="leadingMargin" constant="8" id="f7y-WI-cYK"/>
                             <constraint firstItem="EHk-US-3er" firstAttribute="centerX" secondItem="Xdw-AX-29b" secondAttribute="centerX" id="h17-gG-BCZ"/>
+                            <constraint firstItem="WT4-DW-acH" firstAttribute="top" secondItem="EHk-US-3er" secondAttribute="bottom" constant="36" id="iWx-8R-aV3"/>
                             <constraint firstItem="GCD-c8-IF3" firstAttribute="trailing" secondItem="Xdw-AX-29b" secondAttribute="trailingMargin" id="klY-eI-w1u"/>
                             <constraint firstItem="6Cl-aH-2FT" firstAttribute="centerX" secondItem="Xdw-AX-29b" secondAttribute="centerX" id="o0K-fN-xaI"/>
                             <constraint firstItem="GCD-c8-IF3" firstAttribute="top" secondItem="6Vc-gJ-vg0" secondAttribute="bottom" constant="4" id="ypC-gb-G6v"/>
@@ -492,6 +495,7 @@
                     <connections>
                         <outlet property="funSlider" destination="S0e-eg-7Pe" id="uzh-dz-zKM"/>
                         <outlet property="growthSlider" destination="wQi-wf-trK" id="Tqg-vI-bCN"/>
+                        <outlet property="reviewLabel" destination="WT4-DW-acH" id="n1R-Ek-WnL"/>
                         <outlet property="satisfactionSlider" destination="EHr-aR-xJs" id="Ov0-us-sME"/>
                     </connections>
                 </viewController>

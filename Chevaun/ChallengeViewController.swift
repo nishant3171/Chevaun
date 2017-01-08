@@ -10,10 +10,13 @@ import UIKit
 
 class ChallengeViewController: UIViewController {
     
-    var newActivities: [ActivityModel] = activities
+//    var newActivities = [ActivityModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        print(newActivities[0])
+//        makingChallenges()
         
     }
 
@@ -22,13 +25,13 @@ class ChallengeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func makingChallenges(activity: [ActivityModel]) {
-        
-        
-//        for act in activity {
-//            
+//    func makingChallenges() {
+//        
+//        
+//        for activity in newActivities {
+//            print(activity.name)
 //        }
-        
-    }
+//        
+//    }
 
 }

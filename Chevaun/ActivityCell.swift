@@ -15,6 +15,7 @@ class ActivityCell: UITableViewCell {
     @IBOutlet weak var activityImage: UIImageView!
     @IBOutlet weak var activityName: UILabel!
     @IBOutlet weak var activityDescription: UILabel!
+    @IBOutlet weak var finalReview: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,6 +36,7 @@ class ActivityCell: UITableViewCell {
         
         self.activityDescription.text = activity.description
         self.activityName.text = activity.name
+        self.finalReview.text = activity.review
         
         if activity.image != nil {
             self.activityImage.image = activity.image

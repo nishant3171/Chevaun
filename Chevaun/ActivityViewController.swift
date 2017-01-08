@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-var activities = [ActivityModel]()
+
 class ActivityViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
@@ -17,7 +17,7 @@ class ActivityViewController: UIViewController {
 //    var activities: [ActivityModel] {
 //        return (UIApplication.shared.delegate as! AppDelegate).activities
 //    }
-    
+    var activities = [ActivityModel]()
     
     
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
@@ -43,9 +43,12 @@ class ActivityViewController: UIViewController {
                     }
                 }
                 activity.sort{($0.date > $1.date)}
-                activities = activity
-//                self.activities.sort{($0.date > $1.date)}
+//                self.sendingActivitiesToChallengeController(activities: activity)
+                self.activities = activity
+                
+
                 self.tableView.reloadData()
+                
             })
         }
     }
@@ -59,6 +62,13 @@ class ActivityViewController: UIViewController {
         super.viewDidAppear(true)
 //        tableView.reloadData()
     }
+    
+//    func sendingActivitiesToChallengeController(activities: [ActivityModel]) {
+//        let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
+//        let destination = storyboard.instantiateViewController(withIdentifier: "ChallengeViewController") as! ChallengeViewController
+//        destination.newActivities = activities
+//        print(destination.newActivities[0].date)
+//    }
     
 }
 
