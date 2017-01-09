@@ -32,7 +32,7 @@ class ActivityReviewViewController: UIViewController {
         case Satisfaction = "Oh! That was indeed fulfilling"
         case FunAndGrowth = "Let's make that a hobby!"
         case FunAndSatisfaction = "Joyfully productive activity"
-        case GrowthAndSatisfaction = "Promising potential and reward"
+        case GrowthAndSatisfaction = "Wow! A potentially rewarding skill"
         case GreaterThanForty = "A Benchmark Model"
         case LessThanForty = "Oh!Let's keep this activity aside."
     }
@@ -42,17 +42,16 @@ class ActivityReviewViewController: UIViewController {
         
         if newActivity != nil {
             settingUpSliders()
+            reviewLabel.text = newActivity?.review
+        } else {
+            reviewLabel.isHidden = true
         }
 
         funSlider.value = funSliderValue
         growthSlider.value = growthSliderValue
         satisfactionSlider.value = satisfactionSliderValue
         
-//        if finalReview == "Nice Growth Factor" {
-//            reviewLabel.isHidden = true
-//        } else {
-//            reviewLabel.isHidden = false
-//        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,7 +93,7 @@ class ActivityReviewViewController: UIViewController {
     
     func addingReviewLabelString() {
         
-//        reviewLabel.isHidden = false
+        reviewLabel.isHidden = false
         
         let x = max(max(activityReview[0], activityReview[1]),activityReview[2])
         
