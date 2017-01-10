@@ -207,6 +207,12 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics">
                         <color key="tintColor" red="0.094117647060000004" green="0.46274509800000002" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </simulatedTabBarMetrics>
+                    <connections>
+                        <outlet property="funTaskImage" destination="8VH-lo-90Z" id="cpn-4G-8f6"/>
+                        <outlet property="funTaskName" destination="o1f-BI-bo2" id="8u2-Bg-gF0"/>
+                        <outlet property="mainFocusImage" destination="rhi-UV-mdx" id="ma9-FW-7kv"/>
+                        <outlet property="mainFocusName" destination="6CC-ST-85D" id="DKM-o5-zAK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqw-0V-CjW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,14 +14,9 @@ class ActivityViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-//    var activities: [ActivityModel] {
-//        return (UIApplication.shared.delegate as! AppDelegate).activities
-//    }
     var activities = [ActivityModel]()
     
-    
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +38,7 @@ class ActivityViewController: UIViewController {
                     }
                 }
                 activity.sort{($0.date > $1.date)}
-//                self.sendingActivitiesToChallengeController(activities: activity)
                 self.activities = activity
-                
-
                 self.tableView.reloadData()
                 
             })
@@ -57,18 +49,6 @@ class ActivityViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-//        tableView.reloadData()
-    }
-    
-//    func sendingActivitiesToChallengeController(activities: [ActivityModel]) {
-//        let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
-//        let destination = storyboard.instantiateViewController(withIdentifier: "ChallengeViewController") as! ChallengeViewController
-//        destination.newActivities = activities
-//        print(destination.newActivities[0].date)
-//    }
     
 }
 
@@ -85,8 +65,8 @@ extension ActivityViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath) as! ActivityCell
-//        activities.sort{($0.date > $1.date)}
         let activity = activities[indexPath.row]
         print(activity)
         print(activities[indexPath.row])
