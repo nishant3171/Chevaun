@@ -22,9 +22,13 @@ class ChallengeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       downloadingActivitiesFromFirebase()
+        mainFocusImage.clipsToBounds = true
+        funTaskImage.clipsToBounds = true
+        downloadingActivitiesFromFirebase()
         
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

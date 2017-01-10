@@ -59,7 +59,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTC-oR-d5V">
                                                         <rect key="frame" x="0.0" y="32" width="343" height="77"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rhi-UV-mdx">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rhi-UV-mdx">
                                                                 <rect key="frame" x="0.0" y="3" width="100" height="70"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="70" id="9ON-nM-HJd"/>
@@ -110,7 +110,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycf-ro-EL4">
                                                         <rect key="frame" x="0.0" y="32" width="343" height="77"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8VH-lo-90Z">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8VH-lo-90Z">
                                                                 <rect key="frame" x="0.0" y="3" width="100" height="70"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="70" id="d8U-H4-SAH"/>
