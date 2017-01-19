@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		733D875DDBD3B8A9187F4F7C /* Pods_Chevaun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF71FC4B38F5F883CC9A920 /* Pods_Chevaun.framework */; };
+		F40555611E30EFB000784982 /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40555601E30EFB000784982 /* FriendModel.swift */; };
 		F4107C071E10727200EAFBC4 /* ActivitiesArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4107C061E10727200EAFBC4 /* ActivitiesArray.swift */; };
 		F418815B1E1ECAB50089C3FD /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41881591E1ECAB50089C3FD /* Activity.storyboard */; };
 		F418815D1E1ECB100089C3FD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418815C1E1ECB100089C3FD /* Profile.storyboard */; };
@@ -36,6 +37,7 @@
 		7E28BC6578C91435A489BB91 /* Pods-Chevaun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chevaun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chevaun/Pods-Chevaun.debug.xcconfig"; sourceTree = "<group>"; };
 		8CF71FC4B38F5F883CC9A920 /* Pods_Chevaun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chevaun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA1CA9E7EEE8613145FF8C5 /* Pods-Chevaun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chevaun.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chevaun/Pods-Chevaun.release.xcconfig"; sourceTree = "<group>"; };
+		F40555601E30EFB000784982 /* FriendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
 		F4107C061E10727200EAFBC4 /* ActivitiesArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesArray.swift; sourceTree = "<group>"; };
 		F418815A1E1ECAB50089C3FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Activity.storyboard; sourceTree = "<group>"; };
 		F418815C1E1ECB100089C3FD /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				F43130EF1E0E9A1000824B86 /* ActivityModel.swift */,
 				F4107C061E10727200EAFBC4 /* ActivitiesArray.swift */,
 				F4F255EA1E1406B1002F48B5 /* UserProfile.swift */,
+				F40555601E30EFB000784982 /* FriendModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				F481A2061E1993EA006733BB /* Extras.swift in Sources */,
 				F4107C071E10727200EAFBC4 /* ActivitiesArray.swift in Sources */,
 				F470308D1E0AD1270050257A /* ActivityViewController.swift in Sources */,
+				F40555611E30EFB000784982 /* FriendModel.swift in Sources */,
 				F418815F1E1ECE3E0089C3FD /* HappeningsViewController.swift in Sources */,
 				F470308B1E0AD1270050257A /* AppDelegate.swift in Sources */,
 				F49A38D31E0DDBD1004BCBC8 /* DataService.swift in Sources */,
