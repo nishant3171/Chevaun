@@ -28,5 +28,12 @@ class HappeningsViewController: UIViewController {
         self.navigationController?.pushViewController(destination, animated: true)
         
     }
+    
+    @IBAction func addingNewFriend(sender: UIButton) {
+        
+        let destination = self.storyboard?.instantiateViewController(withIdentifier: "AddNewFriend") as! AddingNewFriendViewController
+        self.navigationController?.pushViewController(destination, animated: true)
+        
+    }
 
 }
