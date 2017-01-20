@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ei7-UD-RtE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Friends-->
+        <scene sceneID="oR9-cJ-b3D">
+            <objects>
+                <viewController storyboardIdentifier="FriendViewController" id="HBR-n4-RH4" customClass="FriendViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rzp-w6-teF"/>
+                        <viewControllerLayoutGuide type="bottom" id="fyt-eP-thI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s0a-hQ-hpj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0eC-VR-uAU">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="83" id="qsr-PI-bSo" customClass="FriendCell" customModule="Chevaun" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="83"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qsr-PI-bSo" id="BOg-9x-NZj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yfd-Es-lFf">
+                                                    <rect key="frame" x="8" y="8" width="100" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="xoB-Yi-78u"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FsH-n8-2Bj">
+                                                    <rect key="frame" x="116" y="8" width="251" height="67"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Movie Night" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJO-5c-X4K">
+                                                            <rect key="frame" x="0.0" y="0.0" width="251" height="22.5"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="eud-xN-Pgj">
+                                                            <rect key="frame" x="0.0" y="22.5" width="251" height="22"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                                            <color key="textColor" red="0.094117647060000004" green="0.46274509800000002" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Watched Bourne Ultimatum with college friends. Best Part was ……" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiu-mB-vgY">
+                                                            <rect key="frame" x="0.0" y="44.5" width="251" height="22.5"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="yfd-Es-lFf" secondAttribute="bottom" constant="5" id="G5P-b0-ViR"/>
+                                                <constraint firstAttribute="bottom" secondItem="FsH-n8-2Bj" secondAttribute="bottom" constant="8" id="SKk-12-mSI"/>
+                                                <constraint firstItem="yfd-Es-lFf" firstAttribute="leading" secondItem="BOg-9x-NZj" secondAttribute="leading" constant="8" id="UFo-26-oTL"/>
+                                                <constraint firstAttribute="trailing" secondItem="FsH-n8-2Bj" secondAttribute="trailing" constant="8" id="URc-72-gRT"/>
+                                                <constraint firstItem="FsH-n8-2Bj" firstAttribute="top" secondItem="BOg-9x-NZj" secondAttribute="top" constant="8" id="p7i-Xr-0qq"/>
+                                                <constraint firstItem="FsH-n8-2Bj" firstAttribute="leading" secondItem="yfd-Es-lFf" secondAttribute="trailing" constant="8" id="yeW-nL-4qR"/>
+                                                <constraint firstItem="yfd-Es-lFf" firstAttribute="top" secondItem="BOg-9x-NZj" secondAttribute="top" constant="8" id="zCU-93-2Rx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="finalReview" destination="eud-xN-Pgj" id="PRh-8Y-WdL"/>
+                                            <outlet property="friendDescription" destination="jiu-mB-vgY" id="yPB-px-BZu"/>
+                                            <outlet property="friendImage" destination="yfd-Es-lFf" id="SCb-ww-QnA"/>
+                                            <outlet property="friendName" destination="OJO-5c-X4K" id="645-hd-TQV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="HBR-n4-RH4" id="pd2-QM-dYG"/>
+                                    <outlet property="delegate" destination="HBR-n4-RH4" id="kIF-9f-cKC"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0eC-VR-uAU" firstAttribute="leading" secondItem="s0a-hQ-hpj" secondAttribute="leading" id="FOi-VW-ojX"/>
+                            <constraint firstItem="fyt-eP-thI" firstAttribute="top" secondItem="0eC-VR-uAU" secondAttribute="bottom" id="OHK-i0-0Xl"/>
+                            <constraint firstItem="0eC-VR-uAU" firstAttribute="top" secondItem="rzp-w6-teF" secondAttribute="bottom" id="cE9-SO-ubS"/>
+                            <constraint firstAttribute="trailing" secondItem="0eC-VR-uAU" secondAttribute="trailing" id="qRl-Nb-6ht"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Friends" id="IIa-qE-fWs"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="0eC-VR-uAU" id="b1Q-mg-avL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cQR-1K-0gs" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2796" y="-708.39580209895053"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="aXz-fW-EAk">
+            <objects>
+                <navigationController storyboardIdentifier="FriendNavigation" automaticallyAdjustsScrollViewInsets="NO" id="ei7-UD-RtE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="L5F-2l-zTr"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rT5-qW-VOa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HBR-n4-RH4" kind="relationship" relationship="rootViewController" id="VxG-Ik-ltU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8P8-fO-WNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1856.8" y="-708.39580209895053"/>
+        </scene>
+    </scenes>
+</document>

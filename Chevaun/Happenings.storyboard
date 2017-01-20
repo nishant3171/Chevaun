@@ -76,7 +76,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addingNewActivityWithSender:" destination="iH5-mi-y5X" eventType="touchUpInside" id="9QG-Xo-O7i"/>
+                                                    <action selector="addingNewActivityWithSender:" destination="iH5-mi-y5X" eventType="touchUpInside" id="8vX-yi-hfq"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M8-mf-qNJ">
@@ -91,7 +91,6 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addingNewActivityWithSender:" destination="iH5-mi-y5X" eventType="touchUpInside" id="IRH-CM-dKd"/>
                                                     <action selector="addingNewFriendWithSender:" destination="iH5-mi-y5X" eventType="touchUpInside" id="h8h-Ez-VyA"/>
                                                 </connections>
                                             </button>
@@ -613,7 +612,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUh-JA-O1a">
                                                 <rect key="frame" x="8" y="8" width="359" height="250"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="56m-6x-4kJ">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="56m-6x-4kJ">
                                                         <rect key="frame" x="119" y="65" width="120" height="120"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="120" id="Wfw-pl-y8s"/>
@@ -625,12 +624,18 @@
                                                         <state key="normal" title="+ Add profile pic from Camera">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="takingImageFromCamera:" destination="QNs-zd-b4D" eventType="touchUpInside" id="e8o-JL-mpJ"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkw-qP-ujo">
                                                         <rect key="frame" x="79" y="204" width="201" height="30"/>
                                                         <state key="normal" title="+ Add profile pic from Gallery">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="pickingGalleryImage:" destination="QNs-zd-b4D" eventType="touchUpInside" id="4ub-PD-39G"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.18431372549019609" green="0.20000000000000001" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
@@ -682,8 +687,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="rIa-Jh-kKQ"/>
                                         <exclude reference="TPw-A3-YiV"/>
+                                        <exclude reference="rIa-Jh-kKQ"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -706,9 +711,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="3g9-tZ-RYm"/>
                                 <exclude reference="SE7-J2-YPD"/>
                                 <exclude reference="ZRn-2K-R2i"/>
-                                <exclude reference="3g9-tZ-RYm"/>
                                 <exclude reference="wU3-qS-g1N"/>
                             </mask>
                         </variation>
@@ -722,9 +727,11 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cameraButton" destination="lm4-js-RRb" id="4Ye-6q-18u"/>
                         <outlet property="descriptionTextView" destination="6IH-Ll-u28" id="hu5-Ce-viF"/>
                         <outlet property="friendNameTextField" destination="drj-0W-QkP" id="jkb-Qx-fzQ"/>
                         <outlet property="friendProfileImage" destination="56m-6x-4kJ" id="GYY-fE-ECE"/>
+                        <outlet property="galleryButton" destination="tkw-qP-ujo" id="5U7-ek-vhr"/>
                         <outlet property="reviewButton" destination="AzQ-J9-0aV" id="eYi-Y2-NDk"/>
                     </connections>
                 </viewController>
@@ -732,10 +739,10 @@
             </objects>
             <point key="canvasLocation" x="3513" y="84"/>
         </scene>
-        <!--View Controller-->
+        <!--Review Meeting View Controller-->
         <scene sceneID="aK3-bh-8JF">
             <objects>
-                <viewController storyboardIdentifier="MeetingReviewController" id="o2q-gV-rq8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MeetingReviewController" id="o2q-gV-rq8" customClass="ReviewMeetingViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iMN-NA-ZVd"/>
                         <viewControllerLayoutGuide type="bottom" id="Kip-zL-8uV"/>
@@ -836,7 +843,7 @@
                                                                 </constraints>
                                                                 <color key="thumbTintColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <connections>
-                                                                    <action selector="growthSliderValueChangedWithSender:" destination="o2q-gV-rq8" eventType="touchUpInside" id="kxs-v1-GfJ"/>
+                                                                    <action selector="intellectualSliderValueChangedWithSender:" destination="o2q-gV-rq8" eventType="touchUpInside" id="SzY-C6-RxH"/>
                                                                 </connections>
                                                             </slider>
                                                         </subviews>
@@ -858,7 +865,7 @@
                                                                 </constraints>
                                                                 <color key="thumbTintColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <connections>
-                                                                    <action selector="satisfactionSliderValueChangedWithSender:" destination="o2q-gV-rq8" eventType="touchUpInside" id="W9q-eD-O5a"/>
+                                                                    <action selector="emotionalSliderValueChangedWithSender:" destination="o2q-gV-rq8" eventType="touchUpInside" id="kIk-ur-zVO"/>
                                                                 </connections>
                                                             </slider>
                                                         </subviews>
@@ -909,10 +916,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emotionalSlider" destination="KON-Ja-p9O" id="bRT-Eg-mcp"/>
                         <outlet property="funSlider" destination="kss-Fj-KY5" id="yWI-XG-mqg"/>
-                        <outlet property="growthSlider" destination="VBN-rq-uEk" id="Fcc-di-Ied"/>
+                        <outlet property="intellectualSlider" destination="VBN-rq-uEk" id="Aui-0Y-0G4"/>
                         <outlet property="reviewLabel" destination="Y42-oF-Mer" id="dvx-gr-NVZ"/>
-                        <outlet property="satisfactionSlider" destination="KON-Ja-p9O" id="e6i-fI-kHz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jpw-GO-Ugp" userLabel="First Responder" sceneMemberID="firstResponder"/>

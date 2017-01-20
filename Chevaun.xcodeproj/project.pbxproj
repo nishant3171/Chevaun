@@ -11,6 +11,11 @@
 		F40555611E30EFB000784982 /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40555601E30EFB000784982 /* FriendModel.swift */; };
 		F40555631E3135E900784982 /* AddingNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40555621E3135E900784982 /* AddingNewFriendViewController.swift */; };
 		F4107C071E10727200EAFBC4 /* ActivitiesArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4107C061E10727200EAFBC4 /* ActivitiesArray.swift */; };
+		F415014E1E31CA0A00D4BBD4 /* ReviewMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415014D1E31CA0A00D4BBD4 /* ReviewMeetingViewController.swift */; };
+		F41501501E31CB7000D4BBD4 /* MeetingReviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415014F1E31CB7000D4BBD4 /* MeetingReviewDelegate.swift */; };
+		F41501521E31CFC800D4BBD4 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41501511E31CFC800D4BBD4 /* FriendViewController.swift */; };
+		F41501541E31D03E00D4BBD4 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41501531E31D03E00D4BBD4 /* FriendCell.swift */; };
+		F41501591E31D56F00D4BBD4 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41501581E31D56F00D4BBD4 /* Friends.storyboard */; };
 		F418815B1E1ECAB50089C3FD /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41881591E1ECAB50089C3FD /* Activity.storyboard */; };
 		F418815D1E1ECB100089C3FD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418815C1E1ECB100089C3FD /* Profile.storyboard */; };
 		F418815F1E1ECE3E0089C3FD /* HappeningsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F418815E1E1ECE3E0089C3FD /* HappeningsViewController.swift */; };
@@ -41,6 +46,11 @@
 		F40555601E30EFB000784982 /* FriendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
 		F40555621E3135E900784982 /* AddingNewFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingNewFriendViewController.swift; sourceTree = "<group>"; };
 		F4107C061E10727200EAFBC4 /* ActivitiesArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesArray.swift; sourceTree = "<group>"; };
+		F415014D1E31CA0A00D4BBD4 /* ReviewMeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewMeetingViewController.swift; sourceTree = "<group>"; };
+		F415014F1E31CB7000D4BBD4 /* MeetingReviewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingReviewDelegate.swift; sourceTree = "<group>"; };
+		F41501511E31CFC800D4BBD4 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		F41501531E31D03E00D4BBD4 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		F41501581E31D56F00D4BBD4 /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 		F418815A1E1ECAB50089C3FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Activity.storyboard; sourceTree = "<group>"; };
 		F418815C1E1ECB100089C3FD /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		F418815E1E1ECE3E0089C3FD /* HappeningsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HappeningsViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				F43130F11E0EAB9500824B86 /* ActivityCell.swift */,
+				F41501531E31D03E00D4BBD4 /* FriendCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -124,6 +135,8 @@
 				F418815E1E1ECE3E0089C3FD /* HappeningsViewController.swift */,
 				F4F2710E1E1F02120061D7F3 /* ChallengeViewController.swift */,
 				F40555621E3135E900784982 /* AddingNewFriendViewController.swift */,
+				F415014D1E31CA0A00D4BBD4 /* ReviewMeetingViewController.swift */,
+				F41501511E31CFC800D4BBD4 /* FriendViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -132,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				F470308E1E0AD1270050257A /* Main.storyboard */,
+				F41501581E31D56F00D4BBD4 /* Friends.storyboard */,
 				F4F2710C1E1F01E80061D7F3 /* Challenge.storyboard */,
 				F41881631E1ECF6B0089C3FD /* Happenings.storyboard */,
 				F418815C1E1ECB100089C3FD /* Profile.storyboard */,
@@ -145,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				F455B12C1E1AF56300C42689 /* ActivityReviewDelegate.swift */,
+				F415014F1E31CB7000D4BBD4 /* MeetingReviewDelegate.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -259,6 +274,7 @@
 				F418815D1E1ECB100089C3FD /* Profile.storyboard in Resources */,
 				F47030951E0AD1270050257A /* LaunchScreen.storyboard in Resources */,
 				F47030921E0AD1270050257A /* Assets.xcassets in Resources */,
+				F41501591E31D56F00D4BBD4 /* Friends.storyboard in Resources */,
 				F418815B1E1ECAB50089C3FD /* Activity.storyboard in Resources */,
 				F470309D1E0AD1B40050257A /* GoogleService-Info.plist in Resources */,
 				F41881641E1ECF6B0089C3FD /* Happenings.storyboard in Resources */,
@@ -325,19 +341,23 @@
 				F43130F01E0E9A1000824B86 /* ActivityModel.swift in Sources */,
 				F46BEC201E0F0B68003F68F3 /* AddNewActivityViewController.swift in Sources */,
 				F440AD581E0AF18A0016D771 /* ProfileViewController.swift in Sources */,
+				F41501521E31CFC800D4BBD4 /* FriendViewController.swift in Sources */,
 				F4FCBD741E167ACD00F47619 /* ActivityReviewViewController.swift in Sources */,
 				F4F2710F1E1F02120061D7F3 /* ChallengeViewController.swift in Sources */,
 				F43130F21E0EAB9500824B86 /* ActivityCell.swift in Sources */,
 				F40555631E3135E900784982 /* AddingNewFriendViewController.swift in Sources */,
+				F415014E1E31CA0A00D4BBD4 /* ReviewMeetingViewController.swift in Sources */,
 				F455B12D1E1AF56300C42689 /* ActivityReviewDelegate.swift in Sources */,
 				F481A2061E1993EA006733BB /* Extras.swift in Sources */,
 				F4107C071E10727200EAFBC4 /* ActivitiesArray.swift in Sources */,
 				F470308D1E0AD1270050257A /* ActivityViewController.swift in Sources */,
+				F41501501E31CB7000D4BBD4 /* MeetingReviewDelegate.swift in Sources */,
 				F40555611E30EFB000784982 /* FriendModel.swift in Sources */,
 				F418815F1E1ECE3E0089C3FD /* HappeningsViewController.swift in Sources */,
 				F470308B1E0AD1270050257A /* AppDelegate.swift in Sources */,
 				F49A38D31E0DDBD1004BCBC8 /* DataService.swift in Sources */,
 				F4F255EB1E1406B1002F48B5 /* UserProfile.swift in Sources */,
+				F41501541E31D03E00D4BBD4 /* FriendCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

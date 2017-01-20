@@ -26,6 +26,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="5Ti-ix-wgC" kind="relationship" relationship="viewControllers" id="nrk-1D-MD6"/>
+                        <segue destination="r6J-PW-7c8" kind="relationship" relationship="viewControllers" id="UfM-Mo-Xf9"/>
                         <segue destination="YeW-fb-UJ4" kind="relationship" relationship="viewControllers" id="2YE-dO-DMG"/>
                         <segue destination="hAg-5i-sGN" kind="relationship" relationship="viewControllers" id="X3H-wH-wjk"/>
                         <segue destination="l1S-Bq-eqq" kind="relationship" relationship="viewControllers" id="VNM-IP-sif"/>
@@ -53,7 +54,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Pu-cc-j1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="502" y="26"/>
+            <point key="canvasLocation" x="554" y="25"/>
         </scene>
         <!--HappeningNavigation-->
         <scene sceneID="Mc7-mc-t6r">
@@ -63,7 +64,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNy-Hf-eyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1004" y="26"/>
+            <point key="canvasLocation" x="1034" y="25"/>
         </scene>
         <!--ChallengeNavigation-->
         <scene sceneID="Bmi-5t-RN3">
@@ -73,13 +74,24 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJc-Jo-cRw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1757" y="25"/>
+            <point key="canvasLocation" x="1459" y="25"/>
+        </scene>
+        <!--FriendsNavigation-->
+        <scene sceneID="fQo-Nn-PmV">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="FriendsNavigation" storyboardName="Friends" referencedIdentifier="FriendsNavigation" id="r6J-PW-7c8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Friends" image="FriendIcon" id="mpy-LQ-7S0"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N4q-bR-jFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="187" y="26"/>
         </scene>
     </scenes>
     <resources>
         <image name="Activity" width="25" height="25"/>
         <image name="ChallengeIcon" width="31" height="31"/>
         <image name="Combined Shape" width="25" height="25"/>
+        <image name="FriendIcon" width="30" height="22"/>
         <image name="Profile" width="31" height="30"/>
         <image name="ProfileHiglighted" width="31" height="30"/>
     </resources>

@@ -33,7 +33,7 @@ init(name: String,description: String?, image: UIImage? ,date: String) {
 init(postKey: String,postData: Dictionary<String,AnyObject>) {
     self.postKey = postKey
     
-    if let name = postData["nameofActivity"] {
+    if let name = postData["nameofFriend"] {
         self.name = name as! String
     }
     

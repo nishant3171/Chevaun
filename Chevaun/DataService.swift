@@ -23,7 +23,9 @@ class DataService {
     private var _REF_BASE = DB_BASE
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_ACTIVITIES = DB_BASE.child("activities")
+    private var _REF_FRIENDS = DB_BASE.child("friends")
     private var _REF_ACTIVITYIMAGES = STORAGE_BASE.child("activity-pics")
+    private var _REF_FRIENDIMAGES = STORAGE_BASE.child("friend-pics")
 
     
     var REF_BASE: FIRDatabaseReference {
@@ -38,8 +40,16 @@ class DataService {
         return _REF_ACTIVITIES
     }
     
+    var REF_FRIENDS: FIRDatabaseReference {
+        return _REF_FRIENDS
+    }
+    
     var REF_ACTIVITYIMAGES: FIRStorageReference {
         return _REF_ACTIVITYIMAGES
+    }
+    
+    var REF_FRIENDIMAGES: FIRStorageReference {
+        return _REF_FRIENDIMAGES
     }
     
     

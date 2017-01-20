@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate,ActivityReviewViewControllerDelegate {
+class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate,ReviewMeetingViewControllerDelegate {
 
     @IBOutlet weak var reviewButton: UIButton!
     @IBOutlet weak var friendNameTextField: UITextField!
@@ -24,7 +24,7 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
     
     //MARK: Variables
     var imagePicker: UIImagePickerController!
-    var newActivity: ActivityModel?
+    var newFriend: FriendModel?
     var timeStamp = String()
     var review: [Int] = [0,0,0]
     var reviewString = String()
@@ -38,7 +38,7 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
         friendNameTextField.delegate = self
         descriptionTextView.delegate = self
         
-        if newActivity != nil {
+        if newFriend != nil {
             settingUpActivityFromTableView()
         }
         
@@ -72,8 +72,8 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
     
     @IBAction func reivewButtonTapped(_ sender: UIButton) {
         
-        let destination = self.storyboard?.instantiateViewController(withIdentifier: "ReviewViewController") as! ActivityReviewViewController
-        destination.newActivity = newActivity
+        let destination = self.storyboard?.instantiateViewController(withIdentifier: "MeetingReviewController") as! ReviewMeetingViewController
+        destination.newFriend = newFriend
         destination.reviewDelegate = self
         self.present(destination, animated: true, completion: nil)
     }
@@ -104,7 +104,7 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
         
         convertingDateToString()
         
-        if newActivity == nil, let mainImage = friendProfileImage.image {
+        if newFriend == nil, let mainImage = friendProfileImage.image {
             
             if let imageData = UIImageJPEGRepresentation(mainImage, 0.2),let newString = defaults.string(forKey: "UID")  {
                 
@@ -112,7 +112,7 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
                 let metadata = FIRStorageMetadata()
                 metadata.contentType = "jpeg"
                 
-                DataService.instance.REF_ACTIVITYIMAGES.child(newString).child(imageUID).put(imageData, metadata: metadata) { (metadata, error) in
+                DataService.instance.REF_FRIENDIMAGES.child(newString).child(imageUID).put(imageData, metadata: metadata) { (metadata, error) in
                     if error != nil {
                         print("Unable to upload images.")
                     } else {
@@ -124,23 +124,23 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
                 }
             }
         } else {
-            newActivity?.image = friendProfileImage.image
-            newActivity?.description = descriptionTextView.text
-            newActivity?.name = friendNameTextField.text!
-            newActivity?.date = timeStamp
-            newActivity?.funPercentage = review[0]
-            newActivity?.growthPercentage = review[1]
-            newActivity?.satisfactionPercentage = review[2]
-            newActivity?.review = reviewString
+            newFriend?.image = friendProfileImage.image
+            newFriend?.description = descriptionTextView.text
+            newFriend?.name = friendNameTextField.text!
+            newFriend?.date = timeStamp
+            newFriend?.funPercentage = review[0]
+            newFriend?.intellectualPercentage = review[1]
+            newFriend?.emotionalPercentage = review[2]
+            newFriend?.review = reviewString
         }
         
         self.dismiss(animated: true, completion: nil)
     }
     
-    func sendValue(fun: Float, growth: Float, satisfaction: Float, finalReview: String) {
+    func sendValue(fun: Float, intellectual: Float, emotional: Float, finalReview: String) {
         review[0] = Int(fun)
-        review[1] = Int(growth)
-        review[2] = Int(satisfaction)
+        review[1] = Int(intellectual)
+        review[2] = Int(emotional)
         reviewString = finalReview
     }
     
@@ -148,16 +148,16 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
         if let name = friendNameTextField.text, let description = descriptionTextView.text, let newString = defaults.string(forKey: "UID") {
             //Check Dictionary is <String, String>
             let post: Dictionary<String, AnyObject> = [
-                "nameofActivity": name as AnyObject,
+                "nameofFriend": name as AnyObject,
                 "description": description as AnyObject,
                 "imageURL": imageURL as AnyObject,
                 "date": timeStamp as AnyObject,
                 "funPercentage": review[0] as AnyObject,
-                "growthPercentage": review[1] as AnyObject,
-                "satisfactionPercentage": review[2] as AnyObject,
+                "intellectualPercentage": review[1] as AnyObject,
+                "emotionalPercentage": review[2] as AnyObject,
                 "reviewString": reviewString as AnyObject
             ]
-            let firebasePost = DataService.instance.REF_ACTIVITIES.child(newString).childByAutoId()
+            let firebasePost = DataService.instance.REF_FRIENDS.child(newString).childByAutoId()
             firebasePost.setValue(post)
         }
     }
@@ -165,19 +165,19 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
     
     func settingUpActivityFromTableView() {
         
-        descriptionTextView.text = newActivity?.description
-        friendNameTextField.text = newActivity?.name
-        review[0] = (newActivity?.funPercentage)!
-        review[1] = (newActivity?.growthPercentage)!
-        review[2] = (newActivity?.satisfactionPercentage)!
-        reviewString = (newActivity?.review)!
+        descriptionTextView.text = newFriend?.description
+        friendNameTextField.text = newFriend?.name
+        review[0] = (newFriend?.funPercentage)!
+        review[1] = (newFriend?.intellectualPercentage)!
+        review[2] = (newFriend?.emotionalPercentage)!
+        reviewString = (newFriend?.review)!
         
-        if newActivity?.image != nil {
-            self.friendProfileImage.image = newActivity?.image
+        if newFriend?.image != nil {
+            self.friendProfileImage.image = newFriend?.image
         } else {
             
             
-            if let imageURL = newActivity?.imageURL {
+            if let imageURL = newFriend?.imageURL {
                 let url = URL(string: imageURL)
                 let imageView: UIImageView = self.friendProfileImage
                 imageView.sd_setImage(with: url)
