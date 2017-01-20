@@ -82,18 +82,18 @@ extension FriendViewController: UITableViewDataSource {
     
 }
 
-//extension FriendViewController: UITableViewDelegate {
-//    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        
-//        let destination = self.storyboard?.instantiateViewController(withIdentifier: "AddNewActivity") as! AddingNewFriendViewController
-//        destination.newFriend = friends[indexPath.row]
-//        print(destination.newFriend!)
-//        self.navigationController?.pushViewController(destination, animated: true)
-//        
-//    }
-//    
-//}
+extension FriendViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let destination = self.storyboard?.instantiateViewController(withIdentifier: "FriendMessages") as! FriendExperienceViewController
+        destination.newFriend = friends[indexPath.row]
+        print(destination.newFriend!)
+        self.navigationController?.pushViewController(destination, animated: true)
+        
+    }
+    
+}
 

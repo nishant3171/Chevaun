@@ -33,6 +33,8 @@
 		F470309D1E0AD1B40050257A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F470309C1E0AD1B40050257A /* GoogleService-Info.plist */; };
 		F481A2061E1993EA006733BB /* Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = F481A2051E1993EA006733BB /* Extras.swift */; };
 		F49A38D31E0DDBD1004BCBC8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49A38D21E0DDBD1004BCBC8 /* DataService.swift */; };
+		F4A5DE491E324347000D7711 /* FriendExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A5DE481E324347000D7711 /* FriendExperienceViewController.swift */; };
+		F4A5DE4B1E3247C6000D7711 /* ExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A5DE4A1E3247C6000D7711 /* ExperienceCell.swift */; };
 		F4F255EB1E1406B1002F48B5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F255EA1E1406B1002F48B5 /* UserProfile.swift */; };
 		F4F2710D1E1F01E80061D7F3 /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F2710C1E1F01E80061D7F3 /* Challenge.storyboard */; };
 		F4F2710F1E1F02120061D7F3 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F2710E1E1F02120061D7F3 /* ChallengeViewController.swift */; };
@@ -70,6 +72,8 @@
 		F470309C1E0AD1B40050257A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F481A2051E1993EA006733BB /* Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extras.swift; sourceTree = "<group>"; };
 		F49A38D21E0DDBD1004BCBC8 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		F4A5DE481E324347000D7711 /* FriendExperienceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendExperienceViewController.swift; sourceTree = "<group>"; };
+		F4A5DE4A1E3247C6000D7711 /* ExperienceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceCell.swift; sourceTree = "<group>"; };
 		F4F255EA1E1406B1002F48B5 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		F4F2710C1E1F01E80061D7F3 /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
 		F4F2710E1E1F02120061D7F3 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 			children = (
 				F43130F11E0EAB9500824B86 /* ActivityCell.swift */,
 				F41501531E31D03E00D4BBD4 /* FriendCell.swift */,
+				F4A5DE4A1E3247C6000D7711 /* ExperienceCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 				F40555621E3135E900784982 /* AddingNewFriendViewController.swift */,
 				F415014D1E31CA0A00D4BBD4 /* ReviewMeetingViewController.swift */,
 				F41501511E31CFC800D4BBD4 /* FriendViewController.swift */,
+				F4A5DE481E324347000D7711 /* FriendExperienceViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -346,6 +352,7 @@
 				F4F2710F1E1F02120061D7F3 /* ChallengeViewController.swift in Sources */,
 				F43130F21E0EAB9500824B86 /* ActivityCell.swift in Sources */,
 				F40555631E3135E900784982 /* AddingNewFriendViewController.swift in Sources */,
+				F4A5DE491E324347000D7711 /* FriendExperienceViewController.swift in Sources */,
 				F415014E1E31CA0A00D4BBD4 /* ReviewMeetingViewController.swift in Sources */,
 				F455B12D1E1AF56300C42689 /* ActivityReviewDelegate.swift in Sources */,
 				F481A2061E1993EA006733BB /* Extras.swift in Sources */,
@@ -356,6 +363,7 @@
 				F418815F1E1ECE3E0089C3FD /* HappeningsViewController.swift in Sources */,
 				F470308B1E0AD1270050257A /* AppDelegate.swift in Sources */,
 				F49A38D31E0DDBD1004BCBC8 /* DataService.swift in Sources */,
+				F4A5DE4B1E3247C6000D7711 /* ExperienceCell.swift in Sources */,
 				F4F255EB1E1406B1002F48B5 /* UserProfile.swift in Sources */,
 				F41501541E31D03E00D4BBD4 /* FriendCell.swift in Sources */,
 			);
