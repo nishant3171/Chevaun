@@ -49,6 +49,12 @@ class FriendViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        navigationController?.tabBarController?.tabBar.isHidden = false
+    }
+    
 }
 
 //MARK: TableViewDataSource
@@ -72,6 +78,10 @@ extension FriendViewController: UITableViewDataSource {
         
         if let friendImage = friends[indexPath.row].image {
             print(friendImage)
+        }
+        
+        if let experience = friends[indexPath.row].experiences {
+            print(experience)
         }
         
         cell.configureCell(friend: friends[indexPath.row])

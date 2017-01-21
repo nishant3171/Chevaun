@@ -24,6 +24,6 @@ class ExperienceCell: UITableViewCell {
     }
 
     func configureCell(friend: FriendModel) {
-        experienceLabel.text = friend.description
+        experienceLabel.text = friend.experiences
     }
 }

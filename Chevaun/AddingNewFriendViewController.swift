@@ -155,7 +155,8 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
                 "funPercentage": review[0] as AnyObject,
                 "intellectualPercentage": review[1] as AnyObject,
                 "emotionalPercentage": review[2] as AnyObject,
-                "reviewString": reviewString as AnyObject
+                "reviewString": reviewString as AnyObject,
+                "experiences": description as AnyObject
             ]
             let firebasePost = DataService.instance.REF_FRIENDS.child(newString).childByAutoId()
             firebasePost.setValue(post)

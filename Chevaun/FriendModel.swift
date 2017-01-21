@@ -22,6 +22,7 @@ var emotionalPercentage: Int!
 var intellectualPercentage: Int!
 var date: String!
 var postKey: String!
+var experiences: String!
 
 init(name: String,description: String?, image: UIImage? ,date: String) {
     self.name = name
@@ -68,6 +69,10 @@ init(postKey: String,postData: Dictionary<String,AnyObject>) {
     
     if let intellectualPercentage = postData["intellectualPercentage"] {
         self.intellectualPercentage = intellectualPercentage as! Int
+    }
+    
+    if let experiences = postData["experiences"] {
+        self.experiences = experiences as! String
     }
     
 }

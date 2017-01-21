@@ -11,6 +11,7 @@ import Firebase
 
 let DB_BASE = FIRDatabase.database().reference()
 let STORAGE_BASE = FIRStorage.storage().reference()
+let USER_ID = FIRAuth.auth()?.currentUser?.uid
 
 class DataService {
     
@@ -24,6 +25,7 @@ class DataService {
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_ACTIVITIES = DB_BASE.child("activities")
     private var _REF_FRIENDS = DB_BASE.child("friends")
+    private var _REF_EXPERIENCES = DB_BASE.child("experiences")
     private var _REF_ACTIVITYIMAGES = STORAGE_BASE.child("activity-pics")
     private var _REF_FRIENDIMAGES = STORAGE_BASE.child("friend-pics")
 
@@ -42,6 +44,10 @@ class DataService {
     
     var REF_FRIENDS: FIRDatabaseReference {
         return _REF_FRIENDS
+    }
+    
+    var REF_EXPERIENCES: FIRDatabaseReference {
+        return _REF_EXPERIENCES
     }
     
     var REF_ACTIVITYIMAGES: FIRStorageReference {
