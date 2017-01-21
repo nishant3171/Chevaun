@@ -23,7 +23,7 @@ class ExperienceCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func configureCell(friend: FriendModel) {
-        experienceLabel.text = friend.experiences
+    func configureCell(experience: ExperienceModel) {
+        experienceLabel.text = experience.experience
     }
 }

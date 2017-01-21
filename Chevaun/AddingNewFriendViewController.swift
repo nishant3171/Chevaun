@@ -53,6 +53,7 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
         
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
         friendProfileImage.clipsToBounds = true
+        friendProfileImage.layer.cornerRadius = 60
         subscribeToNotifications()
         
         print(review[0])
@@ -160,7 +161,19 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
             ]
             let firebasePost = DataService.instance.REF_FRIENDS.child(newString).childByAutoId()
             firebasePost.setValue(post)
+            
+            
+            if let experience = descriptionTextView.text,let userId = USER_ID {
+                let post: Dictionary<String,AnyObject> = [
+                    "experience": experience as AnyObject
+                ]
+                let firebasePost = DataService.instance.REF_EXPERIENCES.child(userId).child(firebasePost.key).childByAutoId()
+                firebasePost.setValue(post)
+            }
+            
         }
+        
+        
     }
     
     

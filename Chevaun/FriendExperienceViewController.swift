@@ -9,7 +9,8 @@
 import UIKit
 import Firebase
 
-class FriendExperienceViewController: UIViewController {
+
+class FriendExperienceViewController: UIViewController, UITextFieldDelegate, ReviewMeetingViewControllerDelegate {
     
     //MARK: IBOutlets
     @IBOutlet weak var experienceTextField: UITextField!
@@ -25,7 +26,8 @@ class FriendExperienceViewController: UIViewController {
     }
     var review: [Int] = [0,0,0]
     var reviewString = String()
-    var experiences = [String]()
+    var experiences = [ExperienceModel]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,17 +36,47 @@ class FriendExperienceViewController: UIViewController {
             settingUpActivityFromTableView()
         }
         
+        experienceTextField.delegate = self
+        
         self.automaticallyAdjustsScrollViewInsets = false
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 80
         
-        tableView.reloadData()
-        
+        if let userId = USER_ID, let postKey = newFriend?.postKey {
+            DataService.instance.REF_EXPERIENCES.child(userId).child(postKey).observe(.value, with: { (snapshot) in
+                print(DataService.instance.REF_EXPERIENCES.child(userId).child(postKey))
+                var experience = [ExperienceModel]()
+                if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                    for snap in snapshot {
+                        print(snap)
+                        if let postDict = snap.value as? Dictionary<String,AnyObject> {
+                            let post = ExperienceModel(postData: postDict)
+                            experience.append(post)
+                        }
+                    }
+                }
+                self.experiences = experience
+                print(self.experiences[0].experience!)
+                
+                self.tableView.rowHeight = UITableViewAutomaticDimension
+                self.tableView.estimatedRowHeight = 80
+                self.tableView.reloadData()
+                
+                
+                
+            })
+        }
         navigationController?.tabBarController?.tabBar.isHidden = true
-        
+ 
+    }
     
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        subscribeToNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        unsubscribeFromNotification()
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,19 +84,23 @@ class FriendExperienceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-//    @IBAction func reivewButtonTapped(_ sender: UIButton) {
-//        
-//        let destination = self.storyboard?.instantiateViewController(withIdentifier: "MeetingReviewController") as! ReviewMeetingViewController
-//        destination.newFriend = newFriend
-//        destination.reviewDelegate = self
-//        self.present(destination, animated: true, completion: nil)
-//    }
+    @IBAction func reivewButtonTapped(_ sender: UIButton) {
+        
+        let destination = self.storyboard?.instantiateViewController(withIdentifier: "MeetingReviewController") as! ReviewMeetingViewController
+        destination.newFriend = newFriend
+        destination.reviewDelegate = self
+        self.present(destination, animated: true, completion: nil)
+    }
+    
+    func sendValue(fun: Float, intellectual: Float, emotional: Float, finalReview: String) {
+        review[0] = Int(fun)
+        review[1] = Int(intellectual)
+        review[2] = Int(emotional)
+        reviewString = finalReview
+    }
     
     @IBAction func addExperienceButtonTapped(sender: UIButton) {
         
-        if let experience = experienceTextField.text {
-            experiences.append(experience)
-        }
         sendingExperiencesToFirebase()
     }
     
@@ -89,24 +125,77 @@ class FriendExperienceViewController: UIViewController {
         }
     }
     
-//    func uploadingActivitiesToFirebase(imageURL: String) {
-//        if let name = activityNameTextField.text, let description = descriptionTextView.text, let newString = defaults.string(forKey: "UID") {
-//            //Check Dictionary is <String, String>
-//            let post: Dictionary<String, AnyObject> = [
-//                "nameofActivity": name as AnyObject,
-//                "description": description as AnyObject,
-//                "imageURL": imageURL as AnyObject,
-//                "date": timeStamp as AnyObject,
-//                "funPercentage": review[0] as AnyObject,
-//                "growthPercentage": review[1] as AnyObject,
-//                "satisfactionPercentage": review[2] as AnyObject,
-//                "reviewString": reviewString as AnyObject
-//            ]
-//            let firebasePost = DataService.instance.REF_ACTIVITIES.child(newString).childByAutoId()
-//            firebasePost.setValue(post)
-//        }
-//    }
+    func sendingFirstExperienceToFirebase() {
+        if let experience = newFriend?.description,let userId = USER_ID, let postKey = newFriend?.postKey {
+            let post: Dictionary<String,AnyObject> = [
+                "experience": experience as AnyObject
+            ]
+            let firebasePost = DataService.instance.REF_EXPERIENCES.child(userId).child(postKey).childByAutoId()
+            firebasePost.setValue(post)
+        }
+    }
     
+    
+    
+    func observeExperiences() {
+        if let userId = USER_ID, let postKey = newFriend?.postKey {
+            DataService.instance.REF_EXPERIENCES.child(userId).child(postKey).observe(.value, with: { (snapshot) in
+                var experience = [ExperienceModel]()
+                if let dictionary = snapshot.value as? [String: AnyObject] {
+                    let post = ExperienceModel(postData: dictionary)
+                    experience.append(post)
+                }
+                self.experiences = experience
+//                self.experiences.insert(experience1, at: 0)
+                print(self.experiences[0].experience!)
+                
+                
+                self.tableView.rowHeight = UITableViewAutomaticDimension
+                self.tableView.estimatedRowHeight = 80
+                self.tableView.reloadData()
+                
+                
+                
+            }, withCancel: nil)
+        }
+    }
+    
+    
+    //Notifications
+    func subscribeToNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func unsubscribeFromNotification() {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+    }
+    func keyboardWillShow(_ notification: Notification) {
+        
+        let keyboardSize = getKeyboardHeight(notification)
+        if view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= keyboardSize
+            
+        }
+    }
+    
+    func keyboardWillHide(_ notification: Notification) {
+        view.frame.origin.y = 0
+    }
+    
+    func getKeyboardHeight(_ notification: Notification) -> CGFloat {
+        let userInfo = (notification as NSNotification).userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        return keyboardSize.cgRectValue.height
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
 
 }
 
@@ -118,18 +207,22 @@ extension FriendExperienceViewController: UITableViewDataSource {
          return 1
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        print(experiences.count)
+        return experiences.count
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExperienceCell", for: indexPath) as! ExperienceCell
         
-        if let friend = newFriend {
-            cell.configureCell(friend: friend)
-        }
-        
+        let experience = experiences[indexPath.row]
+        cell.configureCell(experience: experience)
         return cell
+        
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
+    
     
 }
