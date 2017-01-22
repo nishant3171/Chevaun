@@ -10,11 +10,16 @@ import Foundation
 
 class ExperienceModel {
     var experience: String?
+    var timeStamp: String?
     
     init(postData: Dictionary<String,AnyObject>) {
         
         if let experience = postData["experience"] {
             self.experience = experience as? String
+        }
+        
+        if let timeStamp = postData["timeStamp"] {
+            self.timeStamp = timeStamp as? String
         }
     }
 }

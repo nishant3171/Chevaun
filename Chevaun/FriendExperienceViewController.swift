@@ -27,6 +27,7 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
     var review: [Int] = [0,0,0]
     var reviewString = String()
     var experiences = [ExperienceModel]()
+    var timeStamp: String?
     
 
     override func viewDidLoad() {
@@ -39,6 +40,9 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         experienceTextField.delegate = self
         
         self.automaticallyAdjustsScrollViewInsets = false
+        
+        timeStamp = convertingDateToString()
+        print(timeStamp!)
         
         downloadingExperiencesFromFirebase()
         
@@ -152,21 +156,37 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         
         if let experience = experienceTextField.text,let userId = USER_ID, let postKey = newFriend?.postKey {
             let post: Dictionary<String,AnyObject> = [
-                "experience": experience as AnyObject
+                "experience": experience as AnyObject,
+                "timeStamp": timeStamp as AnyObject
             ]
             let firebasePost = DataService.instance.REF_EXPERIENCES.child(userId).child(postKey).childByAutoId()
             firebasePost.setValue(post)
         }
     }
+//    
+//    func sendingFirstExperienceToFirebase() {
+//        
+//        if let experience = newFriend?.description,let userId = USER_ID, let postKey = newFriend?.postKey {
+//            let date = convertingDateToString()
+//            let post: Dictionary<String,AnyObject> = [
+//                "experience": experience as AnyObject,
+//                "timeStamp": date as AnyObject
+//            ]
+//            let firebasePost = DataService.instance.REF_EXPERIENCES.child(userId).child(postKey).childByAutoId()
+//            firebasePost.setValue(post)
+//        }
+//    }
     
-    func sendingFirstExperienceToFirebase() {
-        if let experience = newFriend?.description,let userId = USER_ID, let postKey = newFriend?.postKey {
-            let post: Dictionary<String,AnyObject> = [
-                "experience": experience as AnyObject
-            ]
-            let firebasePost = DataService.instance.REF_EXPERIENCES.child(userId).child(postKey).childByAutoId()
-            firebasePost.setValue(post)
-        }
+    func convertingDateToString() -> String {
+        
+        let dateOfActivity = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        let timeStamp = formatter.string(from: dateOfActivity)
+        print(timeStamp)
+        return timeStamp
+        
     }
     
     

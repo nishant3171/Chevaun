@@ -11,6 +11,7 @@ import UIKit
 class ExperienceCell: UITableViewCell {
     
     @IBOutlet weak var experienceLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +26,6 @@ class ExperienceCell: UITableViewCell {
 
     func configureCell(experience: ExperienceModel) {
         experienceLabel.text = experience.experience
+        dateLabel.text = experience.timeStamp
     }
 }

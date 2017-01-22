@@ -164,8 +164,10 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
             
             
             if let experience = descriptionTextView.text,let userId = USER_ID {
+                let date = convertingDateToTimeStamp()
                 let post: Dictionary<String,AnyObject> = [
-                    "experience": experience as AnyObject
+                    "experience": experience as AnyObject,
+                    "timeStamp": date as AnyObject
                 ]
                 let firebasePost = DataService.instance.REF_EXPERIENCES.child(userId).child(firebasePost.key).childByAutoId()
                 firebasePost.setValue(post)
@@ -173,6 +175,18 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
             
         }
         
+        
+    }
+    
+    func convertingDateToTimeStamp() -> String {
+        
+        let dateOfActivity = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        let timeStamp = formatter.string(from: dateOfActivity)
+        print(timeStamp)
+        return timeStamp
         
     }
     
