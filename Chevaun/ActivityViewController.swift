@@ -22,32 +22,47 @@ class ActivityViewController: UIViewController {
         super.viewDidLoad()
         
         automaticallyAdjustsScrollViewInsets = false
+        downloadingActivitiesFromFirebase()
         
-        if let newString = UserDefaults.standard.string(forKey: "UID") {
-            DataService.instance.REF_ACTIVITIES.child(newString).observe(.value, with: { (snapshot) in
-                print(DataService.instance.REF_USERS.child(newString))
-                var activity = [ActivityModel]()
-                if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                    for snap in snapshot {
-                        print(snap)
-                        if let postDict = snap.value as? Dictionary<String,AnyObject> {
-                            let key = snap.key
-                            let post = ActivityModel(postKey: key, postData: postDict)
-                            activity.append(post)
-                        }
-                    }
-                }
-                activity.sort{($0.date > $1.date)}
-                self.activities = activity
-                self.tableView.reloadData()
-                
-            })
-        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func downloadingActivitiesFromFirebase() {
+        
+        if let newString = UserDefaults.standard.string(forKey: "UID") {
+            DataService.instance.REF_ACTIVITIES.child(newString).observe(.value, with: { (snapshot) in
+                //                print(DataService.instance.REF_USERS.child(newString))
+                let download = DispatchQueue(label: "download", attributes: [])
+                
+                download.async {
+                    var activity = [ActivityModel]()
+                    if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                        for snap in snapshot {
+                            //                        print(snap)
+                            if let postDict = snap.value as? Dictionary<String,AnyObject> {
+                                let key = snap.key
+                                let post = ActivityModel(postKey: key, postData: postDict)
+                                activity.append(post)
+                            }
+                        }
+                    }
+                    activity.sort{($0.date > $1.date)}
+                    self.activities = activity
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+                
+                
+                
+            })
+        }
+        
     }
     
 }
@@ -67,9 +82,9 @@ extension ActivityViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath) as! ActivityCell
-        let activity = activities[indexPath.row]
-        print(activity)
-        print(activities[indexPath.row])
+//        let activity = activities[indexPath.row]
+//        print(activity)
+//        print(activities[indexPath.row])
         
         if let activityImage = activities[indexPath.row].image {
             print(activityImage)
@@ -91,7 +106,7 @@ extension ActivityViewController: UITableViewDelegate {
         
         let destination = self.storyboard?.instantiateViewController(withIdentifier: "AddNewActivity") as! AddNewActivityViewController
         destination.newActivity = activities[indexPath.row]
-        print(destination.newActivity!)
+//        print(destination.newActivity!)
         self.navigationController?.pushViewController(destination, animated: true)
         
     }

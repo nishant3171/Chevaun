@@ -21,27 +21,8 @@ class FriendViewController: UIViewController {
         super.viewDidLoad()
         
         automaticallyAdjustsScrollViewInsets = false
+        downloadingFriendsFromFirebase()
         
-        if let newString = UserDefaults.standard.string(forKey: "UID") {
-            DataService.instance.REF_FRIENDS.child(newString).observe(.value, with: { (snapshot) in
-                print(DataService.instance.REF_USERS.child(newString))
-                var friend = [FriendModel]()
-                if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                    for snap in snapshot {
-                        print(snap)
-                        if let postDict = snap.value as? Dictionary<String,AnyObject> {
-                            let key = snap.key
-                            let post = FriendModel(postKey: key, postData: postDict)
-                            friend.append(post)
-                        }
-                    }
-                }
-                friend.sort{($0.date > $1.date)}
-                self.friends = friend
-                self.friendTableView.reloadData()
-                
-            })
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,6 +34,39 @@ class FriendViewController: UIViewController {
         super.viewWillAppear(true)
         
         navigationController?.tabBarController?.tabBar.isHidden = false
+    }
+    
+    func downloadingFriendsFromFirebase() {
+        
+        let download = DispatchQueue(label: "download", attributes: [])
+        
+        download.async {
+            
+            if let newString = UserDefaults.standard.string(forKey: "UID") {
+                DataService.instance.REF_FRIENDS.child(newString).observe(.value, with: { (snapshot) in
+                    print(DataService.instance.REF_USERS.child(newString))
+                    var friend = [FriendModel]()
+                    if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                        for snap in snapshot {
+                            print(snap)
+                            if let postDict = snap.value as? Dictionary<String,AnyObject> {
+                                let key = snap.key
+                                let post = FriendModel(postKey: key, postData: postDict)
+                                friend.append(post)
+                            }
+                        }
+                    }
+                    friend.sort{($0.date > $1.date)}
+                    self.friends = friend
+                    
+                    DispatchQueue.main.async {
+                        self.friendTableView.reloadData()
+                    }
+                    
+                })
+            }
+        }
+        
     }
     
 }

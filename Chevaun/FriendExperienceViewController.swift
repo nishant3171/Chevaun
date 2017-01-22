@@ -40,31 +40,8 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         
         self.automaticallyAdjustsScrollViewInsets = false
         
+        downloadingExperiencesFromFirebase()
         
-        if let userId = USER_ID, let postKey = newFriend?.postKey {
-            DataService.instance.REF_EXPERIENCES.child(userId).child(postKey).observe(.value, with: { (snapshot) in
-                print(DataService.instance.REF_EXPERIENCES.child(userId).child(postKey))
-                var experience = [ExperienceModel]()
-                if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                    for snap in snapshot {
-                        print(snap)
-                        if let postDict = snap.value as? Dictionary<String,AnyObject> {
-                            let post = ExperienceModel(postData: postDict)
-                            experience.append(post)
-                        }
-                    }
-                }
-                self.experiences = experience
-                print(self.experiences[0].experience!)
-                
-                self.tableView.rowHeight = UITableViewAutomaticDimension
-                self.tableView.estimatedRowHeight = 80
-                self.tableView.reloadData()
-                
-                
-                
-            })
-        }
         navigationController?.tabBarController?.tabBar.isHidden = true
  
     }
@@ -82,6 +59,44 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func downloadingExperiencesFromFirebase() {
+        
+        let download = DispatchQueue(label: "download", attributes: [])
+        
+        download.async {
+            if let userId = USER_ID, let postKey = self.newFriend?.postKey {
+                DataService.instance.REF_EXPERIENCES.child(userId).child(postKey).observe(.value, with: { (snapshot) in
+                    print(DataService.instance.REF_EXPERIENCES.child(userId).child(postKey))
+                    var experience = [ExperienceModel]()
+                    if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                        for snap in snapshot {
+                            print(snap)
+                            if let postDict = snap.value as? Dictionary<String,AnyObject> {
+                                let post = ExperienceModel(postData: postDict)
+                                experience.append(post)
+                            }
+                        }
+                    }
+                    self.experiences = experience
+                    print(self.experiences[0].experience!)
+                    
+                    
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.rowHeight = UITableViewAutomaticDimension
+                        self.tableView.estimatedRowHeight = 80
+                        self.tableView.reloadData()
+                    }
+                    
+                    
+                    
+                    
+                })
+            }
+        }
+        
     }
     
     @IBAction func reivewButtonTapped(_ sender: UIButton) {
