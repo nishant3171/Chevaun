@@ -117,6 +117,9 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
     @IBAction func addExperienceButtonTapped(sender: UIButton) {
         
         sendingExperiencesToFirebase()
+        experienceTextField.text = ""
+        experienceTextField.resignFirstResponder()
+        
     }
     
     func settingUpActivityFromTableView() {
