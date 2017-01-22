@@ -49,6 +49,8 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         subscribeToNotifications()
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -60,6 +62,19 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func tableViewScrollToBottom(animated: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)) {
+            let numberOfSections = self.tableView.numberOfSections
+            let numberOfRows = self.tableView.numberOfRows(inSection: numberOfSections-1)
+            
+            if numberOfRows > 0 {
+                let indexPath = IndexPath(row: numberOfRows-1, section: (numberOfSections-1))
+                self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: animated)
+            }
+        }
+    }
+
     
     func downloadingExperiencesFromFirebase() {
         
@@ -88,6 +103,7 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
                         self.tableView.rowHeight = UITableViewAutomaticDimension
                         self.tableView.estimatedRowHeight = 80
                         self.tableView.reloadData()
+                        self.tableViewScrollToBottom(animated: true)
                     }
                     
                     
