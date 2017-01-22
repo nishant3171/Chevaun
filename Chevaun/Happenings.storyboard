@@ -612,41 +612,71 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xUh-JA-O1a">
                                                 <rect key="frame" x="8" y="8" width="359" height="250"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="56m-6x-4kJ">
+                                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultProfile" translatesAutoresizingMaskIntoConstraints="NO" id="56m-6x-4kJ">
                                                         <rect key="frame" x="119" y="65" width="120" height="120"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="120" id="Wfw-pl-y8s"/>
                                                             <constraint firstAttribute="height" constant="120" id="hhb-nq-gKz"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="xKp-Rd-CHe" appends="YES" id="jMa-Na-KMU"/>
+                                                        </connections>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lm4-js-RRb">
-                                                        <rect key="frame" x="76" y="16" width="206" height="30"/>
-                                                        <state key="normal" title="+ Add profile pic from Camera">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVf-hY-qgC">
+                                                        <rect key="frame" x="39" y="106" width="48" height="38"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="48" id="Eta-fv-Pxs"/>
+                                                            <constraint firstAttribute="height" constant="38" id="UYK-ff-0P0"/>
+                                                        </constraints>
+                                                        <state key="normal" image="ChevaunCamera"/>
                                                         <connections>
-                                                            <action selector="takingImageFromCamera:" destination="QNs-zd-b4D" eventType="touchUpInside" id="e8o-JL-mpJ"/>
+                                                            <action selector="takingImageFromCamera:" destination="QNs-zd-b4D" eventType="touchUpInside" id="ML1-hw-a3S"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkw-qP-ujo">
-                                                        <rect key="frame" x="79" y="204" width="201" height="30"/>
-                                                        <state key="normal" title="+ Add profile pic from Gallery">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8G-kO-YmE">
+                                                        <rect key="frame" x="271" y="101" width="40" height="49"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="40" id="64X-fo-XaB"/>
+                                                            <constraint firstAttribute="height" constant="49" id="xRF-ga-yUb"/>
+                                                        </constraints>
+                                                        <state key="normal" image="ChevaunGallery"/>
                                                         <connections>
-                                                            <action selector="pickingGalleryImage:" destination="QNs-zd-b4D" eventType="touchUpInside" id="4ub-PD-39G"/>
+                                                            <action selector="pickingGalleryImage:" destination="QNs-zd-b4D" eventType="touchUpInside" id="TpM-kH-7gJ"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icg-49-tsQ">
+                                                        <rect key="frame" x="265" y="158" width="53" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="53" id="GN7-3a-SDo"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81Q-VV-4wl">
+                                                        <rect key="frame" x="34" y="158" width="58" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="58" id="EnF-4Z-5rw"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.18431372549019609" green="0.20000000000000001" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="lm4-js-RRb" firstAttribute="centerX" secondItem="xUh-JA-O1a" secondAttribute="centerX" id="5q6-Ek-OMC"/>
-                                                    <constraint firstItem="lm4-js-RRb" firstAttribute="top" secondItem="xUh-JA-O1a" secondAttribute="top" constant="16" id="Ees-ax-W3k"/>
+                                                    <constraint firstItem="56m-6x-4kJ" firstAttribute="leading" secondItem="81Q-VV-4wl" secondAttribute="trailing" constant="27" id="5mD-qU-nI1"/>
+                                                    <constraint firstItem="f8G-kO-YmE" firstAttribute="centerY" secondItem="xUh-JA-O1a" secondAttribute="centerY" id="8kd-vB-LE6"/>
+                                                    <constraint firstItem="81Q-VV-4wl" firstAttribute="top" secondItem="UVf-hY-qgC" secondAttribute="bottom" constant="14" id="90v-CE-gJj"/>
+                                                    <constraint firstItem="icg-49-tsQ" firstAttribute="top" secondItem="f8G-kO-YmE" secondAttribute="bottom" constant="8" id="9ZL-F2-BNr"/>
                                                     <constraint firstItem="56m-6x-4kJ" firstAttribute="centerY" secondItem="xUh-JA-O1a" secondAttribute="centerY" id="H59-EJ-uQH"/>
-                                                    <constraint firstAttribute="bottom" secondItem="tkw-qP-ujo" secondAttribute="bottom" constant="16" id="Idg-vC-hE2"/>
+                                                    <constraint firstItem="56m-6x-4kJ" firstAttribute="leading" secondItem="UVf-hY-qgC" secondAttribute="trailing" constant="32" id="KqN-9o-oRT"/>
                                                     <constraint firstAttribute="height" constant="250" id="Q9I-vo-Ye7"/>
-                                                    <constraint firstItem="tkw-qP-ujo" firstAttribute="centerX" secondItem="xUh-JA-O1a" secondAttribute="centerX" id="aGv-dg-EWx"/>
                                                     <constraint firstItem="56m-6x-4kJ" firstAttribute="centerX" secondItem="xUh-JA-O1a" secondAttribute="centerX" id="dbV-lH-52j"/>
+                                                    <constraint firstItem="icg-49-tsQ" firstAttribute="leading" secondItem="56m-6x-4kJ" secondAttribute="trailing" constant="26" id="eAf-sM-Zs8"/>
+                                                    <constraint firstItem="UVf-hY-qgC" firstAttribute="centerY" secondItem="xUh-JA-O1a" secondAttribute="centerY" id="go2-DJ-ZT9"/>
+                                                    <constraint firstItem="f8G-kO-YmE" firstAttribute="leading" secondItem="56m-6x-4kJ" secondAttribute="trailing" constant="32" id="mCf-zf-YdI"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -727,15 +757,22 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="cameraButton" destination="lm4-js-RRb" id="4Ye-6q-18u"/>
+                        <outlet property="camerLabel" destination="81Q-VV-4wl" id="8mb-UY-ozd"/>
+                        <outlet property="cameraButton" destination="UVf-hY-qgC" id="44B-r1-asw"/>
                         <outlet property="descriptionTextView" destination="6IH-Ll-u28" id="hu5-Ce-viF"/>
                         <outlet property="friendNameTextField" destination="drj-0W-QkP" id="jkb-Qx-fzQ"/>
                         <outlet property="friendProfileImage" destination="56m-6x-4kJ" id="GYY-fE-ECE"/>
-                        <outlet property="galleryButton" destination="tkw-qP-ujo" id="5U7-ek-vhr"/>
+                        <outlet property="galleryButton" destination="f8G-kO-YmE" id="DBO-7G-I5B"/>
+                        <outlet property="galleryLabel" destination="icg-49-tsQ" id="UyD-1b-NaW"/>
                         <outlet property="reviewButton" destination="AzQ-J9-0aV" id="eYi-Y2-NDk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZm-Tf-eme" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xKp-Rd-CHe">
+                    <connections>
+                        <action selector="profilePicTapped:" destination="QNs-zd-b4D" id="4XB-uu-9bE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3513" y="84"/>
         </scene>
@@ -928,8 +965,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ChevaunCamera" width="48" height="38"/>
+        <image name="ChevaunGallery" width="40" height="49"/>
         <image name="CloseButton" width="44" height="44"/>
         <image name="Combined Shape" width="25" height="25"/>
+        <image name="DefaultProfile" width="120" height="120"/>
         <image name="Face" width="99" height="75"/>
         <image name="Left Arrow" width="35" height="11"/>
         <image name="Right Arrow" width="35" height="11"/>

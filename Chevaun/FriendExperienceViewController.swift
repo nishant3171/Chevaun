@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 
+
 class FriendExperienceViewController: UIViewController, UITextFieldDelegate, ReviewMeetingViewControllerDelegate {
     
     //MARK: IBOutlets
@@ -47,6 +48,33 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         downloadingExperiencesFromFirebase()
         
         navigationController?.tabBarController?.tabBar.isHidden = true
+        
+        let button: UIButton = UIButton(type: UIButtonType.custom)
+        //set image for button
+        if newFriend?.image != nil {
+            button.setImage(newFriend?.image, for: UIControlState.normal)
+        } else {
+            if let imageURL = newFriend?.imageURL {
+                let url = URL(string: imageURL)
+                let imageView = UIImageView()
+                imageView.sd_setImage(with: url)
+                button.setImage(imageView.image, for: UIControlState.normal)
+            }
+        }
+        
+        //add function for button
+//         button.addTarget(self, action: "fbButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        //set frame
+        button.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
+        button.layer.masksToBounds = false
+        button.layer.cornerRadius = button.frame.size.width / 2
+        button.clipsToBounds = true
+        
+        
+        let barButton = UIBarButtonItem(customView: button)
+        //assign button to navigationbar
+        self.navigationItem.rightBarButtonItem = barButton
+        
  
     }
     

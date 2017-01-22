@@ -17,6 +17,8 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
     @IBOutlet weak var galleryButton: UIButton!
     @IBOutlet weak var friendProfileImage: UIImageView!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var camerLabel: UILabel!
+    @IBOutlet weak var galleryLabel: UILabel!
     
     
     //MARK: Constants
@@ -33,6 +35,11 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
         super.viewDidLoad()
         
         imagePicker = UIImagePickerController()
+        
+        cameraButton.isHidden = true
+        camerLabel.isHidden = true
+        galleryButton.isHidden = true
+        galleryLabel.isHidden = true
         
         imagePicker.delegate = self
         friendNameTextField.delegate = self
@@ -52,6 +59,7 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
         super.viewWillAppear(animated)
         
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)
+        
         friendProfileImage.clipsToBounds = true
         friendProfileImage.layer.cornerRadius = 60
         subscribeToNotifications()
@@ -69,6 +77,15 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
         super.viewWillDisappear(animated)
         
         unsubscribeFromNotification()
+    }
+    
+    @IBAction func profilePicTapped(_ sender: Any) {
+        
+        cameraButton.isHidden = false
+        galleryButton.isHidden = false
+        camerLabel.isHidden = false
+        galleryLabel.isHidden = false
+        
     }
     
     @IBAction func reivewButtonTapped(_ sender: UIButton) {
@@ -94,6 +111,8 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
         
         self.galleryButton.isHidden = true
         self.cameraButton.isHidden = true
+        self.galleryLabel.isHidden = true
+        self.camerLabel.isHidden = true
     }
     
     @IBAction func takingImageFromCamera(_ sender: UIButton) {
