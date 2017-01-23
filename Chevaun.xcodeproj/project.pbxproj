@@ -23,6 +23,7 @@
 		F43130F01E0E9A1000824B86 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43130EF1E0E9A1000824B86 /* ActivityModel.swift */; };
 		F43130F21E0EAB9500824B86 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43130F11E0EAB9500824B86 /* ActivityCell.swift */; };
 		F440AD581E0AF18A0016D771 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440AD571E0AF18A0016D771 /* ProfileViewController.swift */; };
+		F4451B911E36150300365F45 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4451B901E36150300365F45 /* Reachability.swift */; };
 		F455B12D1E1AF56300C42689 /* ActivityReviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F455B12C1E1AF56300C42689 /* ActivityReviewDelegate.swift */; };
 		F46BEC201E0F0B68003F68F3 /* AddNewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46BEC1F1E0F0B68003F68F3 /* AddNewActivityViewController.swift */; };
 		F470308B1E0AD1270050257A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470308A1E0AD1270050257A /* AppDelegate.swift */; };
@@ -61,6 +62,7 @@
 		F43130EF1E0E9A1000824B86 /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		F43130F11E0EAB9500824B86 /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		F440AD571E0AF18A0016D771 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F4451B901E36150300365F45 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		F455B12C1E1AF56300C42689 /* ActivityReviewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityReviewDelegate.swift; sourceTree = "<group>"; };
 		F46BEC1F1E0F0B68003F68F3 /* AddNewActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewActivityViewController.swift; sourceTree = "<group>"; };
 		F47030871E0AD1270050257A /* Chevaun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chevaun.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				F49A38D21E0DDBD1004BCBC8 /* DataService.swift */,
+				F4451B901E36150300365F45 /* Reachability.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				F481A2061E1993EA006733BB /* Extras.swift in Sources */,
 				F4107C071E10727200EAFBC4 /* ActivitiesArray.swift in Sources */,
 				F470308D1E0AD1270050257A /* ActivityViewController.swift in Sources */,
+				F4451B911E36150300365F45 /* Reachability.swift in Sources */,
 				F41501501E31CB7000D4BBD4 /* MeetingReviewDelegate.swift in Sources */,
 				F40555611E30EFB000784982 /* FriendModel.swift in Sources */,
 				F418815F1E1ECE3E0089C3FD /* HappeningsViewController.swift in Sources */,

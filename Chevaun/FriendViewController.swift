@@ -21,6 +21,7 @@ class FriendViewController: UIViewController {
         super.viewDidLoad()
         
         automaticallyAdjustsScrollViewInsets = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         downloadingFriendsFromFirebase()
         
     }
@@ -39,7 +40,6 @@ class FriendViewController: UIViewController {
     func downloadingFriendsFromFirebase() {
         
         let download = DispatchQueue(label: "download", attributes: [])
-        
         download.async {
             
             if let newString = UserDefaults.standard.string(forKey: "UID") {
@@ -61,6 +61,7 @@ class FriendViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         self.friendTableView.reloadData()
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     }
                     
                 })

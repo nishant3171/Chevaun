@@ -12,7 +12,7 @@ import Firebase
 
 class ActivityViewController: UIViewController {
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     var activities = [ActivityModel]()
     
@@ -22,6 +22,8 @@ class ActivityViewController: UIViewController {
         super.viewDidLoad()
         
         automaticallyAdjustsScrollViewInsets = false
+        detectingNetworkConnections()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         downloadingActivitiesFromFirebase()
         
         
@@ -34,16 +36,16 @@ class ActivityViewController: UIViewController {
     
     func downloadingActivitiesFromFirebase() {
         
+        detectingFirebaseConnections()
+        
         if let newString = UserDefaults.standard.string(forKey: "UID") {
             DataService.instance.REF_ACTIVITIES.child(newString).observe(.value, with: { (snapshot) in
-                //                print(DataService.instance.REF_USERS.child(newString))
                 let download = DispatchQueue(label: "download", attributes: [])
                 
                 download.async {
                     var activity = [ActivityModel]()
                     if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                         for snap in snapshot {
-                            //                        print(snap)
                             if let postDict = snap.value as? Dictionary<String,AnyObject> {
                                 let key = snap.key
                                 let post = ActivityModel(postKey: key, postData: postDict)
@@ -55,14 +57,47 @@ class ActivityViewController: UIViewController {
                     self.activities = activity
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     }
                 }
-                
-                
                 
             })
         }
         
+    }
+    
+    func detectingFirebaseConnections() {
+        let connectedRef = FIRDatabase.database().reference(withPath: ".info/connected")
+        connectedRef.observe(.value, with: { snapshot in
+            if let connected = snapshot.value as? Bool {
+                if connected {
+                    print("Connected")
+                }
+            } else {
+                print("Not connected")
+                self.alertController(title: "Not Connected To Internet", subtitle: "Please check your internet connection.")
+            }
+        })
+    }
+    
+    func detectingNetworkConnections() {
+        if Reachability.isInternetAvailable() == true {
+            print("Internet connection OK")
+        } else {
+            print("Internet connection FAILED")
+            self.alertController(title: "Not Connected To Our Servers", subtitle: "Please check your internet connection.")
+        }
+    }
+    
+    
+    func alertController(title: String ,subtitle: String) {
+        let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
+        let tryAgainAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+//        alert.addAction(cancelAction)
+        alert.addAction(tryAgainAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
@@ -85,10 +120,6 @@ extension ActivityViewController: UITableViewDataSource {
 //        let activity = activities[indexPath.row]
 //        print(activity)
 //        print(activities[indexPath.row])
-        
-        if let activityImage = activities[indexPath.row].image {
-            print(activityImage)
-        }
         
         cell.configureCell(activity: activities[indexPath.row])
 

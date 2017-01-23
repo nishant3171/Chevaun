@@ -40,18 +40,13 @@ class ActivityCell: UITableViewCell {
         
         if activity.image != nil {
             self.activityImage.image = activity.image
-        } else {
             
+        } else {
+            self.activityImage.image = UIImage(named: "Placeholder.png")
             let imageView: UIImageView = self.activityImage
             let imageURL = URL(string: activity.imageURL)
-            imageView.sd_setImage(with: imageURL)
-            
+            imageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "Placeholder.png"))
         }
-        
-        print(activity.review)
-        print(activity.funPercentage)
-        print(activity.growthPercentage)
-        print(activity.satisfactionPercentage)
         
     }
     
