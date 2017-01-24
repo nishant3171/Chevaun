@@ -127,6 +127,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
                     }
                 }
             }
+            
         } else {
             newActivity?.image = mainActivityImage.image
             newActivity?.description = descriptionTextView.text
