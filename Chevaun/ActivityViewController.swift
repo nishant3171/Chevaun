@@ -15,6 +15,7 @@ class ActivityViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var activities = [ActivityModel]()
+    var percentageComplete = 0.0
     
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
 
@@ -26,6 +27,7 @@ class ActivityViewController: UIViewController {
         detectingFirebaseConnections()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         downloadingActivitiesFromFirebase()
+        print(percentageComplete)
 
         
         

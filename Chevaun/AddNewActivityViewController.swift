@@ -136,26 +136,27 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
                 let metadata = FIRStorageMetadata()
                 metadata.contentType = "jpeg"
                 
-                let uploadTask = DataService.instance.REF_ACTIVITYIMAGES.child(newString).child(imageUID).put(imageData, metadata: metadata)
-                var percentageComplete = 0.0
+//                let uploadTask = DataService.instance.REF_ACTIVITYIMAGES.child(newString).child(imageUID).put(imageData, metadata: metadata)
+//                var percentageComplete = 0.0
                 
                 DataService.instance.REF_ACTIVITYIMAGES.child(newString).child(imageUID).put(imageData, metadata: metadata) { (metadata, error) in
                     
                     
                     
-                    uploadTask.observe(.progress) { snapshot in
-                        // Upload reported progress
-                        percentageComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
-                            / Double(snapshot.progress!.totalUnitCount)
-                        
-                    }
+//                    uploadTask.observe(.progress) { snapshot in
+//                        // Upload reported progress
+//                        percentageComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
+//                            / Double(snapshot.progress!.totalUnitCount)
+//                        
+//                    }
                     if error != nil {
                         print("Unable to upload images.")
                     } else {
                         print("Successfully uploaded image to Firebase.")
                     if let downloadURL = metadata?.downloadURL()?.absoluteString {
-                    self.uploadingActivitiesToFirebase(imageURL: downloadURL)
-                        print(percentageComplete)
+                        self.uploadingActivitiesToFirebase(imageURL: downloadURL)
+//                        print(percentageComplete)
+//                        self.presetingActivityViewController(percentage: percentageComplete)
                     }
                     }
                 }
@@ -174,6 +175,17 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
 
         self.dismiss(animated: true, completion: nil)
     }
+    
+//    func presetingActivityViewController(percentage: Double) {
+//        let storyboard = UIStoryboard(name: "Activity", bundle: nil)
+//        let controller = storyboard.instantiateViewController(withIdentifier: "ActivityViewController") as! ActivityViewController
+//        
+//        controller.percentageComplete = percentage
+//        
+//        self.present(controller, animated: true, completion: nil)
+//        
+//        
+//    }
     
     func sendValue(fun: Float, growth: Float, satisfaction: Float, finalReview: String) {
         review[0] = Int(fun)
