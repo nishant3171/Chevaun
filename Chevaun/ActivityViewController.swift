@@ -23,8 +23,10 @@ class ActivityViewController: UIViewController {
         
         automaticallyAdjustsScrollViewInsets = false
         detectingNetworkConnections()
+        detectingFirebaseConnections()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         downloadingActivitiesFromFirebase()
+
         
         
     }
@@ -35,8 +37,6 @@ class ActivityViewController: UIViewController {
     }
     
     func downloadingActivitiesFromFirebase() {
-        
-        detectingFirebaseConnections()
         
         if let newString = UserDefaults.standard.string(forKey: "UID") {
             DataService.instance.REF_ACTIVITIES.child(newString).observe(.value, with: { (snapshot) in
@@ -141,6 +141,7 @@ extension ActivityViewController: UITableViewDelegate {
         self.navigationController?.pushViewController(destination, animated: true)
         
     }
+    
     
 }
 

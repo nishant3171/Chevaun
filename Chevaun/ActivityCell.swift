@@ -45,7 +45,7 @@ class ActivityCell: UITableViewCell {
             self.activityImage.image = UIImage(named: "Placeholder.png")
             let imageView: UIImageView = self.activityImage
             let imageURL = URL(string: activity.imageURL)
-            imageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "Placeholder.png"))
+            imageView.sd_setImage(with: imageURL)
         }
         
     }
