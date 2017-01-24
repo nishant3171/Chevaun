@@ -104,11 +104,10 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         present(imagePicker, animated: true, completion: nil)
     }
     
-    func resizeImage(image: UIImage, newWidth: CGFloat, newHeight: CGFloat) -> UIImage? {
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
         
-//        let scale = newWidth / image.size.width
-//        let newHeight = image.size.height * scale
-        let newHeight = newHeight
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
         UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
         image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
         
@@ -126,7 +125,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         
         if newActivity == nil, let changeImage = mainActivityImage.image {
             
-            let mainImage = resizeImage(image: changeImage, newWidth: 960, newHeight: 600)
+            let mainImage = resizeImage(image: changeImage, newWidth: 800)
             print(mainImage?.size.width as Any)
             print(mainImage?.size.height as Any)
             
@@ -137,13 +136,26 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
                 let metadata = FIRStorageMetadata()
                 metadata.contentType = "jpeg"
                 
+                let uploadTask = DataService.instance.REF_ACTIVITYIMAGES.child(newString).child(imageUID).put(imageData, metadata: metadata)
+                var percentageComplete = 0.0
+                
                 DataService.instance.REF_ACTIVITYIMAGES.child(newString).child(imageUID).put(imageData, metadata: metadata) { (metadata, error) in
+                    
+                    
+                    
+                    uploadTask.observe(.progress) { snapshot in
+                        // Upload reported progress
+                        percentageComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
+                            / Double(snapshot.progress!.totalUnitCount)
+                        
+                    }
                     if error != nil {
                         print("Unable to upload images.")
                     } else {
                         print("Successfully uploaded image to Firebase.")
                     if let downloadURL = metadata?.downloadURL()?.absoluteString {
                     self.uploadingActivitiesToFirebase(imageURL: downloadURL)
+                        print(percentageComplete)
                     }
                     }
                 }
