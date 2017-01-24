@@ -126,12 +126,12 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         
         if newActivity == nil, let changeImage = mainActivityImage.image {
             
-            let mainImage = resizeImage(image: changeImage, newWidth: 400, newHeight: 250)
+            let mainImage = resizeImage(image: changeImage, newWidth: 960, newHeight: 600)
             print(mainImage?.size.width as Any)
             print(mainImage?.size.height as Any)
             
             //Change ! in line below for image
-            if let imageData = UIImageJPEGRepresentation(mainImage!, 0.8),let newString = defaults.string(forKey: "UID")  {
+            if let imageData = UIImageJPEGRepresentation(mainImage!, 0.3),let newString = defaults.string(forKey: "UID")  {
                 
                 let imageUID = NSUUID().uuidString
                 let metadata = FIRStorageMetadata()
