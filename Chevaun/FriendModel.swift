@@ -44,11 +44,11 @@ init(postKey: String,postData: Dictionary<String,AnyObject>) {
     
     if let imageURL = postData["imageURL"] {
         self.imageURL = imageURL as! String
-        if let image = ActivityViewController.imageCache.object(forKey: imageURL as! NSString) {
-            self.image = image
-        } else {
-            self.image = nil
-        }
+//        if let image = ActivityViewController.imageCache.object(forKey: imageURL as! NSString) {
+//            self.image = image
+//        } else {
+//            self.image = nil
+//        }
     }
     
     if let date = postData["date"] {
