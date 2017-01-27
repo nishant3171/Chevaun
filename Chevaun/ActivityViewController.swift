@@ -93,8 +93,6 @@ class ActivityViewController: UIViewController {
     func alertController(title: String ,subtitle: String) {
         let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
         let tryAgainAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-//        alert.addAction(cancelAction)
         alert.addAction(tryAgainAction)
         
         self.present(alert, animated: true, completion: nil)
