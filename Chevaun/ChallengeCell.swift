@@ -25,5 +25,28 @@ class ChallengeCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func draw(_ rect: CGRect) {
+        mainFocusImage.clipsToBounds = true
+        funTaskImage.clipsToBounds = true
+    }
 
+    func configureCell(growthActivity: ActivityModel, funActivity: ActivityModel) {
+        
+        mainFocusName.text = growthActivity.name
+        funTaskName.text = funActivity.name
+        
+        if growthActivity.image != nil, funActivity.image != nil {
+            self.mainFocusImage.image = growthActivity.image
+            self.funTaskImage.image = funActivity.image
+        } else {
+            let imageView: UIImageView = self.mainFocusImage
+            let imageURL = URL(string: growthActivity.imageURL)
+            imageView.sd_setImage(with: imageURL)
+            
+            let funImageView: UIImageView = self.funTaskImage
+            let funImageURL = URL(string: funActivity.imageURL)
+            funImageView.sd_setImage(with: funImageURL)
+        }
+    }
 }

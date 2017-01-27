@@ -37,7 +37,6 @@
 		F4A5DE491E324347000D7711 /* FriendExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A5DE481E324347000D7711 /* FriendExperienceViewController.swift */; };
 		F4A5DE4B1E3247C6000D7711 /* ExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A5DE4A1E3247C6000D7711 /* ExperienceCell.swift */; };
 		F4AC5A511E3A29DF00EC65D4 /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AC5A501E3A29DF00EC65D4 /* ChallengeCell.swift */; };
-		F4AC5A531E3A2A6300EC65D4 /* ChallengeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4AC5A521E3A2A6300EC65D4 /* ChallengeCell.xib */; };
 		F4E033121E3396C20033E351 /* ExperienceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E033111E3396C20033E351 /* ExperienceModel.swift */; };
 		F4F255EB1E1406B1002F48B5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F255EA1E1406B1002F48B5 /* UserProfile.swift */; };
 		F4F2710D1E1F01E80061D7F3 /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F2710C1E1F01E80061D7F3 /* Challenge.storyboard */; };
@@ -80,7 +79,6 @@
 		F4A5DE481E324347000D7711 /* FriendExperienceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendExperienceViewController.swift; sourceTree = "<group>"; };
 		F4A5DE4A1E3247C6000D7711 /* ExperienceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceCell.swift; sourceTree = "<group>"; };
 		F4AC5A501E3A29DF00EC65D4 /* ChallengeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
-		F4AC5A521E3A2A6300EC65D4 /* ChallengeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChallengeCell.xib; sourceTree = "<group>"; };
 		F4E033111E3396C20033E351 /* ExperienceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceModel.swift; sourceTree = "<group>"; };
 		F4F255EA1E1406B1002F48B5 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		F4F2710C1E1F01E80061D7F3 /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 				F418815C1E1ECB100089C3FD /* Profile.storyboard */,
 				F41881591E1ECAB50089C3FD /* Activity.storyboard */,
 				F47030931E0AD1270050257A /* LaunchScreen.storyboard */,
-				F4AC5A521E3A2A6300EC65D4 /* ChallengeCell.xib */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -294,7 +291,6 @@
 				F47030921E0AD1270050257A /* Assets.xcassets in Resources */,
 				F41501591E31D56F00D4BBD4 /* Friends.storyboard in Resources */,
 				F418815B1E1ECAB50089C3FD /* Activity.storyboard in Resources */,
-				F4AC5A531E3A2A6300EC65D4 /* ChallengeCell.xib in Resources */,
 				F470309D1E0AD1B40050257A /* GoogleService-Info.plist in Resources */,
 				F41881641E1ECF6B0089C3FD /* Happenings.storyboard in Resources */,
 				F4F2710D1E1F01E80061D7F3 /* Challenge.storyboard in Resources */,
