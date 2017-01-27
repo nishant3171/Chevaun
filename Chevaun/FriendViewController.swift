@@ -21,6 +21,8 @@ class FriendViewController: UIViewController {
         super.viewDidLoad()
         
         automaticallyAdjustsScrollViewInsets = false
+        detectingNetworkConnections()
+        detectingFirebaseConnections()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         downloadingFriendsFromFirebase()
         
@@ -68,6 +70,38 @@ class FriendViewController: UIViewController {
             }
         }
         
+    }
+    
+    func detectingFirebaseConnections() {
+        let connectedRef = FIRDatabase.database().reference(withPath: ".info/connected")
+        connectedRef.observe(.value, with: { snapshot in
+            if let connected = snapshot.value as? Bool {
+                if connected {
+                    print("Connected")
+                }
+            } else {
+                print("Not connected")
+                self.alertController(title: "Not Connected To Internet", subtitle: "Please check your internet connection.")
+            }
+        })
+    }
+    
+    func detectingNetworkConnections() {
+        if Reachability.isInternetAvailable() == true {
+            print("Internet connection OK")
+        } else {
+            print("Internet connection FAILED")
+            self.alertController(title: "Not Connected To Our Servers", subtitle: "Please check your internet connection.")
+        }
+    }
+    
+    
+    func alertController(title: String ,subtitle: String) {
+        let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
+        let tryAgainAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+        alert.addAction(tryAgainAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
