@@ -22,6 +22,13 @@ class ChallengeViewController: UIViewController {
     var arrayForMainFocus = [ActivityModel]()
     var arrayForFunTask = [ActivityModel]()
     
+    var friends = [FriendModel]()
+    
+    struct tableViewCellIdentifiers {
+        static let challengeFriendsCell = "ChallengeFriends"
+        
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +36,15 @@ class ChallengeViewController: UIViewController {
 //        mainFocusImage.clipsToBounds = true
 //        funTaskImage.clipsToBounds = true
         automaticallyAdjustsScrollViewInsets = false
+        
+        let cellNib = UINib(nibName: tableViewCellIdentifiers.challengeFriendsCell, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: tableViewCellIdentifiers.challengeFriendsCell)
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 80
+        
         downloadingActivitiesFromFirebase()
+        downloadingFriendsFromFirebase()
         
     }
     
@@ -70,6 +85,39 @@ class ChallengeViewController: UIViewController {
                 }
             })
                 
+        }
+        
+    }
+    
+    func downloadingFriendsFromFirebase() {
+        
+        let download = DispatchQueue(label: "download", attributes: [])
+        download.async {
+            
+            if let newString = UserDefaults.standard.string(forKey: "UID") {
+                DataService.instance.REF_FRIENDS.child(newString).observe(.value, with: { (snapshot) in
+                    print(DataService.instance.REF_USERS.child(newString))
+                    var friend = [FriendModel]()
+                    if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                        for snap in snapshot {
+                            print(snap)
+                            if let postDict = snap.value as? Dictionary<String,AnyObject> {
+                                let key = snap.key
+                                let post = FriendModel(postKey: key, postData: postDict)
+                                friend.append(post)
+                            }
+                        }
+                    }
+                    friend.sort{($0.date > $1.date)}
+                    self.friends = friend
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    }
+                    
+                })
+            }
         }
         
     }
@@ -149,17 +197,26 @@ extension ChallengeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if arrayForMainFocus.count == 0 {
-            return arrayForMainFocus.count
-        } else {
+        if arrayForMainFocus.count == 0 && arrayForFunTask.count == 0 {
+            return 0
+        } else if friends.count == 0 {
             return 1
+        } else {
+            return 2
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.row == 0 {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainChallengeCell", for: indexPath) as! ChallengeCell
         cell.configureCell(growthActivity: arrayForMainFocus[indexPath.row], funActivity: arrayForFunTask[indexPath.row])
         return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellIdentifiers.challengeFriendsCell, for: indexPath) as! ChallengeFriendsCell
+            cell.configureCell(friend: friends[indexPath.row])
+            return cell
+        }
     }
     
     
