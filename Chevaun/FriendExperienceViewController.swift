@@ -106,7 +106,7 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
             }
         }
     }
-
+    
     
     func downloadingExperiencesFromFirebase() {
         

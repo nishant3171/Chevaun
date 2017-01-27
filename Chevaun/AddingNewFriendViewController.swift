@@ -120,13 +120,30 @@ class AddingNewFriendViewController: UIViewController, UIImagePickerControllerDe
         present(imagePicker, animated: true, completion: nil)
     }
     
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+        
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
     @IBAction func savingActivity(_ sender: UIButton) {
         
         convertingDateToString()
         
-        if newFriend == nil, let mainImage = friendProfileImage.image {
+        if newFriend == nil, let changeImage = friendProfileImage.image {
             
-            if let imageData = UIImageJPEGRepresentation(mainImage, 0.2),let newString = defaults.string(forKey: "UID")  {
+            let mainImage = resizeImage(image: changeImage, newWidth: 400)
+            print(mainImage?.size.width as Any)
+            print(mainImage?.size.height as Any)
+            
+            if let imageData = UIImageJPEGRepresentation(mainImage!, 0.3),let newString = defaults.string(forKey: "UID")  {
                 
                 let imageUID = NSUUID().uuidString
                 let metadata = FIRStorageMetadata()

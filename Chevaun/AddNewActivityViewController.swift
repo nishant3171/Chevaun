@@ -121,8 +121,6 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         
         convertingDateToString()
         
-        
-        
         if newActivity == nil, let changeImage = mainActivityImage.image {
             
             let mainImage = resizeImage(image: changeImage, newWidth: 800)
