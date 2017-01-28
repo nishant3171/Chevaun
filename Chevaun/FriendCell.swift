@@ -27,8 +27,9 @@ class FriendCell: UITableViewCell {
     }
     
     override func draw(_ rect: CGRect) {
-        friendImage.clipsToBounds = true
+        
         friendImage.layer.cornerRadius = friendImage.frame.size.width / 2
+        friendImage.clipsToBounds = true
     }
     
     func configureCell(friend: FriendModel) {

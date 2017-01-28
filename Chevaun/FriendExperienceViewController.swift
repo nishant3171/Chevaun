@@ -19,6 +19,8 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
 
     @IBOutlet weak var tableView: UITableView!
     
+    let imageView = UIImageView()
+    
     //MARK: Variables
     var newFriend: FriendModel? {
         didSet {
@@ -48,16 +50,22 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         downloadingExperiencesFromFirebase()
         
         navigationController?.tabBarController?.tabBar.isHidden = true
+        imageView.contentMode = .scaleAspectFill
         
         let button: UIButton = UIButton(type: UIButtonType.custom)
         //set image for button
         if newFriend?.image != nil {
-            button.setImage(newFriend?.image, for: UIControlState.normal)
+            
+            
+            imageView.image = newFriend?.image
+            
+            button.setImage(imageView.image, for: UIControlState.normal)
         } else {
             if let imageURL = newFriend?.imageURL {
                 let url = URL(string: imageURL)
-                let imageView = UIImageView()
+                
                 imageView.sd_setImage(with: url)
+                
                 button.setImage(imageView.image, for: UIControlState.normal)
             }
         }

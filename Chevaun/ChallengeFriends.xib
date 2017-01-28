@@ -51,7 +51,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eei-tW-dyk">
                                         <rect key="frame" x="0.0" y="32" width="343" height="86"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gji-7p-Q5Y">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gji-7p-Q5Y">
                                                 <rect key="frame" x="8" y="8" width="70" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="SmO-Q6-Eh4"/>
@@ -77,7 +77,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQv-av-qgm">
                                         <rect key="frame" x="0.0" y="134" width="343" height="86"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1hj-9I-rca">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1hj-9I-rca">
                                                 <rect key="frame" x="8" y="8" width="70" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="BOS-nH-cfg"/>
