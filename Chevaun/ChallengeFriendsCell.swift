@@ -10,8 +10,10 @@ import UIKit
 
 class ChallengeFriendsCell: UITableViewCell {
     
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var friendName: UILabel!
+    @IBOutlet weak var intellectProfileImage: UIImageView!
+    @IBOutlet weak var intellectFriendName: UILabel!
+    @IBOutlet weak var funProfileImage: UIImageView!
+    @IBOutlet weak var funFriendName: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,18 +27,30 @@ class ChallengeFriendsCell: UITableViewCell {
     }
     
     override func draw(_ rect: CGRect) {
-        profileImageView.clipsToBounds = true
-        profileImageView.layer.cornerRadius = profileImageView.bounds.size.width / 2
+        intellectProfileImage.clipsToBounds = true
+        intellectProfileImage.layer.cornerRadius = intellectProfileImage.bounds.size.width / 2
+        
+        funProfileImage.clipsToBounds = true
+        funProfileImage.layer.cornerRadius = funProfileImage.bounds.size.width / 2
     }
     
-    func configureCell(friend: FriendModel) {
-        friendName.text = friend.name
+    func configureCell(intellectFriend: FriendModel, funFriend: FriendModel) {
+        intellectFriendName.text = intellectFriend.name
+        funFriendName.text = funFriend.name
         
-        if friend.image != nil {
-            profileImageView.image = friend.image
+        if intellectFriend.image != nil {
+            intellectProfileImage.image = intellectFriend.image
         } else {
-            let imageView: UIImageView = profileImageView
-            let imageURL = URL(string: friend.imageURL)
+            let imageView: UIImageView = intellectProfileImage
+            let imageURL = URL(string: intellectFriend.imageURL)
+            imageView.sd_setImage(with: imageURL)
+        }
+        
+        if funFriend.image != nil {
+            funProfileImage.image = funFriend.image
+        } else {
+            let imageView: UIImageView = funProfileImage
+            let imageURL = URL(string: funFriend.imageURL)
             imageView.sd_setImage(with: imageURL)
         }
     }

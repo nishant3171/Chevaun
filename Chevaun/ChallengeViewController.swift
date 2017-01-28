@@ -41,7 +41,7 @@ class ChallengeViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: tableViewCellIdentifiers.challengeFriendsCell)
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 80
+        self.tableView.estimatedRowHeight = 360
         
         downloadingActivitiesFromFirebase()
         downloadingFriendsFromFirebase()
@@ -199,7 +199,7 @@ extension ChallengeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if arrayForMainFocus.count == 0 && arrayForFunTask.count == 0 {
             return 0
-        } else if friends.count == 0 {
+        } else if friends.count < 2 {
             return 1
         } else {
             return 2
@@ -214,8 +214,12 @@ extension ChallengeViewController: UITableViewDataSource {
         return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellIdentifiers.challengeFriendsCell, for: indexPath) as! ChallengeFriendsCell
-            cell.configureCell(friend: friends[indexPath.row])
+            if indexPath.row - 1 >= 0 {
+            cell.configureCell(intellectFriend: friends[indexPath.row], funFriend: friends[indexPath.row - 1] )
             return cell
+            } else {
+                return UITableViewCell()
+            }
         }
     }
     
