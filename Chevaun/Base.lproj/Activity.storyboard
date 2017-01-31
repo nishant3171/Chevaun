@@ -115,7 +115,7 @@
         <scene sceneID="yZ1-tv-K3X">
             <objects>
                 <navigationController storyboardIdentifier="ActivityNavigation" automaticallyAdjustsScrollViewInsets="NO" id="7HY-Od-DOQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activities" image="Activity" id="MaK-jn-pbC"/>
+                    <tabBarItem key="tabBarItem" title="Activities" image="Activity-1" selectedImage="ActivityHighlighted" id="MaK-jn-pbC"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -514,7 +514,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Activity" width="25" height="25"/>
+        <image name="Activity-1" width="25" height="25"/>
+        <image name="ActivityHighlighted" width="25" height="25"/>
         <image name="CloseButton" width="44" height="44"/>
         <image name="Left Arrow" width="35" height="11"/>
         <image name="Placeholder" width="100" height="70"/>

@@ -13,6 +13,7 @@ class HappeningsViewController: UIViewController {
     @IBOutlet weak var newActivityButton: UIButton!
     @IBOutlet weak var newFriend: UIButton!
     @IBOutlet weak var shadowView: UIView!
+    @IBOutlet weak var activityShadowView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +32,23 @@ class HappeningsViewController: UIViewController {
         newActivityButton.layer.cornerRadius = 3.0
         newFriend.layer.cornerRadius = 3.0
         
-//        shadowView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
-//        shadowView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-//        shadowView.layer.shadowOpacity = 0.4
-//        shadowView.layer.shadowRadius = 0.0
-//        shadowView.layer.masksToBounds = false
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOpacity = 0.3
+        shadowView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        shadowView.layer.shadowRadius = 10
+        
+        shadowView.layer.shadowPath = UIBezierPath(rect: shadowView.bounds).cgPath
+        
+        shadowView.layer.shouldRasterize = true
+        
+        activityShadowView.layer.shadowColor = UIColor.black.cgColor
+        activityShadowView.layer.shadowOpacity = 0.3
+        activityShadowView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        activityShadowView.layer.shadowRadius = 10
+        
+        activityShadowView.layer.shadowPath = UIBezierPath(rect: activityShadowView.bounds).cgPath
+        
+        activityShadowView.layer.shouldRasterize = true
         
         
     }

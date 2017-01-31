@@ -290,7 +290,7 @@
         <scene sceneID="8ZD-vf-e6g">
             <objects>
                 <navigationController storyboardIdentifier="FriendsNavigation" automaticallyAdjustsScrollViewInsets="NO" id="nnb-bM-9H1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" image="FriendIcon" id="ZLS-er-Gpt"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="Friends" selectedImage="FriendHighlighted" id="ZLS-er-Gpt"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics">
                         <color key="tintColor" red="0.094117647060000004" green="0.46274509800000002" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -503,7 +503,8 @@
     </scenes>
     <resources>
         <image name="CloseButton" width="44" height="44"/>
-        <image name="FriendIcon" width="30" height="22"/>
+        <image name="FriendHighlighted" width="30" height="22"/>
+        <image name="Friends" width="30" height="22"/>
         <image name="Left Arrow" width="35" height="11"/>
         <image name="Right Arrow" width="35" height="11"/>
     </resources>

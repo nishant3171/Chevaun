@@ -13,14 +13,18 @@
         <scene sceneID="DMo-Ww-VZl">
             <objects>
                 <tabBarController id="qdI-bO-BfX" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="wwm-Cb-jCK">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="wwm-Cb-jCK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.094117647060000004" green="0.46274509800000002" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" red="0.094117647058823528" green="0.46274509803921571" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="barTintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
@@ -40,7 +44,7 @@
         <scene sceneID="uo0-JV-0eZ">
             <objects>
                 <viewControllerPlaceholder storyboardName="Activity" referencedIdentifier="ActivityNavigation" id="5Ti-ix-wgC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activities" image="Activity" selectedImage="Activity" id="x1B-C7-LaY"/>
+                    <tabBarItem key="tabBarItem" title="Activities" image="Activity-1" selectedImage="ActivityHighlighted" id="x1B-C7-LaY"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsL-aW-7wF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,7 +54,7 @@
         <scene sceneID="gYR-0g-jUj">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileNavigation" id="l1S-Bq-eqq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="ProfileHiglighted" id="OpJ-cz-olR"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile-1" selectedImage="ProfileHiglighted" id="OpJ-cz-olR"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Pu-cc-j1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,7 +64,7 @@
         <scene sceneID="Mc7-mc-t6r">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="HappenigsViewController" storyboardName="Happenings" referencedIdentifier="HappeningNavigation" id="YeW-fb-UJ4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add" image="Combined Shape" selectedImage="Combined Shape" id="mEl-Nd-jpd"/>
+                    <tabBarItem key="tabBarItem" title="Add" image="Add" selectedImage="AddHighlighted" id="mEl-Nd-jpd"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gNy-Hf-eyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,7 +74,7 @@
         <scene sceneID="Bmi-5t-RN3">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="ChallengeViewController" storyboardName="Challenge" referencedIdentifier="ChallengeNavigation" id="hAg-5i-sGN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Challenge" image="ChallengeIcon" id="Ogb-e8-eAR"/>
+                    <tabBarItem key="tabBarItem" title="Challenge" image="ChallengeIcon-1" selectedImage="ChallengeHighlighted" id="Ogb-e8-eAR"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJc-Jo-cRw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,7 +84,7 @@
         <scene sceneID="fQo-Nn-PmV">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="FriendsNavigation" storyboardName="Friends" referencedIdentifier="FriendsNavigation" id="r6J-PW-7c8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" image="FriendIcon" id="mpy-LQ-7S0"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="Friends" selectedImage="FriendHighlighted" id="mpy-LQ-7S0"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N4q-bR-jFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,11 +92,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Activity" width="25" height="25"/>
-        <image name="ChallengeIcon" width="31" height="31"/>
-        <image name="Combined Shape" width="25" height="25"/>
-        <image name="FriendIcon" width="30" height="22"/>
-        <image name="Profile" width="31" height="30"/>
+        <image name="Activity-1" width="25" height="25"/>
+        <image name="ActivityHighlighted" width="25" height="25"/>
+        <image name="Add" width="25" height="25"/>
+        <image name="AddHighlighted" width="25" height="25"/>
+        <image name="ChallengeHighlighted" width="31" height="31"/>
+        <image name="ChallengeIcon-1" width="31" height="31"/>
+        <image name="FriendHighlighted" width="30" height="22"/>
+        <image name="Friends" width="30" height="22"/>
+        <image name="Profile-1" width="31" height="30"/>
         <image name="ProfileHiglighted" width="31" height="30"/>
     </resources>
 </document>

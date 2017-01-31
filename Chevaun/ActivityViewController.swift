@@ -29,6 +29,7 @@ class ActivityViewController: UIViewController {
         downloadingActivitiesFromFirebase()
         print(percentageComplete)
 
+        UITabBar.appearance().backgroundColor = .white
         
         
     }

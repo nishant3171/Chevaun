@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Profile.png",
+      "filename" : "ChallengeHighlighted.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Profile@2x.png",
+      "filename" : "ChallengeHighlighted@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Profile@3x.png",
+      "filename" : "ChallengeHighlighted@3x.png",
       "scale" : "3x"
     }
   ],
