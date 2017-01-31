@@ -165,28 +165,29 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJw-jf-icv">
                                             <rect key="frame" x="4" y="188" width="242" height="58"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="jwc-2y-AKn">
+                                                    <rect key="frame" x="4" y="30" width="234" height="20"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                                    <color key="textColor" red="0.10196078431372549" green="0.51372549019607838" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny Mornings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eE-7f-r8M">
                                                     <rect key="frame" x="4" y="4" width="234" height="22"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="jwc-2y-AKn">
-                                                    <rect key="frame" x="4" y="30" width="234" height="20"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
-                                                    <color key="textColor" red="0.094117647060000004" green="0.46274509800000002" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="jwc-2y-AKn" firstAttribute="top" secondItem="2eE-7f-r8M" secondAttribute="bottom" constant="4" id="Ile-jV-4qG"/>
-                                                <constraint firstAttribute="trailing" secondItem="2eE-7f-r8M" secondAttribute="trailing" constant="4" id="hCF-KL-vNL"/>
-                                                <constraint firstAttribute="trailing" secondItem="jwc-2y-AKn" secondAttribute="trailing" constant="4" id="hPk-9E-Kyz"/>
-                                                <constraint firstItem="2eE-7f-r8M" firstAttribute="leading" secondItem="jJw-jf-icv" secondAttribute="leading" constant="4" id="iAN-a8-ej3"/>
-                                                <constraint firstItem="jwc-2y-AKn" firstAttribute="leading" secondItem="jJw-jf-icv" secondAttribute="leading" constant="4" id="rJT-k3-iKQ"/>
-                                                <constraint firstAttribute="bottom" secondItem="jwc-2y-AKn" secondAttribute="bottom" constant="8" id="rTi-S8-QOf"/>
-                                                <constraint firstItem="2eE-7f-r8M" firstAttribute="top" secondItem="jJw-jf-icv" secondAttribute="top" constant="4" id="u9J-mX-y9g"/>
+                                                <constraint firstItem="jwc-2y-AKn" firstAttribute="top" secondItem="2eE-7f-r8M" secondAttribute="bottom" constant="4" id="6bW-mh-non"/>
+                                                <constraint firstAttribute="trailing" secondItem="2eE-7f-r8M" secondAttribute="trailing" constant="4" id="ASQ-hN-yy8"/>
+                                                <constraint firstAttribute="trailing" secondItem="jwc-2y-AKn" secondAttribute="trailing" constant="4" id="LkW-Yn-JzH"/>
+                                                <constraint firstItem="jwc-2y-AKn" firstAttribute="top" secondItem="2eE-7f-r8M" secondAttribute="bottom" constant="4" id="TIr-Oi-hvQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="jwc-2y-AKn" secondAttribute="bottom" constant="8" id="d4d-On-dfP"/>
+                                                <constraint firstItem="jwc-2y-AKn" firstAttribute="leading" secondItem="jJw-jf-icv" secondAttribute="leading" constant="4" id="dzQ-FW-cQ4"/>
+                                                <constraint firstItem="2eE-7f-r8M" firstAttribute="leading" secondItem="jJw-jf-icv" secondAttribute="leading" constant="4" id="h1L-gc-rDi"/>
+                                                <constraint firstItem="2eE-7f-r8M" firstAttribute="top" secondItem="jJw-jf-icv" secondAttribute="top" constant="4" id="qsH-es-7qL"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -204,6 +205,7 @@
                                     <outlet property="activityImage" destination="dg1-3C-ypC" id="WSx-c7-Mzr"/>
                                     <outlet property="activityName" destination="2eE-7f-r8M" id="eTQ-O8-Ix8"/>
                                     <outlet property="finalReview" destination="jwc-2y-AKn" id="wSF-6J-gro"/>
+                                    <outlet property="labelView" destination="jJw-jf-icv" id="Jah-pd-OnY"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -216,7 +218,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ZK-o0-lMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="205.59999999999999" y="693.10344827586209"/>
+            <point key="canvasLocation" x="-194" y="797"/>
         </scene>
         <!--Add New Activity View Controller-->
         <scene sceneID="A7F-lB-i24">

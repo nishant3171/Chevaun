@@ -13,8 +13,14 @@ class ActivityCollectionCell: UICollectionViewCell {
     @IBOutlet weak var activityImage: UIImageView!
     @IBOutlet weak var activityName: UILabel!
     @IBOutlet weak var finalReview: UILabel!
-    
+    @IBOutlet weak var labelView: UIView!
     override func draw(_ rect: CGRect) {
+        
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurEffectView.frame = labelView.bounds
+//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        labelView.insertSubview(blurEffectView, at: 0)
         
         activityImage.clipsToBounds = true
         activityImage.layer.cornerRadius = 2.0
