@@ -48,8 +48,6 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         
         self.automaticallyAdjustsScrollViewInsets = false
         
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -268,7 +266,6 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
 ////            view.frame.origin.y -= getKeyboardHeight(notification)
 //            writingTextView.contentInset = UIEdgeInsets(top: 8.0, left: 8.0, bottom: getKeyboardHeight(notification), right: 8.0)
 //        }
-        
         let keyboardSize = getKeyboardHeight(notification)
         if view.frame.origin.y == 0 {
             self.view.frame.origin.y -= keyboardSize

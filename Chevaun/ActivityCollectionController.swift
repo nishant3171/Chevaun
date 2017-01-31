@@ -1,41 +1,38 @@
 //
-//  ViewController.swift
+//  ActivityCollectionController.swift
 //  Chevaun
 //
-//  Created by Nishant Punia on 21/12/16.
-//  Copyright © 2016 MLBNP. All rights reserved.
+//  Created by Nishant Punia on 31/01/17.
+//  Copyright © 2017 MLBNP. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-
-class ActivityViewController: UIViewController {
-    
-    @IBOutlet weak var tableView: UITableView!
+class ActivityCollectionController: UICollectionViewController {
     
     var activities = [ActivityModel]()
-    var percentageComplete = 0.0
     
-    static var imageCache: NSCache<NSString, UIImage> = NSCache()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        automaticallyAdjustsScrollViewInsets = false
+        let width = (collectionView!.frame.width) / 2
+        let layout = collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: width, height: width)
+        
         detectingNetworkConnections()
         detectingFirebaseConnections()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         downloadingActivitiesFromFirebase()
-        print(percentageComplete)
-        
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(true)
+//        
+//        navigationController?.tabBarController?.tabBar.isHidden = false
+//    }
+    
     
     func downloadingActivitiesFromFirebase() {
         
@@ -57,7 +54,7 @@ class ActivityViewController: UIViewController {
                     activity.sort{($0.date > $1.date)}
                     self.activities = activity
                     DispatchQueue.main.async {
-                        self.tableView.reloadData()
+                        self.collectionView!.reloadData()
                         UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     }
                 }
@@ -98,49 +95,36 @@ class ActivityViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+
+    
     
 }
 
-//MARK: TableViewDataSource
-extension ActivityViewController: UITableViewDataSource {
+extension ActivityCollectionController {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(activities.count)
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return activities.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath) as! ActivityCell
-//        let activity = activities[indexPath.row]
-//        print(activity)
-//        print(activities[indexPath.row])
-        
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivityCollection", for: indexPath) as! ActivityCollectionCell
         cell.configureCell(activity: activities[indexPath.row])
-
         return cell
-    
     }
-    
 }
 
-extension ActivityViewController: UITableViewDelegate {
+extension ActivityCollectionController {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        tableView.deselectRow(at: indexPath, animated: true)
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let destination = self.storyboard?.instantiateViewController(withIdentifier: "AddNewActivity") as! AddNewActivityViewController
         destination.newActivity = activities[indexPath.row]
-//        print(destination.newActivity!)
+        //        print(destination.newActivity!)
         self.navigationController?.pushViewController(destination, animated: true)
-        
     }
     
-    
 }
-

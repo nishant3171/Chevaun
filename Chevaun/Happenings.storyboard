@@ -183,7 +183,7 @@
         <!--Add New Activity View Controller-->
         <scene sceneID="EyV-zV-ca7">
             <objects>
-                <viewController storyboardIdentifier="AddNewActivity" id="E7R-FV-w5U" customClass="AddNewActivityViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNewActivity" extendedLayoutIncludesOpaqueBars="YES" hidesBottomBarWhenPushed="YES" id="E7R-FV-w5U" customClass="AddNewActivityViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JIM-Za-x2d"/>
                         <viewControllerLayoutGuide type="bottom" id="F3p-7u-Shh"/>
@@ -284,13 +284,13 @@
                                             <constraint firstAttribute="height" constant="1200" id="8Jl-5n-6Hy"/>
                                             <constraint firstAttribute="bottom" secondItem="3mu-Ee-dbQ" secondAttribute="bottom" constant="8" id="DeP-7e-Dnl"/>
                                             <constraint firstItem="cXH-Ou-Dub" firstAttribute="top" secondItem="eMF-dr-pwG" secondAttribute="bottom" constant="16" id="FfB-I7-jPK"/>
+                                            <constraint firstAttribute="bottom" secondItem="3mu-Ee-dbQ" secondAttribute="bottom" constant="16" id="ICR-eS-WTj"/>
                                             <constraint firstItem="ee5-Qt-KTY" firstAttribute="centerX" secondItem="eMF-dr-pwG" secondAttribute="centerX" id="Oj2-is-tWv"/>
                                             <constraint firstAttribute="height" constant="536" id="SeT-hd-871"/>
                                             <constraint firstItem="3mu-Ee-dbQ" firstAttribute="top" secondItem="cXH-Ou-Dub" secondAttribute="bottom" id="Z9R-KH-SMJ"/>
                                             <constraint firstItem="mns-2i-Lby" firstAttribute="centerX" secondItem="eMF-dr-pwG" secondAttribute="centerX" id="ZAo-IR-LbK"/>
                                             <constraint firstAttribute="bottom" secondItem="3mu-Ee-dbQ" secondAttribute="bottom" constant="8" id="gHF-yf-YUK"/>
                                             <constraint firstItem="eMF-dr-pwG" firstAttribute="top" secondItem="mns-2i-Lby" secondAttribute="bottom" constant="-46" id="hP3-dp-fFh"/>
-                                            <constraint firstAttribute="bottom" secondItem="3mu-Ee-dbQ" secondAttribute="bottom" constant="16" id="jev-DL-Lyj"/>
                                             <constraint firstAttribute="trailing" secondItem="eMF-dr-pwG" secondAttribute="trailing" constant="8" id="n66-Ef-nA3"/>
                                             <constraint firstAttribute="trailing" secondItem="cXH-Ou-Dub" secondAttribute="trailing" constant="8" id="nwp-L1-Nax"/>
                                             <constraint firstItem="cXH-Ou-Dub" firstAttribute="top" secondItem="ee5-Qt-KTY" secondAttribute="bottom" constant="33" id="pwS-Ir-e2K"/>
@@ -559,7 +559,7 @@
         <!--Adding New Friend View Controller-->
         <scene sceneID="N6g-Hq-mgt">
             <objects>
-                <viewController storyboardIdentifier="AddNewFriend" id="QNs-zd-b4D" customClass="AddingNewFriendViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNewFriend" extendedLayoutIncludesOpaqueBars="YES" hidesBottomBarWhenPushed="YES" id="QNs-zd-b4D" customClass="AddingNewFriendViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AQZ-Pb-SN1"/>
                         <viewControllerLayoutGuide type="bottom" id="EIc-17-gjg"/>

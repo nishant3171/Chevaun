@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pS2-wm-E9l">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ActivityCell" rowHeight="83" id="R3T-fz-18d" customClass="ActivityCell" customModule="Chevaun" customModuleProvider="target">
@@ -129,17 +129,99 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7SA-xh-3qa"/>
+                        <segue destination="l8b-kg-cyI" kind="relationship" relationship="rootViewController" id="ILh-iX-ftF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOw-9A-ftx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-194.40000000000001" y="26.53673163418291"/>
         </scene>
+        <!--Activities-->
+        <scene sceneID="8hO-7L-RZu">
+            <objects>
+                <collectionViewController id="l8b-kg-cyI" customClass="ActivityCollectionController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Fhj-Rb-1ah">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="5Za-5T-mdD">
+                            <size key="itemSize" width="250" height="250"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ActivityCollection" id="AFV-Ny-MdL" customClass="ActivityCollectionCell" customModule="Chevaun" customModuleProvider="target">
+                                <rect key="frame" x="63" y="0.0" width="250" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dg1-3C-ypC">
+                                            <rect key="frame" x="4" y="4" width="242" height="242"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJw-jf-icv">
+                                            <rect key="frame" x="4" y="188" width="242" height="58"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny Mornings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eE-7f-r8M">
+                                                    <rect key="frame" x="4" y="4" width="234" height="22"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="jwc-2y-AKn">
+                                                    <rect key="frame" x="4" y="30" width="234" height="20"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                                    <color key="textColor" red="0.094117647060000004" green="0.46274509800000002" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="jwc-2y-AKn" firstAttribute="top" secondItem="2eE-7f-r8M" secondAttribute="bottom" constant="4" id="Ile-jV-4qG"/>
+                                                <constraint firstAttribute="trailing" secondItem="2eE-7f-r8M" secondAttribute="trailing" constant="4" id="hCF-KL-vNL"/>
+                                                <constraint firstAttribute="trailing" secondItem="jwc-2y-AKn" secondAttribute="trailing" constant="4" id="hPk-9E-Kyz"/>
+                                                <constraint firstItem="2eE-7f-r8M" firstAttribute="leading" secondItem="jJw-jf-icv" secondAttribute="leading" constant="4" id="iAN-a8-ej3"/>
+                                                <constraint firstItem="jwc-2y-AKn" firstAttribute="leading" secondItem="jJw-jf-icv" secondAttribute="leading" constant="4" id="rJT-k3-iKQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="jwc-2y-AKn" secondAttribute="bottom" constant="8" id="rTi-S8-QOf"/>
+                                                <constraint firstItem="2eE-7f-r8M" firstAttribute="top" secondItem="jJw-jf-icv" secondAttribute="top" constant="4" id="u9J-mX-y9g"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dg1-3C-ypC" secondAttribute="trailing" constant="4" id="BZo-L5-gpA"/>
+                                    <constraint firstItem="dg1-3C-ypC" firstAttribute="top" secondItem="AFV-Ny-MdL" secondAttribute="top" constant="4" id="KD4-10-iKe"/>
+                                    <constraint firstAttribute="bottom" secondItem="dg1-3C-ypC" secondAttribute="bottom" constant="4" id="Uox-2P-izt"/>
+                                    <constraint firstItem="jJw-jf-icv" firstAttribute="leading" secondItem="AFV-Ny-MdL" secondAttribute="leading" constant="4" id="hq5-Nn-0Qm"/>
+                                    <constraint firstAttribute="bottom" secondItem="jJw-jf-icv" secondAttribute="bottom" constant="4" id="sil-9d-twA"/>
+                                    <constraint firstAttribute="trailing" secondItem="jJw-jf-icv" secondAttribute="trailing" constant="4" id="slB-Ta-Al5"/>
+                                    <constraint firstItem="dg1-3C-ypC" firstAttribute="leading" secondItem="AFV-Ny-MdL" secondAttribute="leading" constant="4" id="veL-KF-qKV"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="activityImage" destination="dg1-3C-ypC" id="WSx-c7-Mzr"/>
+                                    <outlet property="activityName" destination="2eE-7f-r8M" id="eTQ-O8-Ix8"/>
+                                    <outlet property="finalReview" destination="jwc-2y-AKn" id="wSF-6J-gro"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="l8b-kg-cyI" id="kU5-5u-oCK"/>
+                            <outlet property="delegate" destination="l8b-kg-cyI" id="rwf-AR-aeo"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Activities" id="1EZ-Uc-WIe"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ZK-o0-lMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205.59999999999999" y="693.10344827586209"/>
+        </scene>
         <!--Add New Activity View Controller-->
         <scene sceneID="A7F-lB-i24">
             <objects>
-                <viewController storyboardIdentifier="AddNewActivity" id="Pky-aT-02h" customClass="AddNewActivityViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNewActivity" extendedLayoutIncludesOpaqueBars="YES" id="Pky-aT-02h" customClass="AddNewActivityViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UBi-SU-L14"/>
                         <viewControllerLayoutGuide type="bottom" id="eUg-mH-OCE"/>
