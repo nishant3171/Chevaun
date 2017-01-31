@@ -120,9 +120,10 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o6I-TM-Kr3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="o6I-TM-Kr3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                         </textAttributes>
@@ -141,7 +142,7 @@
             <objects>
                 <collectionViewController id="l8b-kg-cyI" customClass="ActivityCollectionController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Fhj-Rb-1ah">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="5Za-5T-mdD">
@@ -152,33 +153,33 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ActivityCollection" id="AFV-Ny-MdL" customClass="ActivityCollectionCell" customModule="Chevaun" customModuleProvider="target">
-                                <rect key="frame" x="62.5" y="0.0" width="250" height="250"/>
+                                <rect key="frame" x="63" y="0.0" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dg1-3C-ypC">
-                                            <rect key="frame" x="4" y="4" width="242" height="242"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJw-jf-icv">
-                                            <rect key="frame" x="4" y="188" width="242" height="58"/>
+                                            <rect key="frame" x="0.0" y="184.5" width="250" height="65.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="jwc-2y-AKn">
-                                                    <rect key="frame" x="4" y="30" width="234" height="20"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
-                                                    <color key="textColor" red="0.10196078431372549" green="0.51372549019607838" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="jwc-2y-AKn">
+                                                    <rect key="frame" x="4" y="35.5" width="242" height="22"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny Mornings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eE-7f-r8M">
-                                                    <rect key="frame" x="4" y="4" width="234" height="22"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny Mornings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eE-7f-r8M">
+                                                    <rect key="frame" x="4" y="4" width="242" height="27.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="jwc-2y-AKn" firstAttribute="top" secondItem="2eE-7f-r8M" secondAttribute="bottom" constant="4" id="6bW-mh-non"/>
                                                 <constraint firstAttribute="trailing" secondItem="2eE-7f-r8M" secondAttribute="trailing" constant="4" id="ASQ-hN-yy8"/>
@@ -193,13 +194,13 @@
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="dg1-3C-ypC" secondAttribute="trailing" constant="4" id="BZo-L5-gpA"/>
-                                    <constraint firstItem="dg1-3C-ypC" firstAttribute="top" secondItem="AFV-Ny-MdL" secondAttribute="top" constant="4" id="KD4-10-iKe"/>
-                                    <constraint firstAttribute="bottom" secondItem="dg1-3C-ypC" secondAttribute="bottom" constant="4" id="Uox-2P-izt"/>
-                                    <constraint firstItem="jJw-jf-icv" firstAttribute="leading" secondItem="AFV-Ny-MdL" secondAttribute="leading" constant="4" id="hq5-Nn-0Qm"/>
-                                    <constraint firstAttribute="bottom" secondItem="jJw-jf-icv" secondAttribute="bottom" constant="4" id="sil-9d-twA"/>
-                                    <constraint firstAttribute="trailing" secondItem="jJw-jf-icv" secondAttribute="trailing" constant="4" id="slB-Ta-Al5"/>
-                                    <constraint firstItem="dg1-3C-ypC" firstAttribute="leading" secondItem="AFV-Ny-MdL" secondAttribute="leading" constant="4" id="veL-KF-qKV"/>
+                                    <constraint firstAttribute="trailing" secondItem="dg1-3C-ypC" secondAttribute="trailing" id="BZo-L5-gpA"/>
+                                    <constraint firstItem="dg1-3C-ypC" firstAttribute="top" secondItem="AFV-Ny-MdL" secondAttribute="top" id="KD4-10-iKe"/>
+                                    <constraint firstAttribute="bottom" secondItem="dg1-3C-ypC" secondAttribute="bottom" id="Uox-2P-izt"/>
+                                    <constraint firstItem="jJw-jf-icv" firstAttribute="leading" secondItem="AFV-Ny-MdL" secondAttribute="leading" id="hq5-Nn-0Qm"/>
+                                    <constraint firstAttribute="bottom" secondItem="jJw-jf-icv" secondAttribute="bottom" id="sil-9d-twA"/>
+                                    <constraint firstAttribute="trailing" secondItem="jJw-jf-icv" secondAttribute="trailing" id="slB-Ta-Al5"/>
+                                    <constraint firstItem="dg1-3C-ypC" firstAttribute="leading" secondItem="AFV-Ny-MdL" secondAttribute="leading" id="veL-KF-qKV"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="activityImage" destination="dg1-3C-ypC" id="WSx-c7-Mzr"/>

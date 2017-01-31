@@ -23,7 +23,6 @@ class ActivityCollectionCell: UICollectionViewCell {
 //        labelView.insertSubview(blurEffectView, at: 0)
         
         activityImage.clipsToBounds = true
-        activityImage.layer.cornerRadius = 2.0
         activityImage.layer.masksToBounds = true
     }
     

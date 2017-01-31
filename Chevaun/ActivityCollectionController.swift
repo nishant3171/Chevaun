@@ -16,9 +16,10 @@ class ActivityCollectionController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let width = (collectionView!.frame.width) / 2
+        let width = (collectionView!.frame.width)
+        let height = width / 2
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: width, height: width)
+        layout.itemSize = CGSize(width: width, height: height)
         
         detectingNetworkConnections()
         detectingFirebaseConnections()
