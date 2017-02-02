@@ -10,6 +10,7 @@
 		733D875DDBD3B8A9187F4F7C /* Pods_Chevaun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF71FC4B38F5F883CC9A920 /* Pods_Chevaun.framework */; };
 		F40555611E30EFB000784982 /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40555601E30EFB000784982 /* FriendModel.swift */; };
 		F40555631E3135E900784982 /* AddingNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40555621E3135E900784982 /* AddingNewFriendViewController.swift */; };
+		F40CCC4A1E439C3200241CD9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40CCC491E439C3200241CD9 /* ProfileViewController.swift */; };
 		F4107C071E10727200EAFBC4 /* ActivitiesArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4107C061E10727200EAFBC4 /* ActivitiesArray.swift */; };
 		F415014E1E31CA0A00D4BBD4 /* ReviewMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415014D1E31CA0A00D4BBD4 /* ReviewMeetingViewController.swift */; };
 		F41501501E31CB7000D4BBD4 /* MeetingReviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415014F1E31CB7000D4BBD4 /* MeetingReviewDelegate.swift */; };
@@ -22,7 +23,7 @@
 		F41881641E1ECF6B0089C3FD /* Happenings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F41881631E1ECF6B0089C3FD /* Happenings.storyboard */; };
 		F43130F01E0E9A1000824B86 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43130EF1E0E9A1000824B86 /* ActivityModel.swift */; };
 		F43130F21E0EAB9500824B86 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43130F11E0EAB9500824B86 /* ActivityCell.swift */; };
-		F440AD581E0AF18A0016D771 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440AD571E0AF18A0016D771 /* ProfileViewController.swift */; };
+		F440AD581E0AF18A0016D771 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440AD571E0AF18A0016D771 /* LoginViewController.swift */; };
 		F4451B911E36150300365F45 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4451B901E36150300365F45 /* Reachability.swift */; };
 		F455B12D1E1AF56300C42689 /* ActivityReviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F455B12C1E1AF56300C42689 /* ActivityReviewDelegate.swift */; };
 		F46BEC201E0F0B68003F68F3 /* AddNewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46BEC1F1E0F0B68003F68F3 /* AddNewActivityViewController.swift */; };
@@ -52,6 +53,7 @@
 		BBA1CA9E7EEE8613145FF8C5 /* Pods-Chevaun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chevaun.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chevaun/Pods-Chevaun.release.xcconfig"; sourceTree = "<group>"; };
 		F40555601E30EFB000784982 /* FriendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
 		F40555621E3135E900784982 /* AddingNewFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingNewFriendViewController.swift; sourceTree = "<group>"; };
+		F40CCC491E439C3200241CD9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F4107C061E10727200EAFBC4 /* ActivitiesArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesArray.swift; sourceTree = "<group>"; };
 		F415014D1E31CA0A00D4BBD4 /* ReviewMeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewMeetingViewController.swift; sourceTree = "<group>"; };
 		F415014F1E31CB7000D4BBD4 /* MeetingReviewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingReviewDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +66,7 @@
 		F41881631E1ECF6B0089C3FD /* Happenings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Happenings.storyboard; sourceTree = "<group>"; };
 		F43130EF1E0E9A1000824B86 /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		F43130F11E0EAB9500824B86 /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
-		F440AD571E0AF18A0016D771 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F440AD571E0AF18A0016D771 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F4451B901E36150300365F45 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		F455B12C1E1AF56300C42689 /* ActivityReviewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityReviewDelegate.swift; sourceTree = "<group>"; };
 		F46BEC1F1E0F0B68003F68F3 /* AddNewActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewActivityViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +150,6 @@
 			children = (
 				F46BEC1F1E0F0B68003F68F3 /* AddNewActivityViewController.swift */,
 				F470308C1E0AD1270050257A /* ActivityViewController.swift */,
-				F440AD571E0AF18A0016D771 /* ProfileViewController.swift */,
 				F4FCBD731E167ACD00F47619 /* ActivityReviewViewController.swift */,
 				F418815E1E1ECE3E0089C3FD /* HappeningsViewController.swift */,
 				F4F2710E1E1F02120061D7F3 /* ChallengeViewController.swift */,
@@ -156,6 +157,8 @@
 				F415014D1E31CA0A00D4BBD4 /* ReviewMeetingViewController.swift */,
 				F41501511E31CFC800D4BBD4 /* FriendViewController.swift */,
 				F4A5DE481E324347000D7711 /* FriendExperienceViewController.swift */,
+				F440AD571E0AF18A0016D771 /* LoginViewController.swift */,
+				F40CCC491E439C3200241CD9 /* ProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -371,9 +374,10 @@
 				F43130F01E0E9A1000824B86 /* ActivityModel.swift in Sources */,
 				F46E3C1B1E3BB00000FF9B9D /* ChallengeFriendsCell.swift in Sources */,
 				F46BEC201E0F0B68003F68F3 /* AddNewActivityViewController.swift in Sources */,
-				F440AD581E0AF18A0016D771 /* ProfileViewController.swift in Sources */,
+				F440AD581E0AF18A0016D771 /* LoginViewController.swift in Sources */,
 				F41501521E31CFC800D4BBD4 /* FriendViewController.swift in Sources */,
 				F4FCBD741E167ACD00F47619 /* ActivityReviewViewController.swift in Sources */,
+				F40CCC4A1E439C3200241CD9 /* ProfileViewController.swift in Sources */,
 				F4F2710F1E1F02120061D7F3 /* ChallengeViewController.swift in Sources */,
 				F43130F21E0EAB9500824B86 /* ActivityCell.swift in Sources */,
 				F40555631E3135E900784982 /* AddingNewFriendViewController.swift in Sources */,
