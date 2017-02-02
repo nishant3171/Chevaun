@@ -25,6 +25,7 @@ class FriendViewController: UIViewController {
         detectingFirebaseConnections()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         downloadingFriendsFromFirebase()
+        friendTableView.tableFooterView = UIView()
         
     }
     
