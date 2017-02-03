@@ -17,9 +17,16 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var facebookView: UIView!
     @IBOutlet weak var twitterView: UIView!
     @IBOutlet weak var googleView: UIView!
+    @IBOutlet weak var signUpView: UIView!
+    @IBOutlet weak var loginView: UIView!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        signUpView.layer.cornerRadius = 3.0
+        loginView.layer.cornerRadius = 3.0
 
         roundedView(views: logoView)
         roundedView(views: facebookView)
@@ -39,6 +46,37 @@ class LoginViewController: UIViewController {
     
     @IBAction func backButtonTapped(sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func loginEmailTapped(sender: UIButton) {
+        let destination = self.storyboard?.instantiateViewController(withIdentifier: "EmailLoginViewController") as! EmailLoginViewController
+        self.present(destination, animated: true, completion: nil)
+    }
+    
+    @IBAction func signUpButtonTapped(sender: UIButton) {
+        
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
+            print("Service not yet available.")
+            return
+        }
+        
+        
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+            
+            if error != nil {
+                print(error!)
+            } else {
+                if let newUser = user {
+                    let userData = ["provider": "Email"]
+                    DataService.instance.saveUser(uid: newUser.uid, userData: userData)
+                    print(newUser.uid)
+                }
+                
+            }
+        })
+        
+        
+        
     }
     
     @IBAction func facebookLogin(sender: UITapGestureRecognizer) {

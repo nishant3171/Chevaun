@@ -8,12 +8,16 @@
 
 import Foundation
 
-//class UserProfile {
-//    
+class UserProfile {
+    
 //    private var _firstName: String = " "
 //    private var _lastName: String = " "
 //    private var _userId: String = " "
-//    
+    
+    private var provider: String!
+    private var email: String?
+    private var password: String?
+    
 //    var firstName: String {
 //        return _firstName
 //    }
@@ -25,6 +29,6 @@ import Foundation
 //    var userId: String {
 //        return _userId
 //    }
-//    
-//    
-//}
+    
+    
+}

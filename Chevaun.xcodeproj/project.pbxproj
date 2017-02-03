@@ -12,6 +12,7 @@
 		F40555631E3135E900784982 /* AddingNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40555621E3135E900784982 /* AddingNewFriendViewController.swift */; };
 		F40CCC4A1E439C3200241CD9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40CCC491E439C3200241CD9 /* ProfileViewController.swift */; };
 		F4107C071E10727200EAFBC4 /* ActivitiesArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4107C061E10727200EAFBC4 /* ActivitiesArray.swift */; };
+		F4148D3C1E44FFC70082882E /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4148D3B1E44FFC70082882E /* EmailLoginViewController.swift */; };
 		F415014E1E31CA0A00D4BBD4 /* ReviewMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415014D1E31CA0A00D4BBD4 /* ReviewMeetingViewController.swift */; };
 		F41501501E31CB7000D4BBD4 /* MeetingReviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F415014F1E31CB7000D4BBD4 /* MeetingReviewDelegate.swift */; };
 		F41501521E31CFC800D4BBD4 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41501511E31CFC800D4BBD4 /* FriendViewController.swift */; };
@@ -55,6 +56,7 @@
 		F40555621E3135E900784982 /* AddingNewFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingNewFriendViewController.swift; sourceTree = "<group>"; };
 		F40CCC491E439C3200241CD9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F4107C061E10727200EAFBC4 /* ActivitiesArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesArray.swift; sourceTree = "<group>"; };
+		F4148D3B1E44FFC70082882E /* EmailLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		F415014D1E31CA0A00D4BBD4 /* ReviewMeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewMeetingViewController.swift; sourceTree = "<group>"; };
 		F415014F1E31CB7000D4BBD4 /* MeetingReviewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingReviewDelegate.swift; sourceTree = "<group>"; };
 		F41501511E31CFC800D4BBD4 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				F4A5DE481E324347000D7711 /* FriendExperienceViewController.swift */,
 				F440AD571E0AF18A0016D771 /* LoginViewController.swift */,
 				F40CCC491E439C3200241CD9 /* ProfileViewController.swift */,
+				F4148D3B1E44FFC70082882E /* EmailLoginViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F43130F01E0E9A1000824B86 /* ActivityModel.swift in Sources */,
+				F4148D3C1E44FFC70082882E /* EmailLoginViewController.swift in Sources */,
 				F46E3C1B1E3BB00000FF9B9D /* ChallengeFriendsCell.swift in Sources */,
 				F46BEC201E0F0B68003F68F3 /* AddNewActivityViewController.swift in Sources */,
 				F440AD581E0AF18A0016D771 /* LoginViewController.swift in Sources */,

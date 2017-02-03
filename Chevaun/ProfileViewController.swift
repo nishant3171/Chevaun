@@ -19,11 +19,7 @@ class ProfileViewController: UIViewController {
         tableview.reloadData()
     }
     
-    @IBAction func signUpButtonTapped(sender: UIButton) {
-        print("Not yet connected")
-    }
-    
-    @IBAction func loginButtonTapped(sender: UIButton) {
+    @IBAction func addAccountButtonTapped(sender: UIButton) {
         
         let destination = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.present(destination, animated: true, completion: nil)
