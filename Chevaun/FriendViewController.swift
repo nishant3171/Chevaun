@@ -33,11 +33,11 @@ class FriendViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        navigationController?.tabBarController?.tabBar.isHidden = false
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(true)
+//        
+//        navigationController?.tabBarController?.tabBar.isHidden = false
+//    }
     
     func downloadingFriendsFromFirebase() {
         

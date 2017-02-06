@@ -25,11 +25,11 @@
                         <viewControllerLayoutGuide type="bottom" id="izY-da-fmf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iGM-2r-U42">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgt-NT-DLa">
-                                <rect key="frame" x="0.0" y="64" width="375" height="174"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="174"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's add something new to your life" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfz-Sz-mHA">
                                         <rect key="frame" x="54.5" y="16" width="266.5" height="22"/>
@@ -55,7 +55,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Fv-q6-XwY">
-                                <rect key="frame" x="0.0" y="238" width="375" height="380"/>
+                                <rect key="frame" x="0.0" y="174" width="375" height="380"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHE-Sk-a5A">
                                         <rect key="frame" x="62" y="105" width="250" height="170"/>
@@ -162,11 +162,10 @@
                     <tabBarItem key="tabBarItem" title="Add" image="Add" selectedImage="AddHighlighted" id="Uo8-HW-mvo"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vkq-WD-3RG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Vkq-WD-3RG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                         </textAttributes>

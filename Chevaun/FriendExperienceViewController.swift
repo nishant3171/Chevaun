@@ -49,7 +49,6 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         
         downloadingExperiencesFromFirebase()
         
-        navigationController?.tabBarController?.tabBar.isHidden = true
         imageView.contentMode = .scaleAspectFill
         
         let button: UIButton = UIButton(type: UIButtonType.custom)
