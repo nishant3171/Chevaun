@@ -38,11 +38,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyW-Ik-Pen">
-                                                    <rect key="frame" x="112" y="44" width="152" height="64"/>
+                                                    <rect key="frame" x="92" y="40" width="192" height="72"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="152" id="JfM-0C-hnd"/>
-                                                        <constraint firstAttribute="height" constant="64" id="g8U-UQ-jw2"/>
+                                                        <constraint firstAttribute="width" constant="192" id="JfM-0C-hnd"/>
+                                                        <constraint firstAttribute="height" constant="72" id="g8U-UQ-jw2"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                     <state key="normal" title="Add Your Account">

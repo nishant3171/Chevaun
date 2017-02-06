@@ -115,7 +115,7 @@
         <!--Friend Experience View Controller-->
         <scene sceneID="Fc0-7S-5xo">
             <objects>
-                <viewController storyboardIdentifier="FriendMessages" id="kLZ-U2-c3Q" customClass="FriendExperienceViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FriendMessages" extendedLayoutIncludesOpaqueBars="YES" hidesBottomBarWhenPushed="YES" id="kLZ-U2-c3Q" customClass="FriendExperienceViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1gI-R9-QjL"/>
                         <viewControllerLayoutGuide type="bottom" id="xwj-aJ-7vX"/>
