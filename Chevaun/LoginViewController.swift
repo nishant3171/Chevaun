@@ -15,7 +15,6 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var logoView: UIView!
     @IBOutlet weak var facebookView: UIView!
-    @IBOutlet weak var twitterView: UIView!
     @IBOutlet weak var googleView: UIView!
     @IBOutlet weak var signUpView: UIView!
     @IBOutlet weak var loginView: UIView!
@@ -30,7 +29,6 @@ class LoginViewController: UIViewController {
 
         roundedView(views: logoView)
         roundedView(views: facebookView)
-        roundedView(views: twitterView)
         roundedView(views: googleView)
         
     }

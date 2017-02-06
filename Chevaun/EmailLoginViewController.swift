@@ -41,6 +41,7 @@ class EmailLoginViewController: UIViewController {
                 let destination = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainController") as! UITabBarController
                 destination.selectedIndex = 2
                 self.present(destination, animated: true, completion: nil)
+                
             }
         })
     }

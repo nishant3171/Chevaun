@@ -46,6 +46,7 @@ class ActivityReviewViewController: UIViewController {
         } else {
             reviewLabel.isHidden = true
         }
+        
 
         funSlider.value = funSliderValue
         growthSlider.value = growthSliderValue
