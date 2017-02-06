@@ -137,23 +137,38 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
 //                let uploadTask = DataService.instance.REF_ACTIVITYIMAGES.child(newString).child(imageUID).put(imageData, metadata: metadata)
 //                var percentageComplete = 0.0
                 
+                
+                
                 DataService.instance.REF_ACTIVITYIMAGES.child(newString).child(imageUID).put(imageData, metadata: metadata) { (metadata, error) in
                     
-                    
-                    
+//                    uploadTask.observe(.resume) { snapshot in
+//                        print("Started")
+//                        percentageComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
+//                            / Double(snapshot.progress!.totalUnitCount)
+//                        print(percentageComplete)
+//                    }
+//                    
 //                    uploadTask.observe(.progress) { snapshot in
 //                        // Upload reported progress
 //                        percentageComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
 //                            / Double(snapshot.progress!.totalUnitCount)
+//                        print(percentageComplete)
 //                        
 //                    }
                     if error != nil {
                         print("Unable to upload images.")
                     } else {
                         print("Successfully uploaded image to Firebase.")
+                        
+                        
+                        
                     if let downloadURL = metadata?.downloadURL()?.absoluteString {
                         self.uploadingActivitiesToFirebase(imageURL: downloadURL)
-//                        print(percentageComplete)
+                        
+                        let destination = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainController") as! UITabBarController
+                        destination.selectedIndex = 0
+                        self.present(destination, animated: true, completion: nil)
+                        
 //                        self.presetingActivityViewController(percentage: percentageComplete)
                     }
                     }

@@ -26,6 +26,8 @@
 		F43130F21E0EAB9500824B86 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43130F11E0EAB9500824B86 /* ActivityCell.swift */; };
 		F440AD581E0AF18A0016D771 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440AD571E0AF18A0016D771 /* LoginViewController.swift */; };
 		F4451B911E36150300365F45 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4451B901E36150300365F45 /* Reachability.swift */; };
+		F454A99A1E48E9A400011E7A /* ActivityCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454A9991E48E9A400011E7A /* ActivityCollectionController.swift */; };
+		F454A99C1E48E9B600011E7A /* ActivityCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454A99B1E48E9B600011E7A /* ActivityCollectionCell.swift */; };
 		F455B12D1E1AF56300C42689 /* ActivityReviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F455B12C1E1AF56300C42689 /* ActivityReviewDelegate.swift */; };
 		F46BEC201E0F0B68003F68F3 /* AddNewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46BEC1F1E0F0B68003F68F3 /* AddNewActivityViewController.swift */; };
 		F46E3C171E3BACBE00FF9B9D /* ChallengeFriends.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46E3C161E3BACBE00FF9B9D /* ChallengeFriends.xib */; };
@@ -70,6 +72,8 @@
 		F43130F11E0EAB9500824B86 /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		F440AD571E0AF18A0016D771 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F4451B901E36150300365F45 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		F454A9991E48E9A400011E7A /* ActivityCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCollectionController.swift; sourceTree = "<group>"; };
+		F454A99B1E48E9B600011E7A /* ActivityCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCollectionCell.swift; sourceTree = "<group>"; };
 		F455B12C1E1AF56300C42689 /* ActivityReviewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityReviewDelegate.swift; sourceTree = "<group>"; };
 		F46BEC1F1E0F0B68003F68F3 /* AddNewActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewActivityViewController.swift; sourceTree = "<group>"; };
 		F46E3C161E3BACBE00FF9B9D /* ChallengeFriends.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChallengeFriends.xib; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 				F41501531E31D03E00D4BBD4 /* FriendCell.swift */,
 				F4A5DE4A1E3247C6000D7711 /* ExperienceCell.swift */,
 				F4AC5A501E3A29DF00EC65D4 /* ChallengeCell.swift */,
+				F454A99B1E48E9B600011E7A /* ActivityCollectionCell.swift */,
 				F46E3C1A1E3BB00000FF9B9D /* ChallengeFriendsCell.swift */,
 			);
 			name = View;
@@ -153,6 +158,7 @@
 				F46BEC1F1E0F0B68003F68F3 /* AddNewActivityViewController.swift */,
 				F470308C1E0AD1270050257A /* ActivityViewController.swift */,
 				F4FCBD731E167ACD00F47619 /* ActivityReviewViewController.swift */,
+				F454A9991E48E9A400011E7A /* ActivityCollectionController.swift */,
 				F418815E1E1ECE3E0089C3FD /* HappeningsViewController.swift */,
 				F4F2710E1E1F02120061D7F3 /* ChallengeViewController.swift */,
 				F40555621E3135E900784982 /* AddingNewFriendViewController.swift */,
@@ -392,10 +398,12 @@
 				F4107C071E10727200EAFBC4 /* ActivitiesArray.swift in Sources */,
 				F470308D1E0AD1270050257A /* ActivityViewController.swift in Sources */,
 				F4451B911E36150300365F45 /* Reachability.swift in Sources */,
+				F454A99C1E48E9B600011E7A /* ActivityCollectionCell.swift in Sources */,
 				F41501501E31CB7000D4BBD4 /* MeetingReviewDelegate.swift in Sources */,
 				F40555611E30EFB000784982 /* FriendModel.swift in Sources */,
 				F418815F1E1ECE3E0089C3FD /* HappeningsViewController.swift in Sources */,
 				F4E033121E3396C20033E351 /* ExperienceModel.swift in Sources */,
+				F454A99A1E48E9A400011E7A /* ActivityCollectionController.swift in Sources */,
 				F470308B1E0AD1270050257A /* AppDelegate.swift in Sources */,
 				F4AC5A511E3A29DF00EC65D4 /* ChallengeCell.swift in Sources */,
 				F49A38D31E0DDBD1004BCBC8 /* DataService.swift in Sources */,

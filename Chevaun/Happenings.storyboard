@@ -183,7 +183,7 @@
         <!--Add New Activity View Controller-->
         <scene sceneID="EyV-zV-ca7">
             <objects>
-                <viewController storyboardIdentifier="AddNewActivity" id="E7R-FV-w5U" customClass="AddNewActivityViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNewActivity" extendedLayoutIncludesOpaqueBars="YES" hidesBottomBarWhenPushed="YES" id="E7R-FV-w5U" customClass="AddNewActivityViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JIM-Za-x2d"/>
                         <viewControllerLayoutGuide type="bottom" id="F3p-7u-Shh"/>
