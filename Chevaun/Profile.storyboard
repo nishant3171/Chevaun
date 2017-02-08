@@ -235,12 +235,16 @@
                                                                                     </imageView>
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" red="0.1019607843" green="0.51372549020000002" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <gestureRecognizers/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="44" id="8x9-VY-6VV"/>
                                                                                     <constraint firstItem="8P9-EX-YQm" firstAttribute="centerX" secondItem="goi-nN-jLh" secondAttribute="centerX" id="Gjt-nK-kJ2"/>
                                                                                     <constraint firstAttribute="height" constant="44" id="HHH-Y2-boV"/>
                                                                                     <constraint firstItem="8P9-EX-YQm" firstAttribute="centerY" secondItem="goi-nN-jLh" secondAttribute="centerY" id="fkP-kD-m75"/>
                                                                                 </constraints>
+                                                                                <connections>
+                                                                                    <outletCollection property="gestureRecognizers" destination="dr0-ar-QMN" appends="YES" id="7fx-tE-T08"/>
+                                                                                </connections>
                                                                             </view>
                                                                         </subviews>
                                                                         <constraints>
@@ -343,6 +347,11 @@
                         <action selector="facebookLoginWithSender:" destination="xGS-0L-hBR" id="NdW-le-zqr"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="dr0-ar-QMN">
+                    <connections>
+                        <action selector="googleLoginWithSender:" destination="xGS-0L-hBR" id="WtK-DK-kv8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3616.8000000000002" y="-702.09895052473769"/>
         </scene>
@@ -353,6 +362,8 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile-1" selectedImage="ProfileHiglighted" id="LUM-q0-TH7"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="bZz-HC-W1P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -385,7 +396,7 @@
                                         <rect key="frame" x="0.0" y="35" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D8x-7H-sgl" id="tao-kK-YkV">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pqw-tb-EQW">
@@ -420,7 +431,7 @@
                                         <rect key="frame" x="0.0" y="191" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IXp-go-guY" id="ifg-4c-Vcv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxJ-Fx-4GK">

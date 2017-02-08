@@ -10,8 +10,9 @@ import UIKit
 import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
+import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var logoView: UIView!
     @IBOutlet weak var facebookView: UIView!
@@ -30,6 +31,8 @@ class LoginViewController: UIViewController {
         roundedView(views: logoView)
         roundedView(views: facebookView)
         roundedView(views: googleView)
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
         
     }
 
@@ -93,6 +96,11 @@ class LoginViewController: UIViewController {
                 self.firebaseAuthentication(credential)
             }
         }
+    }
+    
+    @IBAction func googleLogin(sender: UITapGestureRecognizer) {
+        GIDSignIn.sharedInstance().signIn()
+        
     }
 
     func firebaseAuthentication(_ credential: FIRAuthCredential) {

@@ -9,9 +9,10 @@
 import UIKit
 import Firebase
 import FBSDKLoginKit
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
     var activities = [ActivityModel]()
@@ -21,11 +22,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 //        UITabBar.appearance().barTintColor = .white
         
         
         return true
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let err = error {
+            print("Cannot login: ", err)
+        }
+        
+        print("Successfully logged in with Google.")
+        
+        guard let idToken = user.authentication.idToken else { return }
+        guard let accessToken = user.authentication.accessToken else { return }
+        
+        let credentials = FIRGoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        
+        FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
+            if error != nil {
+                print("Unable to authenticate with Firebase.\(error)")
+            } else if user?.uid != nil {
+                
+                if let newUser = user {
+                    let userData = ["provider": credentials.provider]
+                    DataService.instance.saveUser(uid: newUser.uid, userData: userData)
+                    print(newUser.uid)
+                    
+                    UserDefaults.standard.set(newUser.uid, forKey: "UID")
+                    //Save UID in constants file. See the example from Udacity.
+                    print("Authenticated with Firebase.")
+                    
+                }
+            }
+            else {
+                print("Couldn't get the user id.")
+            }
+        })
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -51,7 +89,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        
+        GIDSignIn.sharedInstance().handle(url,
+                                             sourceApplication: sourceApplication,
+                                             annotation: annotation)
+        
+        return handled
     }
 
 }
