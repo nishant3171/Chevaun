@@ -43,6 +43,9 @@
 		F4A5DE491E324347000D7711 /* FriendExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A5DE481E324347000D7711 /* FriendExperienceViewController.swift */; };
 		F4A5DE4B1E3247C6000D7711 /* ExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A5DE4A1E3247C6000D7711 /* ExperienceCell.swift */; };
 		F4AC5A511E3A29DF00EC65D4 /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AC5A501E3A29DF00EC65D4 /* ChallengeCell.swift */; };
+		F4BC5AE41E4A347100AA8546 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BC5AE21E4A347100AA8546 /* SettingsCell.swift */; };
+		F4BC5AE51E4A347100AA8546 /* SettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4BC5AE31E4A347100AA8546 /* SettingsCell.xib */; };
+		F4BC5AE71E4A424E00AA8546 /* ProfileAgainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BC5AE61E4A424E00AA8546 /* ProfileAgainViewController.swift */; };
 		F4E033121E3396C20033E351 /* ExperienceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E033111E3396C20033E351 /* ExperienceModel.swift */; };
 		F4F255EB1E1406B1002F48B5 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F255EA1E1406B1002F48B5 /* UserProfile.swift */; };
 		F4F2710D1E1F01E80061D7F3 /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F2710C1E1F01E80061D7F3 /* Challenge.storyboard */; };
@@ -91,6 +94,9 @@
 		F4A5DE481E324347000D7711 /* FriendExperienceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendExperienceViewController.swift; sourceTree = "<group>"; };
 		F4A5DE4A1E3247C6000D7711 /* ExperienceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceCell.swift; sourceTree = "<group>"; };
 		F4AC5A501E3A29DF00EC65D4 /* ChallengeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
+		F4BC5AE21E4A347100AA8546 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		F4BC5AE31E4A347100AA8546 /* SettingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsCell.xib; sourceTree = "<group>"; };
+		F4BC5AE61E4A424E00AA8546 /* ProfileAgainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileAgainViewController.swift; sourceTree = "<group>"; };
 		F4E033111E3396C20033E351 /* ExperienceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExperienceModel.swift; sourceTree = "<group>"; };
 		F4F255EA1E1406B1002F48B5 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		F4F2710C1E1F01E80061D7F3 /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
@@ -148,6 +154,7 @@
 				F4AC5A501E3A29DF00EC65D4 /* ChallengeCell.swift */,
 				F454A99B1E48E9B600011E7A /* ActivityCollectionCell.swift */,
 				F46E3C1A1E3BB00000FF9B9D /* ChallengeFriendsCell.swift */,
+				F4BC5AE21E4A347100AA8546 /* SettingsCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -168,6 +175,7 @@
 				F440AD571E0AF18A0016D771 /* LoginViewController.swift */,
 				F40CCC491E439C3200241CD9 /* ProfileViewController.swift */,
 				F4148D3B1E44FFC70082882E /* EmailLoginViewController.swift */,
+				F4BC5AE61E4A424E00AA8546 /* ProfileAgainViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -199,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				F46E3C161E3BACBE00FF9B9D /* ChallengeFriends.xib */,
+				F4BC5AE31E4A347100AA8546 /* SettingsCell.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -315,6 +324,7 @@
 				F418815D1E1ECB100089C3FD /* Profile.storyboard in Resources */,
 				F46E3C171E3BACBE00FF9B9D /* ChallengeFriends.xib in Resources */,
 				F47030951E0AD1270050257A /* LaunchScreen.storyboard in Resources */,
+				F4BC5AE51E4A347100AA8546 /* SettingsCell.xib in Resources */,
 				F47030921E0AD1270050257A /* Assets.xcassets in Resources */,
 				F41501591E31D56F00D4BBD4 /* Friends.storyboard in Resources */,
 				F418815B1E1ECAB50089C3FD /* Activity.storyboard in Resources */,
@@ -402,8 +412,10 @@
 				F41501501E31CB7000D4BBD4 /* MeetingReviewDelegate.swift in Sources */,
 				F40555611E30EFB000784982 /* FriendModel.swift in Sources */,
 				F418815F1E1ECE3E0089C3FD /* HappeningsViewController.swift in Sources */,
+				F4BC5AE71E4A424E00AA8546 /* ProfileAgainViewController.swift in Sources */,
 				F4E033121E3396C20033E351 /* ExperienceModel.swift in Sources */,
 				F454A99A1E48E9A400011E7A /* ActivityCollectionController.swift in Sources */,
+				F4BC5AE41E4A347100AA8546 /* SettingsCell.swift in Sources */,
 				F470308B1E0AD1270050257A /* AppDelegate.swift in Sources */,
 				F4AC5A511E3A29DF00EC65D4 /* ChallengeCell.swift in Sources */,
 				F49A38D31E0DDBD1004BCBC8 /* DataService.swift in Sources */,

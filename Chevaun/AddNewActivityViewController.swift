@@ -165,9 +165,9 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
                     if let downloadURL = metadata?.downloadURL()?.absoluteString {
                         self.uploadingActivitiesToFirebase(imageURL: downloadURL)
                         
-                        let destination = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainController") as! UITabBarController
-                        destination.selectedIndex = 0
-                        self.present(destination, animated: true, completion: nil)
+//                        let destination = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainController") as! UITabBarController
+//                        destination.selectedIndex = 0
+//                        self.present(destination, animated: true, completion: nil)
                         
 //                        self.presetingActivityViewController(percentage: percentageComplete)
                     }
@@ -185,8 +185,6 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
             newActivity?.satisfactionPercentage = review[2]
             newActivity?.review = reviewString
         }
-
-        self.dismiss(animated: true, completion: nil)
     }
     
 //    func presetingActivityViewController(percentage: Double) {

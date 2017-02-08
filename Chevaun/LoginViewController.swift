@@ -68,6 +68,7 @@ class LoginViewController: UIViewController {
                     let userData = ["provider": "Email"]
                     DataService.instance.saveUser(uid: newUser.uid, userData: userData)
                     print(newUser.uid)
+                    UserDefaults.standard.set(newUser.uid, forKey: "UID")
                 }
                 
             }

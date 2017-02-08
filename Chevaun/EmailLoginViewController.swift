@@ -37,7 +37,11 @@ class EmailLoginViewController: UIViewController {
                 print(error!)
             } else {
                 print("Logged in with user.")
-                
+                guard let user = user else {
+                    print("No user found.")
+                    return
+                }
+                UserDefaults.standard.set(user.uid, forKey: "UID")
                 let destination = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainController") as! UITabBarController
                 destination.selectedIndex = 2
                 self.present(destination, animated: true, completion: nil)
