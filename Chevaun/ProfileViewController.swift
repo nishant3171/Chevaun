@@ -40,6 +40,10 @@ class ProfileViewController: UIViewController {
         do {
             try firebaseAuth?.signOut()
             print("Signed Out.")
+            
+//            let destination = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainController") as! UITabBarController
+//            destination.selectedIndex = 2
+//            self.present(destination, animated: true, completion: nil)
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }

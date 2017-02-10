@@ -173,9 +173,9 @@
 				F41501511E31CFC800D4BBD4 /* FriendViewController.swift */,
 				F4A5DE481E324347000D7711 /* FriendExperienceViewController.swift */,
 				F440AD571E0AF18A0016D771 /* LoginViewController.swift */,
+				F4BC5AE61E4A424E00AA8546 /* ProfileAgainViewController.swift */,
 				F40CCC491E439C3200241CD9 /* ProfileViewController.swift */,
 				F4148D3B1E44FFC70082882E /* EmailLoginViewController.swift */,
-				F4BC5AE61E4A424E00AA8546 /* ProfileAgainViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

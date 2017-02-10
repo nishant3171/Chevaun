@@ -21,21 +21,45 @@ class ActivityCollectionController: UICollectionViewController {
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: height)
         
+//        detectingNetworkConnections()
+//        detectingFirebaseConnections()
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+//        downloadingActivitiesFromFirebase()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        print("I am loadin,,,")
+        checkingUser()
         detectingNetworkConnections()
         detectingFirebaseConnections()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         downloadingActivitiesFromFirebase()
-        
+        print("I am done.")
+        collectionView?.reloadData()
+        collectionView?.setNeedsDisplay()
+        navigationController?.tabBarController?.tabBar.isHidden = false
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(true)
-//        
-//        navigationController?.tabBarController?.tabBar.isHidden = false
-//    }
+    func checkingUser() {
+        FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
+            if let user = user {
+                print(user.uid)
+            } else {
+                print("User signed out.")
+                self.activities = []
+            }
+        })
+    }
     
     
     func downloadingActivitiesFromFirebase() {
+        
+        if UserDefaults.standard.string(forKey: "UID") == nil {
+            print("Reloading Collection View.")
+        }
         
         if let newString = UserDefaults.standard.string(forKey: "UID") {
             DataService.instance.REF_ACTIVITIES.child(newString).observe(.value, with: { (snapshot) in

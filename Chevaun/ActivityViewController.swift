@@ -30,14 +30,10 @@ class ActivityViewController: UIViewController {
         print(percentageComplete)
 
         UITabBar.appearance().backgroundColor = .white
-        NotificationCenter.default.addObserver(self, selector: #selector(loadList),name:NSNotification.Name(rawValue: "load"), object: nil)
-        
+    
     }
     
-    func loadList(notification: NSNotification){
-        //load data here
-        self.tableView.reloadData()
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

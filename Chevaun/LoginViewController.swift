@@ -101,6 +101,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     @IBAction func googleLogin(sender: UITapGestureRecognizer) {
         GIDSignIn.sharedInstance().signIn()
         
+        
     }
 
     func firebaseAuthentication(_ credential: FIRAuthCredential) {
