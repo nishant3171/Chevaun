@@ -21,11 +21,6 @@ class ActivityCollectionController: UICollectionViewController {
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: height)
         
-//        detectingNetworkConnections()
-//        detectingFirebaseConnections()
-//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-//        downloadingActivitiesFromFirebase()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,9 +32,7 @@ class ActivityCollectionController: UICollectionViewController {
         detectingFirebaseConnections()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         downloadingActivitiesFromFirebase()
-        print("I am done.")
         collectionView?.reloadData()
-        collectionView?.setNeedsDisplay()
         navigationController?.tabBarController?.tabBar.isHidden = false
     }
     
