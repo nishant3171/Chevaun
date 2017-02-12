@@ -22,11 +22,13 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
     let imageView = UIImageView()
     
     //MARK: Variables
-    var newFriend: FriendModel? {
-        didSet {
-            navigationItem.title = newFriend?.name
-        }
-    }
+    var newFriend: FriendModel?
+//    var newFriend: FriendModel? {
+//        didSet {
+//            navigationItem.title = newFriend?.name
+//            settingUpUserProfile()
+//        }
+//    }
     var review: [Int] = [0,0,0]
     var reviewString = String()
     var experiences = [ExperienceModel]()
@@ -40,6 +42,8 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
             settingUpActivityFromTableView()
         }
         
+        settingUpUserProfile()
+        
         experienceTextField.delegate = self
         
         self.automaticallyAdjustsScrollViewInsets = false
@@ -48,39 +52,6 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         print(timeStamp!)
         
         downloadingExperiencesFromFirebase()
-        
-        imageView.contentMode = .scaleAspectFill
-        
-        let button: UIButton = UIButton(type: UIButtonType.custom)
-        //set image for button
-        if newFriend?.image != nil {
-            
-            
-            imageView.image = newFriend?.image
-            
-            button.setImage(imageView.image, for: UIControlState.normal)
-        } else {
-            if let imageURL = newFriend?.imageURL {
-                let url = URL(string: imageURL)
-                
-                imageView.sd_setImage(with: url)
-                
-                button.setImage(imageView.image, for: UIControlState.normal)
-            }
-        }
-        
-        //add function for button
-//         button.addTarget(self, action: "fbButtonPressed", forControlEvents: UIControlEvents.TouchUpInside)
-        //set frame
-        button.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
-        button.layer.masksToBounds = false
-        button.layer.cornerRadius = button.frame.size.width / 2
-        button.clipsToBounds = true
-        
-        
-        let barButton = UIBarButtonItem(customView: button)
-        //assign button to navigationbar
-        self.navigationItem.rightBarButtonItem = barButton
         
  
     }
@@ -100,6 +71,53 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func settingUpUserProfile() {
+        
+        let titleView = UIView()
+        titleView.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
+//        titleView.backgroundColor = .red
+        
+        let containerView = UIView()
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        titleView.addSubview(containerView)
+        
+        let profileImageView = UIImageView()
+        profileImageView.translatesAutoresizingMaskIntoConstraints = false
+        profileImageView.contentMode = .scaleAspectFill
+        profileImageView.layer.cornerRadius = 20
+        profileImageView.clipsToBounds = true
+        
+        containerView.addSubview(profileImageView)
+        
+        if let imageUrl = newFriend?.imageURL {
+            
+            let url = URL(string: imageUrl)
+            profileImageView.sd_setImage(with: url)
+            
+        }
+        
+        profileImageView.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
+        profileImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        let nameLabel = UILabel()
+        containerView.addSubview(nameLabel)
+        
+        nameLabel.text = newFriend?.name
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        nameLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 8).isActive = true
+        nameLabel.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor).isActive = true
+        nameLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
+        nameLabel.heightAnchor.constraint(equalTo: profileImageView.heightAnchor).isActive = true
+        
+        containerView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
+        containerView.centerXAnchor.constraint(equalTo: titleView.centerXAnchor).isActive = true
+        
+        self.navigationItem.titleView = titleView
     }
     
     func tableViewScrollToBottom(animated: Bool) {
@@ -130,6 +148,7 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
                             if let postDict = snap.value as? Dictionary<String,AnyObject> {
                                 let post = ExperienceModel(postData: postDict)
                                 experience.append(post)
+                                
                             }
                         }
                     }
@@ -139,6 +158,7 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
                     
                     
                     DispatchQueue.main.async {
+                        self.settingUpUserProfile()
                         self.tableView.rowHeight = UITableViewAutomaticDimension
                         self.tableView.estimatedRowHeight = 80
                         self.tableView.reloadData()
