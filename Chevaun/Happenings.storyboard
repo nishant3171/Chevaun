@@ -32,7 +32,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="174"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's add something new to your life" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfz-Sz-mHA">
-                                        <rect key="frame" x="54.5" y="16" width="266.5" height="22"/>
+                                        <rect key="frame" x="54" y="16" width="267" height="22"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -58,75 +58,64 @@
                                 <rect key="frame" x="0.0" y="174" width="375" height="380"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHE-Sk-a5A">
-                                        <rect key="frame" x="62" y="105" width="250" height="170"/>
+                                        <rect key="frame" x="24" y="96" width="327" height="188"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7FF-zG-0U1">
-                                                <rect key="frame" x="8" y="35" width="234" height="35"/>
+                                                <rect key="frame" x="8" y="35" width="311" height="35"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="OvU-8W-APl"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32F-jt-7Jq">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="70"/>
-                                                <color key="backgroundColor" red="0.094117647058823528" green="0.46274509803921571" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="70"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.46274509800000002" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="250" id="AYI-kQ-il6"/>
                                                     <constraint firstAttribute="height" constant="70" id="cbD-cO-2vM"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
-                                                <state key="normal" title="Add your activity">
+                                                <state key="normal" title="Add an activity">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addingNewActivityWithSender:" destination="iH5-mi-y5X" eventType="touchUpInside" id="8vX-yi-hfq"/>
+                                                    <action selector="addingNewActivityWithSender:" destination="iH5-mi-y5X" eventType="touchUpInside" id="zgF-Xk-TeI"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6Q-9E-zBc">
-                                                <rect key="frame" x="8" y="135" width="234" height="35"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="gdo-0W-DgO"/>
-                                                </constraints>
-                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M8-mf-qNJ">
-                                                <rect key="frame" x="0.0" y="100" width="250" height="70"/>
-                                                <color key="backgroundColor" red="0.094117647060000004" green="0.46274509800000002" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="0.0" y="118" width="327" height="70"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="250" id="5A4-7M-6yw"/>
                                                     <constraint firstAttribute="height" constant="70" id="pi1-ST-uiD"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                 <state key="normal" title="Met a new friend">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" red="0.094117647060000004" green="0.46274509800000002" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="addingNewFriendWithSender:" destination="iH5-mi-y5X" eventType="touchUpInside" id="h8h-Ez-VyA"/>
+                                                    <action selector="addingNewFriendWithSender:" destination="iH5-mi-y5X" eventType="touchUpInside" id="gJT-fN-6nZ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="32F-jt-7Jq" firstAttribute="leading" secondItem="cHE-Sk-a5A" secondAttribute="leading" id="5mb-N4-esh"/>
-                                            <constraint firstAttribute="height" constant="170" id="8WY-Ld-YMs"/>
-                                            <constraint firstAttribute="bottom" secondItem="V6Q-9E-zBc" secondAttribute="bottom" id="GeP-hc-yxN"/>
-                                            <constraint firstItem="1M8-mf-qNJ" firstAttribute="top" secondItem="7FF-zG-0U1" secondAttribute="bottom" constant="30" id="H5a-tH-AuZ"/>
+                                            <constraint firstItem="1M8-mf-qNJ" firstAttribute="top" secondItem="32F-jt-7Jq" secondAttribute="bottom" constant="48" id="B4U-6M-ULz"/>
                                             <constraint firstItem="7FF-zG-0U1" firstAttribute="centerX" secondItem="cHE-Sk-a5A" secondAttribute="centerX" id="KRc-DF-DDH"/>
-                                            <constraint firstAttribute="width" constant="250" id="TpU-GV-Nit"/>
                                             <constraint firstAttribute="bottom" secondItem="1M8-mf-qNJ" secondAttribute="bottom" id="USB-TC-W1m"/>
-                                            <constraint firstAttribute="trailing" secondItem="V6Q-9E-zBc" secondAttribute="trailing" constant="8" id="Vp4-el-Fkc"/>
                                             <constraint firstItem="32F-jt-7Jq" firstAttribute="top" secondItem="cHE-Sk-a5A" secondAttribute="top" id="X1t-7T-p3n"/>
                                             <constraint firstAttribute="trailing" secondItem="7FF-zG-0U1" secondAttribute="trailing" constant="8" id="XVC-XK-PMT"/>
                                             <constraint firstAttribute="trailing" secondItem="32F-jt-7Jq" secondAttribute="trailing" id="fZ5-GM-NZY"/>
                                             <constraint firstAttribute="trailing" secondItem="1M8-mf-qNJ" secondAttribute="trailing" id="goc-bk-xFi"/>
-                                            <constraint firstItem="V6Q-9E-zBc" firstAttribute="centerX" secondItem="cHE-Sk-a5A" secondAttribute="centerX" id="mqw-eh-i5m"/>
+                                            <constraint firstItem="7FF-zG-0U1" firstAttribute="bottom" secondItem="32F-jt-7Jq" secondAttribute="bottom" id="nSi-R1-tta"/>
                                             <constraint firstItem="1M8-mf-qNJ" firstAttribute="leading" secondItem="cHE-Sk-a5A" secondAttribute="leading" id="zdx-bU-R09"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cHE-Sk-a5A" secondAttribute="trailing" constant="24" id="4bn-nN-zB8"/>
                                     <constraint firstItem="cHE-Sk-a5A" firstAttribute="centerX" secondItem="8Fv-q6-XwY" secondAttribute="centerX" id="6VV-15-HjI"/>
+                                    <constraint firstItem="cHE-Sk-a5A" firstAttribute="leading" secondItem="8Fv-q6-XwY" secondAttribute="leading" constant="24" id="KF8-w9-lmm"/>
                                     <constraint firstItem="cHE-Sk-a5A" firstAttribute="centerY" secondItem="8Fv-q6-XwY" secondAttribute="centerY" id="hRz-ws-J3s"/>
                                 </constraints>
                             </view>
@@ -145,10 +134,9 @@
                     <navigationItem key="navigationItem" title="Happenings" id="tyn-9H-LP4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="activityShadowView" destination="7FF-zG-0U1" id="BB0-EJ-00R"/>
-                        <outlet property="newActivityButton" destination="32F-jt-7Jq" id="Jyc-cd-F5l"/>
-                        <outlet property="newFriend" destination="1M8-mf-qNJ" id="MKz-BK-m4P"/>
-                        <outlet property="shadowView" destination="V6Q-9E-zBc" id="rdF-El-rBP"/>
+                        <outlet property="activityShadowView" destination="7FF-zG-0U1" id="aSf-PJ-GZU"/>
+                        <outlet property="newActivityButton" destination="32F-jt-7Jq" id="yPw-t5-iLk"/>
+                        <outlet property="newFriend" destination="1M8-mf-qNJ" id="Wf5-xB-Q5k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oor-p3-FFv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -164,7 +152,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Vkq-WD-3RG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Vkq-WD-3RG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -560,7 +548,7 @@
         <!--Adding New Friend View Controller-->
         <scene sceneID="N6g-Hq-mgt">
             <objects>
-                <viewController storyboardIdentifier="AddNewFriend" id="QNs-zd-b4D" customClass="AddingNewFriendViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNewFriend" extendedLayoutIncludesOpaqueBars="YES" hidesBottomBarWhenPushed="YES" id="QNs-zd-b4D" customClass="AddingNewFriendViewController" customModule="Chevaun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AQZ-Pb-SN1"/>
                         <viewControllerLayoutGuide type="bottom" id="EIc-17-gjg"/>

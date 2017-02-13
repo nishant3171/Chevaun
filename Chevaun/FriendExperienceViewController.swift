@@ -43,15 +43,14 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         }
         
         settingUpUserProfile()
-        
         experienceTextField.delegate = self
-        
         self.automaticallyAdjustsScrollViewInsets = false
-        
         timeStamp = convertingDateToString()
         print(timeStamp!)
-        
         downloadingExperiencesFromFirebase()
+        
+        let rightBarButton = UIBarButtonItem(title: "Review", style: .plain, target: self, action: #selector(reivewButtonTapped))
+        navigationItem.rightBarButtonItem = rightBarButton
         
  
     }
@@ -175,8 +174,15 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         
     }
     
-    @IBAction func reivewButtonTapped(_ sender: UIButton) {
-        
+//    @IBAction func reivewButtonTapped(_ sender: UIButton) {
+//        
+//        let destination = self.storyboard?.instantiateViewController(withIdentifier: "MeetingReviewController") as! ReviewMeetingViewController
+//        destination.newFriend = newFriend
+//        destination.reviewDelegate = self
+//        self.present(destination, animated: true, completion: nil)
+//    }
+    
+    func reivewButtonTapped() {
         let destination = self.storyboard?.instantiateViewController(withIdentifier: "MeetingReviewController") as! ReviewMeetingViewController
         destination.newFriend = newFriend
         destination.reviewDelegate = self

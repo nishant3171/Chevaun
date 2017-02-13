@@ -26,7 +26,14 @@ class FriendViewController: UIViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         downloadingFriendsFromFirebase()
         
+        friendTableView.allowsMultipleSelectionDuringEditing = true
+        
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(true)
+//        self.friendTableView.reloadData()
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -139,6 +146,31 @@ extension FriendViewController: UITableViewDataSource {
         
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        guard let uid = USER_ID else {
+            return
+        }
+        
+        let friend = friends[indexPath.row]
+        
+        DataService.instance.REF_FRIENDS.child(uid).child(friend.postKey).removeValue { (error, reference) in
+            
+            if error != nil {
+                print("Could not proceed \(error)")
+            } else {
+                self.friends.remove(at: indexPath.row)
+//                self.friendTableView.deleteRows(at: [indexPath], with: .automatic)
+//                self.friendTableView.reloadData()
+                
+            }
+        }
+        
+    }
 }
 
 extension FriendViewController: UITableViewDelegate {
@@ -153,6 +185,8 @@ extension FriendViewController: UITableViewDelegate {
         self.navigationController?.pushViewController(destination, animated: true)
         
     }
+    
+    
     
 }
 
