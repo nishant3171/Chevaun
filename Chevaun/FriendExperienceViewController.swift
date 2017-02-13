@@ -104,6 +104,7 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         profileImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         let nameLabel = UILabel()
+        nameLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 17)
         containerView.addSubview(nameLabel)
         
         nameLabel.text = newFriend?.name
