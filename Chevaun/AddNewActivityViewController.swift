@@ -48,7 +48,7 @@ class AddNewActivityViewController: UIViewController,UIImagePickerControllerDele
         
         self.automaticallyAdjustsScrollViewInsets = false
         
-        
+        imagePicker.allowsEditing = true
         
     }
     

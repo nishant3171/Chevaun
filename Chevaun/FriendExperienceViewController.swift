@@ -11,15 +11,13 @@ import Firebase
 
 
 
-class FriendExperienceViewController: UIViewController, UITextFieldDelegate, ReviewMeetingViewControllerDelegate {
+class FriendExperienceViewController: UIViewController, UITextFieldDelegate, ReviewMeetingViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: IBOutlets
     @IBOutlet weak var experienceTextField: UITextField!
-    @IBOutlet weak var reviewButton: UIButton!
-
     @IBOutlet weak var tableView: UITableView!
     
-    let imageView = UIImageView()
+//    let imageView = UIImageView()
     
     //MARK: Variables
     var newFriend: FriendModel?
@@ -42,7 +40,7 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
             settingUpActivityFromTableView()
         }
         
-        settingUpUserProfile()
+//        settingUpUserProfile()
         experienceTextField.delegate = self
         self.automaticallyAdjustsScrollViewInsets = false
         timeStamp = convertingDateToString()
@@ -53,6 +51,12 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         navigationItem.rightBarButtonItem = rightBarButton
         
  
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        settingUpUserProfile()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -174,14 +178,6 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         
     }
     
-//    @IBAction func reivewButtonTapped(_ sender: UIButton) {
-//        
-//        let destination = self.storyboard?.instantiateViewController(withIdentifier: "MeetingReviewController") as! ReviewMeetingViewController
-//        destination.newFriend = newFriend
-//        destination.reviewDelegate = self
-//        self.present(destination, animated: true, completion: nil)
-//    }
-    
     func reivewButtonTapped() {
         let destination = self.storyboard?.instantiateViewController(withIdentifier: "MeetingReviewController") as! ReviewMeetingViewController
         destination.newFriend = newFriend
@@ -196,6 +192,38 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         reviewString = finalReview
     }
     
+    @IBAction func galleryImageTapped(sender: UITapGestureRecognizer) {
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        var selectedImage: UIImage?
+        
+        if let galleryImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            print(galleryImage)
+            selectedImage = galleryImage
+        }
+        
+        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            selectedImage = editedImage
+        }
+        
+        if let pickedImage = selectedImage {
+            print(pickedImage)
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+   
     @IBAction func addExperienceButtonTapped(sender: UIButton) {
         
         sendingExperiencesToFirebase()
@@ -225,19 +253,6 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
             firebasePost.setValue(post)
         }
     }
-//    
-//    func sendingFirstExperienceToFirebase() {
-//        
-//        if let experience = newFriend?.description,let userId = USER_ID, let postKey = newFriend?.postKey {
-//            let date = convertingDateToString()
-//            let post: Dictionary<String,AnyObject> = [
-//                "experience": experience as AnyObject,
-//                "timeStamp": date as AnyObject
-//            ]
-//            let firebasePost = DataService.instance.REF_EXPERIENCES.child(userId).child(postKey).childByAutoId()
-//            firebasePost.setValue(post)
-//        }
-//    }
     
     func convertingDateToString() -> String {
         
@@ -250,8 +265,6 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         return timeStamp
         
     }
-    
-    
     
     func observeExperiences() {
         if let userId = USER_ID, let postKey = newFriend?.postKey {

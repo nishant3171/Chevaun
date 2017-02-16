@@ -53,7 +53,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Chevaun uses camera to take activity images.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>{human-readable reason for photo access}</string>
+	<string>Chevaun uses gallery to add images to your activities.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
