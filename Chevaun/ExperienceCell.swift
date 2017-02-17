@@ -12,6 +12,7 @@ class ExperienceCell: UITableViewCell {
     
     @IBOutlet weak var experienceLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var experienceImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,9 +24,26 @@ class ExperienceCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func draw(_ rect: CGRect) {
+        experienceImage.clipsToBounds = true
+    }
 
     func configureCell(experience: ExperienceModel) {
-        experienceLabel.text = experience.experience
-        dateLabel.text = experience.timeStamp
+        
+        if experience.imageURL == nil && experience.experience != nil {
+            experienceLabel.isHidden = false
+            experienceLabel.text = experience.experience
+            dateLabel.text = experience.timeStamp
+            experienceImage.image = nil
+        } else {
+            experienceLabel.text = nil
+            experienceLabel.isHidden = true
+            let imageView: UIImageView = experienceImage
+            if let imageURL = experience.imageURL {
+                let imageUrl = URL(string: imageURL)
+                imageView.sd_setImage(with: imageUrl)
+            }
+        }
     }
 }

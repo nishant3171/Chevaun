@@ -6,10 +6,14 @@
 //  Copyright © 2017 MLBNP. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class ExperienceModel {
     var experience: String?
+    var image: UIImage?
+    var imageURL: String?
+    var imageHeight: CGFloat?
+    var imageWidth: CGFloat?
     var timeStamp: String?
     
     init(postData: Dictionary<String,AnyObject>) {
@@ -20,6 +24,18 @@ class ExperienceModel {
         
         if let timeStamp = postData["timeStamp"] {
             self.timeStamp = timeStamp as? String
+        }
+        
+        if let imageURL = postData["imageURL"] {
+            self.imageURL = imageURL as? String
+        }
+        
+        if let imageHeight = postData["imageHeight"] {
+            self.imageHeight = imageHeight as? CGFloat
+        }
+        
+        if let imageWidth = postData["imageWidth"] {
+            self.imageWidth = imageWidth as? CGFloat
         }
     }
 }

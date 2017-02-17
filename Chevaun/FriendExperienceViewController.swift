@@ -9,8 +9,6 @@
 import UIKit
 import Firebase
 
-
-
 class FriendExperienceViewController: UIViewController, UITextFieldDelegate, ReviewMeetingViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: IBOutlets
@@ -50,6 +48,7 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         let rightBarButton = UIBarButtonItem(title: "Review", style: .plain, target: self, action: #selector(reivewButtonTapped))
         navigationItem.rightBarButtonItem = rightBarButton
         
+        
  
     }
     
@@ -61,6 +60,7 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
         subscribeToNotifications()
         
         
@@ -169,9 +169,6 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
                         self.tableViewScrollToBottom(animated: true)
                     }
                     
-                    
-                    
-                    
                 })
             }
         }
@@ -214,7 +211,7 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         }
         
         if let pickedImage = selectedImage {
-            print(pickedImage)
+            savingExperienceImage(image: pickedImage)
         }
         
         self.dismiss(animated: true, completion: nil)
@@ -242,6 +239,70 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         
     }
     
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+        
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
+    func savingExperienceImage(image: UIImage) {
+        
+            
+            let mainImage = resizeImage(image: image, newWidth: 800)
+            print(mainImage?.size.width as Any)
+            print(mainImage?.size.height as Any)
+            
+            //Change ! in line below for image
+        
+            guard let newImage = mainImage else {
+                print("No Image")
+                return
+            }
+            if let imageData = UIImageJPEGRepresentation(newImage, 0.3),let newString = USER_ID  {
+                
+                let imageUID = NSUUID().uuidString
+                let metadata = FIRStorageMetadata()
+                metadata.contentType = "jpeg"
+                
+                
+                DataService.instance.REF_EXPERIENCEIMAGES.child(newString).child(imageUID).put(imageData, metadata: metadata) { (metadata, error) in
+                    
+                    if error != nil {
+                        print("Unable to upload images.")
+                    } else {
+                        print("Successfully uploaded image to Firebase.")
+                        
+                        if let downloadURL = metadata?.downloadURL()?.absoluteString {
+                            self.sendingImagesToFirebase(imageURL: downloadURL, image: newImage)
+                        }
+                    }
+                }
+            }
+            
+        
+    }
+    
+    func sendingImagesToFirebase(imageURL: String, image: UIImage) {
+        
+        if let userId = USER_ID, let postKey = newFriend?.postKey {
+            let post: Dictionary<String,AnyObject> = [
+                "imageURL": imageURL as AnyObject,
+                "imageHeight": image.size.height as AnyObject,
+                "imageWidth": image.size.width as AnyObject,
+                "timeStamp": timeStamp as AnyObject
+            ]
+            let firebasePost = DataService.instance.REF_EXPERIENCES.child(userId).child(postKey).childByAutoId()
+            firebasePost.setValue(post)
+        }
+    }
+    
     func sendingExperiencesToFirebase() {
         
         if let experience = experienceTextField.text,let userId = USER_ID, let postKey = newFriend?.postKey {
@@ -253,6 +314,8 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
             firebasePost.setValue(post)
         }
     }
+    
+    
     
     func convertingDateToString() -> String {
         
@@ -266,28 +329,28 @@ class FriendExperienceViewController: UIViewController, UITextFieldDelegate, Rev
         
     }
     
-    func observeExperiences() {
-        if let userId = USER_ID, let postKey = newFriend?.postKey {
-            DataService.instance.REF_EXPERIENCES.child(userId).child(postKey).observe(.value, with: { (snapshot) in
-                var experience = [ExperienceModel]()
-                if let dictionary = snapshot.value as? [String: AnyObject] {
-                    let post = ExperienceModel(postData: dictionary)
-                    experience.append(post)
-                }
-                self.experiences = experience
-//                self.experiences.insert(experience1, at: 0)
-                print(self.experiences[0].experience!)
-                
-                
-                self.tableView.rowHeight = UITableViewAutomaticDimension
-                self.tableView.estimatedRowHeight = 80
-                self.tableView.reloadData()
-                
-                
-                
-            }, withCancel: nil)
-        }
-    }
+//    func observeExperiences() {
+//        if let userId = USER_ID, let postKey = newFriend?.postKey {
+//            DataService.instance.REF_EXPERIENCES.child(userId).child(postKey).observe(.value, with: { (snapshot) in
+//                var experience = [ExperienceModel]()
+//                if let dictionary = snapshot.value as? [String: AnyObject] {
+//                    let post = ExperienceModel(postData: dictionary)
+//                    experience.append(post)
+//                }
+//                self.experiences = experience
+////                self.experiences.insert(experience1, at: 0)
+//                print(self.experiences[0].experience!)
+//                
+//                
+//                self.tableView.rowHeight = UITableViewAutomaticDimension
+//                self.tableView.estimatedRowHeight = 80
+//                self.tableView.reloadData()
+//                
+//                
+//                
+//            }, withCancel: nil)
+//        }
+//    }
     
     
     //Notifications
@@ -352,6 +415,16 @@ extension FriendExperienceViewController: UITableViewDataSource {
         
     }
     
+}
+
+extension FriendExperienceViewController: UITableViewDelegate {
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if experiences[indexPath.row].imageURL != nil {
+            return 250
+        } else {
+            return UITableViewAutomaticDimension
+        }
+    }
 }
